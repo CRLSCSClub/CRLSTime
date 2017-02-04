@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -72,6 +71,7 @@ function advanceLunchMode() {
     lunchMode = "A";
     schedule = scheduleA;
   }
+  localStorage.setItem("lunch", lunchMode);
   drawLunchButton();
 }
 
@@ -267,6 +267,10 @@ myDate(5, 29)
 ];
 
 var lunchMode = "A";
+if(localStorage.lunch)
+{
+  lunchMode = localStorage.lunch;
+}
 schedule = scheduleA;
 
 function isHoliday() {
