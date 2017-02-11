@@ -271,16 +271,7 @@ if(localStorage.lunch)
 {
   lunchMode = localStorage.lunch;
 }
-schedule = getSchedule(lunchMode);
-
-function getSchedule(var key) {
-  if(key == "A")
-    return scheduleA;
-  if(key == "B")
-    return scheduleB;
-  if(key == "C")
-    return scheduleC;
-}
+schedule = scheduleA;
 
 function isHoliday() {
   for (i = 0; i < schoolHolidays.length; i++) {
