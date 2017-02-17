@@ -60,15 +60,15 @@ function drawSettingsButton() {
 
 // Lunch
 function advanceLunchMode() {
-  if (lunchMode == "A") {
+  if (lunchMode === "A") {
     lunchMode = "B";
     schedule = scheduleB;
   }
-  else if (lunchMode == "B") {
+  else if (lunchMode === "B") {
     lunchMode = "C";
     schedule = scheduleC;
     }
-  else if (lunchMode == "C") {
+  else if (lunchMode === "C") {
     lunchMode = "A";
     schedule = scheduleA;
   }
@@ -271,7 +271,7 @@ schedule = scheduleA;
 
 function isHoliday() {
   for (i = 0; i < schoolHolidays.length; i++) {
-    if (schoolHolidays[i].month == today.getMonth() + 1 && schoolHolidays[i].day == today.getDate()) {
+    if (schoolHolidays[i].month === today.getMonth() + 1 && schoolHolidays[i].day === today.getDate()) {
       return true;
     }
   }
@@ -279,7 +279,7 @@ function isHoliday() {
 }
 
 function isWeekend() {
-  return today.getDay() == 0 || today.getDay() == 6;
+  return today.getDay() === 0 || today.getDay() === 6;
 }
 
 function getPeriodIndex() {
@@ -314,7 +314,7 @@ function drawClock() {
   var periodLength = getPeriodLength(periodIndex);
 
   // when to display a normal clock
-  if (periodLabel == "morning" || periodLabel == "after" || isWeekend() || isHoliday()){
+  if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
       drawNumbersNormal(ctx, radius, 1, 12);
       drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
