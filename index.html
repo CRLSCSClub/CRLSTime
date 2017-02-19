@@ -12,6 +12,8 @@
 style="background-color:#FFF">
 </canvas>
 
+<SCRIPT src="ServerDate.js"></SCRIPT>
+
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -285,8 +287,7 @@ function isWeekend() {
 }
 
 function getPeriodIndex() {
-    var now = new Date();
-   // var day = now.getDay();
+    var now = ServerDate;
     for(index = 0; true; index++){
       if (now > schedule[index].start && now < schedule[index + 1].start) {
         return index;
@@ -299,7 +300,6 @@ function getPeriodLength(i) {
 }
 
 drawCRLSTimeButton();
-
 
 //drawSettingsButton();
 //drawBSButton();
@@ -440,7 +440,7 @@ function drawPeriodLabel(ctx, radius, label) {
 }
 
 function drawNormalTime(ctx, radius){
-    var now = new Date();
+    var now = ServerDate;
     var hour = now.getHours();
     var minute = now.getMinutes();
     var second = now.getSeconds();
@@ -460,7 +460,7 @@ function drawNormalTime(ctx, radius){
 }
 
 function drawSchoolTime(ctx, radius, index){
-    var now = new Date();
+    var now = ServerDate;
     var second = now.getSeconds();
 
     // minute
@@ -476,7 +476,7 @@ function drawSchoolTime(ctx, radius, index){
 
 // ctx : canvas context
 // pos : angle out of 360, 90 is east
-// length, width : self expalnatory
+// length, width : self explanatory
 // color : CSS color ('#FF0000' is red) 
 function drawHand(ctx, pos, length, width, color) {
     ctx.beginPath();
