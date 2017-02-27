@@ -138,7 +138,7 @@ canvas.addEventListener('click', function(evt) {
 
     if (isInside(mousePos,rect)) {
         advanceLunchMode();
-    }   
+    }
 }, false);
 //////////////////////////////////////////////////
 
@@ -292,7 +292,7 @@ function getPeriodIndex() {
       if (now > schedule[index].start && now < schedule[index + 1].start) {
         return index;
       }
-    } 
+    }
 }
 
 function getPeriodLength(i) {
@@ -351,7 +351,7 @@ function drawFace(ctx, radius) {
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
   ctx.stroke();
-  
+
   // inner hub
   ctx.beginPath();
   ctx.arc(0, 0, radius*0.07, 0, 2*Math.PI);
@@ -392,7 +392,7 @@ function drawNumbersCountDown(ctx, radius, incr, max) {
   ctx.font = radius*0.20 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  for(num = max - incr; num >= 0; num -= incr){
+  for(num = (max % incr === 0) ? max - incr : max - max % incr; num >= 0; num -= incr){
     ang = 2 * Math.PI - (num * 2 * Math.PI / max);
     ctx.rotate(ang);
     ctx.translate(0, -radius*0.82);
@@ -410,7 +410,7 @@ function drawSpecialLabel(ctx, radius, label) {
   ctx.font = radius*0.25 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  
+
     ang = Math.PI;
     ctx.rotate(ang);
     ctx.translate(0, radius*0.35);
@@ -427,7 +427,7 @@ function drawPeriodLabel(ctx, radius, label) {
   ctx.font = radius*0.45 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  
+
     ang = Math.PI;
     ctx.rotate(ang);
     ctx.translate(0, -radius*0.32);
@@ -444,7 +444,7 @@ function drawNormalTime(ctx, radius){
     var hour = now.getHours();
     var minute = now.getMinutes();
     var second = now.getSeconds();
-   
+
     //hour
     hour=hour%12;
     hour=(hour*Math.PI/6)+
@@ -477,7 +477,7 @@ function drawSchoolTime(ctx, radius, index){
 // ctx : canvas context
 // pos : angle out of 360, 90 is east
 // length, width : self explanatory
-// color : CSS color ('#FF0000' is red) 
+// color : CSS color ('#FF0000' is red)
 function drawHand(ctx, pos, length, width, color) {
     ctx.beginPath();
     ctx.lineWidth = width;
