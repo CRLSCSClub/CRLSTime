@@ -138,7 +138,7 @@ canvas.addEventListener('click', function(evt) {
 
     if (isInside(mousePos,rect)) {
         advanceLunchMode();
-    }
+    }   
 }, false);
 //////////////////////////////////////////////////
 
@@ -292,7 +292,7 @@ function getPeriodIndex() {
       if (now > schedule[index].start && now < schedule[index + 1].start) {
         return index;
       }
-    }
+    } 
 }
 
 function getPeriodLength(i) {
@@ -309,7 +309,7 @@ setInterval(drawClock, 1000);
 
 function drawClock() {
 
-  drawFace(ctx, radius);
+  drawFace(ctx, radius, 0, 0);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
   var periodIndex = getPeriodIndex();
   var periodLabel = schedule[periodIndex].label;
@@ -331,30 +331,32 @@ function drawClock() {
       drawSpecialLabel(ctx, radius, "");
       drawSchoolTime(ctx, radius, periodIndex);
       drawLunchButton(); // comment out for  all school lunch
+      drawFace(ctx, radius/5, radius/2.5, radius/3);
+      drawSchoolDay(ctx, radius);
   }
 }
 
-function drawFace(ctx, radius) {
+function drawFace(ctx, radius, x, y) {
   var grad;
 
   // bg of face
     ctx.beginPath();
-    ctx.arc(0, 0, radius, 0, 2*Math.PI);
+    ctx.arc(x, y, radius, 0, 2*Math.PI);
     ctx.fillStyle = '#111111';
     ctx.fill();
 
   // outside ring
-  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad = ctx.createRadialGradient(x,y,radius*0.95, x,y,radius*1.05);
   grad.addColorStop(0, '#333');
   grad.addColorStop(0.5, '#FFF');
   grad.addColorStop(1, '#333');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
   ctx.stroke();
-
+  
   // inner hub
   ctx.beginPath();
-  ctx.arc(0, 0, radius*0.07, 0, 2*Math.PI);
+  ctx.arc(x, y, radius*0.07, 0, 2*Math.PI);
   ctx.fillStyle = '#666';
   ctx.fill();
 }
@@ -392,7 +394,7 @@ function drawNumbersCountDown(ctx, radius, incr, max) {
   ctx.font = radius*0.20 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  for(num = (max % incr === 0) ? max - incr : max - max % incr; num >= 0; num -= incr){
+  for(num = max - incr; num >= 0; num -= incr){
     ang = 2 * Math.PI - (num * 2 * Math.PI / max);
     ctx.rotate(ang);
     ctx.translate(0, -radius*0.82);
@@ -410,7 +412,7 @@ function drawSpecialLabel(ctx, radius, label) {
   ctx.font = radius*0.25 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-
+  
     ang = Math.PI;
     ctx.rotate(ang);
     ctx.translate(0, radius*0.35);
@@ -427,7 +429,7 @@ function drawPeriodLabel(ctx, radius, label) {
   ctx.font = radius*0.45 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-
+  
     ang = Math.PI;
     ctx.rotate(ang);
     ctx.translate(0, -radius*0.32);
@@ -439,24 +441,33 @@ function drawPeriodLabel(ctx, radius, label) {
     ctx.rotate(-ang);
 }
 
+function drawSchoolDay(ctx, radius) {
+  //schedule = scheduleA;
+  var now = ServerDate;
+  var tod = now.getTime() - schedule[2].start; // Time of Day (tod)
+  var lod = schedule[schedule.length - 2].start - schedule[2].start; // Length of Day (lod) (in milliseconds)
+  tod=(tod*2*Math.PI/lod);
+  drawHand(ctx, tod, radius*.9/5, radius*0.01, 'red', radius/2.5, radius/3);
+}
+
 function drawNormalTime(ctx, radius){
     var now = ServerDate;
     var hour = now.getHours();
     var minute = now.getMinutes();
     var second = now.getSeconds();
-
+   
     //hour
     hour=hour%12;
     hour=(hour*Math.PI/6)+
     (minute*Math.PI/(6*60))+
     (second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.55, radius*0.06, '#999');
+    drawHand(ctx, hour, radius*0.55, radius*0.06, '#999', 0, 0);
     //minute
     minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.83, radius*0.06, 'silver');
+    drawHand(ctx, minute, radius*0.83, radius*0.06, 'silver', 0, 0);
     // second
     second=(second*Math.PI/30);
-    drawHand(ctx, second, radius*0.9, radius*0.02, 'red');
+    drawHand(ctx, second, radius*0.9, radius*0.02, 'red', 0, 0);
 }
 
 function drawSchoolTime(ctx, radius, index){
@@ -467,27 +478,25 @@ function drawSchoolTime(ctx, radius, index){
     var minute = (now - schedule[index].start)/60000;
     minute = minute/getPeriodLength(index);
     minute = minute * 2 * Math.PI;
-    drawHand(ctx, minute, radius*0.83, radius*0.05, 'silver');
+    drawHand(ctx, minute, radius*0.83, radius*0.05, 'silver', 0, 0);
 
     // second
     second=(second*Math.PI/30);
-    drawHand(ctx, second, radius*0.9, radius*0.02, 'red');
+    drawHand(ctx, second, radius*0.9, radius*0.02, 'red', 0, 0);
 }
 
 // ctx : canvas context
 // pos : angle out of 360, 90 is east
 // length, width : self explanatory
-// color : CSS color ('#FF0000' is red)
-function drawHand(ctx, pos, length, width, color) {
+// color : CSS color ('#FF0000' is red) 
+function drawHand(ctx, pos, length, width, color, x, y) {
     ctx.beginPath();
     ctx.lineWidth = width;
     ctx.lineCap = "round";
-    ctx.moveTo(0,0);
-    ctx.rotate(pos);
-    ctx.lineTo(0, -length);
+    ctx.moveTo(x,y);
+    ctx.lineTo(x+length*Math.cos(pos-Math.PI/2), y+length*Math.sin(pos-Math.PI/2));
     ctx.strokeStyle = color;
     ctx.stroke();
-    ctx.rotate(-pos);
 }
 </script>
 
