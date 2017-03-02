@@ -255,6 +255,62 @@ block("after",today.setHours(14,30,0,0)),
 block("end",today.setHours(23,59,59,0))
 ];
 
+var scheduleAX = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,14,0,0)),
+block("CM X",today.setHours(9,18,0,0)),
+block("CM X-2",today.setHours(10,16,0,0)),
+block("2",today.setHours(10,20,0,0)),
+block("2-LA",today.setHours(11,29,0,0)),
+block("LA",today.setHours(11,33,0,0)),
+block("LA-3",today.setHours(12,3,0,0)),
+block("3",today.setHours(12,7,0,0)),
+block("3-4",today.setHours(13,17,0,0)),
+block("4",today.setHours(13,21,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleBX = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,14,0,0)),
+block("CM X",today.setHours(9,18,0,0)),
+block("CM X-2",today.setHours(10,16,0,0)),
+block("2",today.setHours(10,20,0,0)),
+block("2-3",today.setHours(11,29,0,0)),
+block("3",today.setHours(11,33,0,0)),
+block("3-LB",today.setHours(12,7,0,0)),
+block("LB",today.setHours(12,10,0,0)),
+block("LB-3",today.setHours(12,40,0,0)),
+block("3",today.setHours(12,43,0,0)),
+block("3-4",today.setHours(13,17,0,0)),
+block("4",today.setHours(13,21,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleCX = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,14,0,0)),
+block("CM X",today.setHours(9,18,0,0)),
+block("CM X-2",today.setHours(10,16,0,0)),
+block("2",today.setHours(10,20,0,0)),
+block("2-3",today.setHours(11,29,0,0)),
+block("3",today.setHours(11,33,0,0)),
+block("3-LC",today.setHours(12,43,0,0)),
+block("LC",today.setHours(12,47,0,0)),
+block("LC-4",today.setHours(13,17,0,0)),
+block("4",today.setHours(13,21,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
 var schoolHolidays = [
 myDate(2, 20),
 myDate(2, 21),
@@ -271,6 +327,12 @@ myDate(5, 29)
 ];
 
 var lunchMode = "A";
+
+// next three lines for XBlock day only
+scheduleA = scheduleAX;
+scheduleB = scheduleBX;
+scheduleC = scheduleCX;
+
 schedule = scheduleA;
 
 function isHoliday() {
@@ -325,7 +387,7 @@ function drawClock() {
   {
       var interval = 1;
       if (periodLength > 20) interval = 5;
-      if (periodLength > 60) interval = 10;
+      if (periodLength > 55) interval = 10;
       drawNumbersCountDown(ctx, radius, interval, periodLength);
       drawPeriodLabel(ctx, radius, periodLabel);
       drawSpecialLabel(ctx, radius, "");
