@@ -336,6 +336,8 @@ function drawClock() {
   }
 }
 
+// radius: radius of the face
+// x, y: x, y coordinates of the center of the face
 function drawFace(ctx, radius, x, y) {
   var grad;
 
@@ -489,6 +491,7 @@ function drawSchoolTime(ctx, radius, index){
 // pos : angle out of 360, 90 is east
 // length, width : self explanatory
 // color : CSS color ('#FF0000' is red) 
+// x, y: x, y coordinates of the start of the hand; point of rotation
 function drawHand(ctx, pos, length, width, color, x, y) {
     ctx.beginPath();
     ctx.lineWidth = width;
