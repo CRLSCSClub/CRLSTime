@@ -274,11 +274,11 @@ if(localStorage.lunch)
 schedule = getSchedule(lunchMode);
 
 function getSchedule(var key) {
-  if(key == "A")
+  if(key === "A")
     return scheduleA;
-  if(key == "B")
+  if(key === "B")
     return scheduleB;
-  if(key == "C")
+  if(key === "C")
     return scheduleC;
 }
 
