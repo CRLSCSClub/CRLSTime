@@ -309,20 +309,22 @@ setInterval(drawClock, 1000);
 
 function drawClock() {
 
-  drawFace(ctx, radius, 0, 0);
+  //drawFace(ctx, radius, 0, 0);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
   var periodIndex = getPeriodIndex();
   var periodLabel = schedule[periodIndex].label;
   var periodLength = getPeriodLength(periodIndex);
 
   // when to display a normal clock
-  if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
+  if (true)//periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
       drawNumbersNormal(ctx, radius, 1, 12);
       drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
       removeLunchButton();
   } else // display school time
   {
+      drawFace(ctx, radius/5, radius/2.5, radius/3);
+      drawSchoolDay(ctx, radius);
       var interval = 1;
       if (periodLength > 20) interval = 5;
       if (periodLength > 60) interval = 10;
@@ -331,13 +333,9 @@ function drawClock() {
       drawSpecialLabel(ctx, radius, "");
       drawSchoolTime(ctx, radius, periodIndex);
       drawLunchButton(); // comment out for  all school lunch
-      drawFace(ctx, radius/5, radius/2.5, radius/3);
-      drawSchoolDay(ctx, radius);
   }
 }
 
-// radius: radius of the face
-// x, y: x, y coordinates of the center of the face
 function drawFace(ctx, radius, x, y) {
   var grad;
 
@@ -491,7 +489,6 @@ function drawSchoolTime(ctx, radius, index){
 // pos : angle out of 360, 90 is east
 // length, width : self explanatory
 // color : CSS color ('#FF0000' is red) 
-// x, y: x, y coordinates of the start of the hand; point of rotation
 function drawHand(ctx, pos, length, width, color, x, y) {
     ctx.beginPath();
     ctx.lineWidth = width;
