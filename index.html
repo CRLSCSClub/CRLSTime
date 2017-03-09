@@ -309,22 +309,22 @@ setInterval(drawClock, 1000);
 
 function drawClock() {
 
-  //drawFace(ctx, radius, 0, 0);
+  drawFace(ctx, radius, 0, 0);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
   var periodIndex = getPeriodIndex();
   var periodLabel = schedule[periodIndex].label;
   var periodLength = getPeriodLength(periodIndex);
 
   // when to display a normal clock
-  if (true)//periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
+  if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
       drawNumbersNormal(ctx, radius, 1, 12);
       drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
       removeLunchButton();
   } else // display school time
   {
-      drawFace(ctx, radius/5, radius/2.5, radius/3);
-      drawSchoolDay(ctx, radius);
+      drawFace(ctx, radius/5, radius/2.5, radius/5);
+      drawSchoolDay(ctx, radius/5, radius/2.5, radius/5);
       var interval = 1;
       if (periodLength > 20) interval = 5;
       if (periodLength > 60) interval = 10;
@@ -336,6 +336,8 @@ function drawClock() {
   }
 }
 
+// radius: radius of the face
+// x, y: x, y coordinates of the center of the face
 function drawFace(ctx, radius, x, y) {
   var grad;
 
@@ -441,13 +443,13 @@ function drawPeriodLabel(ctx, radius, label) {
     ctx.rotate(-ang);
 }
 
-function drawSchoolDay(ctx, radius) {
+function drawSchoolDay(ctx, radius, x, y) {
   //schedule = scheduleA;
   var now = ServerDate;
   var tod = now.getTime() - schedule[2].start; // Time of Day (tod)
   var lod = schedule[schedule.length - 2].start - schedule[2].start; // Length of Day (lod) (in milliseconds)
   tod=(tod*2*Math.PI/lod);
-  drawHand(ctx, tod, radius*.9/5, radius*0.01, 'red', radius/2.5, radius/3);
+  drawHand(ctx, tod, radius*.9, radius*0.05, 'red', x, y);
 }
 
 function drawNormalTime(ctx, radius){
@@ -489,6 +491,7 @@ function drawSchoolTime(ctx, radius, index){
 // pos : angle out of 360, 90 is east
 // length, width : self explanatory
 // color : CSS color ('#FF0000' is red) 
+// x, y: x, y coordinates of the start of the hand; point of rotation
 function drawHand(ctx, pos, length, width, color, x, y) {
     ctx.beginPath();
     ctx.lineWidth = width;
