@@ -309,7 +309,7 @@ setInterval(drawClock, 1000);
 
 function drawClock() {
 
-  drawFace(ctx, radius, 0, 0);
+  drawFace(ctx, radius, 0, 0, '#FFF');
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
   var periodIndex = getPeriodIndex();
   var periodLabel = schedule[periodIndex].label;
@@ -323,7 +323,7 @@ function drawClock() {
       removeLunchButton();
   } else // display school time
   {
-      drawFace(ctx, radius/5, radius/2.5, radius/5);
+      drawFace(ctx, radius/5, radius/2.5, radius/5, '#AAA');
       drawSchoolDay(ctx, radius/5, radius/2.5, radius/5);
       var interval = 1;
       if (periodLength > 20) interval = 5;
@@ -338,7 +338,7 @@ function drawClock() {
 
 // radius: radius of the face
 // x, y: x, y coordinates of the center of the face
-function drawFace(ctx, radius, x, y) {
+function drawFace(ctx, radius, x, y, ringColor) {
   var grad;
 
   // bg of face
@@ -350,7 +350,7 @@ function drawFace(ctx, radius, x, y) {
   // outside ring
   grad = ctx.createRadialGradient(x,y,radius*0.95, x,y,radius*1.05);
   grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, '#FFF');
+  grad.addColorStop(0.5, ringColor);
   grad.addColorStop(1, '#333');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
@@ -449,7 +449,7 @@ function drawSchoolDay(ctx, radius, x, y) {
   var tod = now.getTime() - schedule[2].start; // Time of Day (tod)
   var lod = schedule[schedule.length - 2].start - schedule[2].start; // Length of Day (lod) (in milliseconds)
   tod=(tod*2*Math.PI/lod);
-  drawHand(ctx, tod, radius*.9, radius*0.05, 'red', x, y);
+  drawHand(ctx, tod, radius*.9, radius*0.05, '#a34646', x, y);
 }
 
 function drawNormalTime(ctx, radius){
