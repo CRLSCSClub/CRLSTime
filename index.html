@@ -317,7 +317,7 @@ myDate(2, 21),
 myDate(2, 22),
 myDate(2, 23),
 myDate(2, 24),
-myDate(3, 14), // snowday 
+myDate(3, 14), // snowday
 myDate(4, 14),
 myDate(4, 17),
 myDate(4, 18),
@@ -381,7 +381,7 @@ function drawClock() {
   // when to display a normal clock
   if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
       drawNumbersNormal(ctx, radius, 1, 12);
-      drawSpecialLabel(ctx, radius, "Snowday");
+      drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
       removeLunchButton();
   } else // display school time
