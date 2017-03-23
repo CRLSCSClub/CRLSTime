@@ -479,9 +479,9 @@ var lunchMode = "A";
 // scheduleC = scheduleCX;
 
 // next three lines for MCAS34 only
-scheduleA = scheduleAMCAS34;
-scheduleB = scheduleBMCAS34;
-scheduleC = scheduleCMCAS34;
+scheduleA = scheduleAMCASShort;
+scheduleB = scheduleBMCASShort;
+scheduleC = scheduleCMCASShort;
 
 schedule = scheduleA;
 
@@ -643,7 +643,7 @@ function drawSpecialLabel(ctx, radius, label) {
 
 function drawPeriodLabel(ctx, radius, label) {
   var ang;
-  ctx.font = radius*0.35 + "px arial";
+  ctx.font = radius*0.40 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
 
