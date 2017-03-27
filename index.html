@@ -1,5 +1,7 @@
 <html>
 <head>
+<title>CRLSTime</title>
+<link rel="shortcut icon" type="image/x-icon" href="falcon_high_res2.png" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 </head>
@@ -8,6 +10,8 @@
 <canvas id="canvas"
 style="background-color:#FFF">
 </canvas>
+
+<SCRIPT src="ServerDate.js"></SCRIPT>
 
 <script>
 var canvas = document.getElementById("canvas");
@@ -59,15 +63,15 @@ function drawSettingsButton() {
 
 // Lunch
 function advanceLunchMode() {
-  if (lunchMode == "A") {
+  if (lunchMode === "A") {
     lunchMode = "B";
     schedule = scheduleB;
   }
-  else if (lunchMode == "B") {
+  else if (lunchMode === "B") {
     lunchMode = "C";
     schedule = scheduleC;
     }
-  else if (lunchMode == "C") {
+  else if (lunchMode === "C") {
     lunchMode = "A";
     schedule = scheduleA;
   }
@@ -79,7 +83,7 @@ var lowerLeftX = -radius * 0.88;
 var lowerLeftY = radius * 0.88;
 function drawLunchButton() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
-  ctx.font = radius*0.2 + "px arial";
+  ctx.font = radius*0.25 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   ctx.fillStyle = '#999';
@@ -134,7 +138,7 @@ canvas.addEventListener('click', function(evt) {
 
     if (isInside(mousePos,rect)) {
         advanceLunchMode();
-    }   
+    }
 }, false);
 //////////////////////////////////////////////////
 
@@ -251,12 +255,213 @@ block("after",today.setHours(14,30,0,0)),
 block("end",today.setHours(23,59,59,0))
 ];
 
+var scheduleAX = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,14,0,0)),
+block("CM X",today.setHours(9,18,0,0)),
+block("CM X-2",today.setHours(10,16,0,0)),
+block("2",today.setHours(10,20,0,0)),
+block("2-LA",today.setHours(11,29,0,0)),
+block("LA",today.setHours(11,33,0,0)),
+block("LA-3",today.setHours(12,3,0,0)),
+block("3",today.setHours(12,7,0,0)),
+block("3-4",today.setHours(13,17,0,0)),
+block("4",today.setHours(13,21,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleBX = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,14,0,0)),
+block("CM X",today.setHours(9,18,0,0)),
+block("CM X-2",today.setHours(10,16,0,0)),
+block("2",today.setHours(10,20,0,0)),
+block("2-3",today.setHours(11,29,0,0)),
+block("3",today.setHours(11,33,0,0)),
+block("3-LB",today.setHours(12,7,0,0)),
+block("LB",today.setHours(12,10,0,0)),
+block("LB-3",today.setHours(12,40,0,0)),
+block("3",today.setHours(12,43,0,0)),
+block("3-4",today.setHours(13,17,0,0)),
+block("4",today.setHours(13,21,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleCX = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,14,0,0)),
+block("CM X",today.setHours(9,18,0,0)),
+block("CM X-2",today.setHours(10,16,0,0)),
+block("2",today.setHours(10,20,0,0)),
+block("2-3",today.setHours(11,29,0,0)),
+block("3",today.setHours(11,33,0,0)),
+block("3-LC",today.setHours(12,43,0,0)),
+block("LC",today.setHours(12,47,0,0)),
+block("LC-4",today.setHours(13,17,0,0)),
+block("4",today.setHours(13,21,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleAMCAS12 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("MCAS",today.setHours(8,5,0,0)),
+block("MCAS-LA",today.setHours(11,8,0,0)),
+block("LA",today.setHours(11,12,0,0)),
+block("LA-1",today.setHours(11,42,0,0)),
+block("1",today.setHours(11,46,0,0)),
+block("1-2",today.setHours(13,06,0,0)),
+block("2",today.setHours(13,10,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleBMCAS12 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("MCAS",today.setHours(8,5,0,0)),
+block("MCAS-1",today.setHours(11,8,0,0)),
+block("1",today.setHours(11,12,0,0)),
+block("1-LB",today.setHours(11,52,0,0)),
+block("LB",today.setHours(11,54,0,0)),
+block("LB-1",today.setHours(12,24,0,0)),
+block("1",today.setHours(12,26,0,0)),
+block("1-2",today.setHours(13,6,0,0)),
+block("2",today.setHours(13,10,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleCMCAS12 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("MCAS",today.setHours(8,5,0,0)),
+block("MCAS-1",today.setHours(11,8,0,0)),
+block("1",today.setHours(11,12,0,0)),
+block("1-LC",today.setHours(12,32,0,0)),
+block("LC",today.setHours(12,36,0,0)),
+block("LC-2",today.setHours(13,6,0,0)),
+block("2",today.setHours(13,10,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleAMCAS34 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("MCAS",today.setHours(8,5,0,0)),
+block("MCAS-LA",today.setHours(11,8,0,0)),
+block("LA",today.setHours(11,12,0,0)),
+block("LA-3",today.setHours(11,42,0,0)),
+block("3",today.setHours(11,46,0,0)),
+block("3-4",today.setHours(13,06,0,0)),
+block("4",today.setHours(13,10,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleBMCAS34 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("MCAS",today.setHours(8,5,0,0)),
+block("MCAS-3",today.setHours(11,8,0,0)),
+block("3",today.setHours(11,12,0,0)),
+block("3-LB",today.setHours(11,52,0,0)),
+block("LB",today.setHours(11,54,0,0)),
+block("LB-3",today.setHours(12,24,0,0)),
+block("3",today.setHours(12,26,0,0)),
+block("3-4",today.setHours(13,6,0,0)),
+block("4",today.setHours(13,10,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleCMCAS34 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("MCAS",today.setHours(8,5,0,0)),
+block("MCAS-3",today.setHours(11,8,0,0)),
+block("3",today.setHours(11,12,0,0)),
+block("3-LC",today.setHours(12,32,0,0)),
+block("LC",today.setHours(12,36,0,0)),
+block("LC-4",today.setHours(13,6,0,0)),
+block("4",today.setHours(13,10,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+
+var scheduleAMCASShort = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("MCAS",today.setHours(8,5,0,0)),
+  block("MCAS-1",today.setHours(10,30,0,0)),
+  block("1",today.setHours(10,34,0,0)),
+  block("1-LA",today.setHours(11,16,0,0)),
+  block("LA",today.setHours(11,20,0,0)),
+  block("LA-3",today.setHours(11,50,0,0)),
+  block("3",today.setHours(11,54,0,0)),
+  block("3-4",today.setHours(13,00,0,0)),
+  block("4",today.setHours(13,04,0,0)),
+  block("4-2",today.setHours(13,45,0,0)),
+  block("2",today.setHours(13,49,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
+var scheduleBMCASShort = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("MCAS",today.setHours(8,5,0,0)),
+  block("MCAS-1",today.setHours(10,30,0,0)),
+  block("1",today.setHours(10,34,0,0)),
+  block("1-3",today.setHours(11,16,0,0)),
+  block("3",today.setHours(11,20,0,0)),
+  block("3-LB",today.setHours(11,53,0,0)),
+  block("LB",today.setHours(11,55,0,0)),
+  block("LB-3",today.setHours(12,25,0,0)),
+  block("3",today.setHours(12,27,0,0)),
+  block("3-4",today.setHours(13,00,0,0)),
+  block("4",today.setHours(13,04,0,0)),
+  block("4-2",today.setHours(13,45,0,0)),
+  block("2",today.setHours(13,49,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
+var scheduleCMCASShort = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("MCAS",today.setHours(8,5,0,0)),
+  block("MCAS-1",today.setHours(10,30,0,0)),
+  block("1",today.setHours(10,34,0,0)),
+  block("1-3",today.setHours(11,16,0,0)),
+  block("3",today.setHours(11,20,0,0)),
+  block("3-LC",today.setHours(12,26,0,0)),
+  block("LC",today.setHours(12,30,0,0)),
+  block("3-4",today.setHours(13,00,0,0)),
+  block("4",today.setHours(13,04,0,0)),
+  block("4-2",today.setHours(13,45,0,0)),
+  block("2",today.setHours(13,49,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
 var schoolHolidays = [
 myDate(2, 20),
 myDate(2, 21),
 myDate(2, 22),
 myDate(2, 23),
 myDate(2, 24),
+myDate(3, 14), // snowday
 myDate(4, 14),
 myDate(4, 17),
 myDate(4, 18),
@@ -267,12 +472,12 @@ myDate(5, 29)
 ];
 
 var lunchMode = "A";
+
 if(localStorage.lunch)
 {
   lunchMode = localStorage.lunch;
 }
-schedule = getSchedule(lunchMode);
-
+  
 function getSchedule(var key) {
   if(key === "A")
     return scheduleA;
@@ -282,9 +487,21 @@ function getSchedule(var key) {
     return scheduleC;
 }
 
+// next three lines for XBlock day only
+// scheduleA = scheduleAX;
+// scheduleB = scheduleBX;
+// scheduleC = scheduleCX;
+
+// next three lines for MCAS34 only
+// scheduleA = scheduleAMCASShort;
+// scheduleB = scheduleBMCASShort;
+// scheduleC = scheduleCMCASShort;
+
+schedule = getSchedule(lunchMode);
+
 function isHoliday() {
   for (i = 0; i < schoolHolidays.length; i++) {
-    if (schoolHolidays[i].month == today.getMonth() + 1 && schoolHolidays[i].day == today.getDate()) {
+    if (schoolHolidays[i].month === today.getMonth() + 1 && schoolHolidays[i].day === today.getDate()) {
       return true;
     }
   }
@@ -292,17 +509,16 @@ function isHoliday() {
 }
 
 function isWeekend() {
-  return today.getDay() == 0 || today.getDay() == 6;
+  return today.getDay() === 0 || today.getDay() === 6;
 }
 
 function getPeriodIndex() {
-    var now = new Date();
-   // var day = now.getDay();
+    var now = ServerDate;
     for(index = 0; true; index++){
       if (now > schedule[index].start && now < schedule[index + 1].start) {
         return index;
       }
-    } 
+    }
 }
 
 function getPeriodLength(i) {
@@ -310,7 +526,6 @@ function getPeriodLength(i) {
 }
 
 drawCRLSTimeButton();
-
 
 //drawSettingsButton();
 //drawBSButton();
@@ -327,7 +542,7 @@ function drawClock() {
   var periodLength = getPeriodLength(periodIndex);
 
   // when to display a normal clock
-  if (periodLabel == "morning" || periodLabel == "after" || isWeekend() || isHoliday()){
+  if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
       drawNumbersNormal(ctx, radius, 1, 12);
       drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
@@ -336,7 +551,8 @@ function drawClock() {
   {
       var interval = 1;
       if (periodLength > 20) interval = 5;
-      if (periodLength > 60) interval = 10;
+      if (periodLength > 55) interval = 10;
+      if (periodLength > 120) interval = 15;
       drawNumbersCountDown(ctx, radius, interval, periodLength);
       drawPeriodLabel(ctx, radius, periodLabel);
       drawSpecialLabel(ctx, radius, "");
@@ -362,7 +578,7 @@ function drawFace(ctx, radius) {
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
   ctx.stroke();
-  
+
   // inner hub
   ctx.beginPath();
   ctx.arc(0, 0, radius*0.07, 0, 2*Math.PI);
@@ -403,7 +619,13 @@ function drawNumbersCountDown(ctx, radius, incr, max) {
   ctx.font = radius*0.20 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  for(num = max - incr; num >= 0; num -= incr){
+  // next line assures numbering is done as multiple of incr
+  var start = (max % incr === 0) ? max - incr : max - max % incr;
+  // this checks if first angle is very small (crowding of 1st number)
+  if (2 * Math.PI - (start * 2 * Math.PI / max) < .2){
+    start -= incr;
+  }
+  for(num = start; num >= 0; num -= incr){
     ang = 2 * Math.PI - (num * 2 * Math.PI / max);
     ctx.rotate(ang);
     ctx.translate(0, -radius*0.82);
@@ -421,7 +643,7 @@ function drawSpecialLabel(ctx, radius, label) {
   ctx.font = radius*0.25 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  
+
     ang = Math.PI;
     ctx.rotate(ang);
     ctx.translate(0, radius*0.35);
@@ -435,10 +657,10 @@ function drawSpecialLabel(ctx, radius, label) {
 
 function drawPeriodLabel(ctx, radius, label) {
   var ang;
-  ctx.font = radius*0.45 + "px arial";
+  ctx.font = radius*0.40 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  
+
     ang = Math.PI;
     ctx.rotate(ang);
     ctx.translate(0, -radius*0.32);
@@ -451,11 +673,11 @@ function drawPeriodLabel(ctx, radius, label) {
 }
 
 function drawNormalTime(ctx, radius){
-    var now = new Date();
+    var now = ServerDate;
     var hour = now.getHours();
     var minute = now.getMinutes();
     var second = now.getSeconds();
-   
+
     //hour
     hour=hour%12;
     hour=(hour*Math.PI/6)+
@@ -471,7 +693,7 @@ function drawNormalTime(ctx, radius){
 }
 
 function drawSchoolTime(ctx, radius, index){
-    var now = new Date();
+    var now = ServerDate;
     var second = now.getSeconds();
 
     // minute
@@ -487,8 +709,8 @@ function drawSchoolTime(ctx, radius, index){
 
 // ctx : canvas context
 // pos : angle out of 360, 90 is east
-// length, width : self expalnatory
-// color : CSS color ('#FF0000' is red) 
+// length, width : self explanatory
+// color : CSS color ('#FF0000' is red)
 function drawHand(ctx, pos, length, width, color) {
     ctx.beginPath();
     ctx.lineWidth = width;
