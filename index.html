@@ -471,22 +471,6 @@ myDate(4, 21),
 myDate(5, 29)
 ];
 
-var lunchMode = "A";
-
-if(localStorage.lunch)
-{
-  lunchMode = localStorage.lunch;
-}
-  
-function getSchedule(var key) {
-  if(key === "A")
-    return scheduleA;
-  if(key === "B")
-    return scheduleB;
-  if(key === "C")
-    return scheduleC;
-}
-
 // next three lines for XBlock day only
 // scheduleA = scheduleAX;
 // scheduleB = scheduleBX;
@@ -496,6 +480,22 @@ function getSchedule(var key) {
 // scheduleA = scheduleAMCASShort;
 // scheduleB = scheduleBMCASShort;
 // scheduleC = scheduleCMCASShort;
+
+var lunchMode = "A";
+
+if(localStorage.lunch)
+{
+  lunchMode = localStorage.lunch;
+}
+
+function getSchedule(key) {
+  if(key === "A")
+    return scheduleA;
+  if(key === "B")
+    return scheduleB;
+  if(key === "C")
+    return scheduleC;
+}
 
 schedule = getSchedule(lunchMode);
 
