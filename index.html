@@ -45,7 +45,7 @@ function drawCRLSTimeButton() {
   ctx.font = "bold " + radius*0.067 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  ctx.fillStyle = '#999';
+  ctx.fillStyle = '#888';
   ctx.fillText("CRLSTime", upperLeftX, upperLeftY);
 }
 
@@ -86,7 +86,7 @@ function drawLunchButton() {
   ctx.font = radius*0.25 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  ctx.fillStyle = '#999';
+  ctx.fillStyle = '#888';
   ctx.fillText(lunchMode, lowerLeftX, lowerLeftY);
 }
 
@@ -483,6 +483,69 @@ myDate(4, 21),
 myDate(5, 29)
 ];
 
+var blackDays = [
+  myDate(2, 7),
+  myDate(2, 9),
+  myDate(2, 13),
+  myDate(2, 15),
+  myDate(2, 17),
+  myDate(2, 28),
+  myDate(3, 2),
+  myDate(3, 6),
+  myDate(3, 8),
+  myDate(3, 10),
+  myDate(3, 14),
+  myDate(3, 15),
+  myDate(3, 17),
+  myDate(3, 21),
+  myDate(3, 22),
+  myDate(3, 24),
+  myDate(3, 28),
+  myDate(3, 29),
+  myDate(3, 30),
+  myDate(4, 3),
+  myDate(4, 5),
+  myDate(4, 7),
+  myDate(4, 11),
+  myDate(4, 13),
+  myDate(4, 25),
+  myDate(4, 27),
+  myDate(5, 1),
+  myDate(5, 3),
+  myDate(5, 5),
+  myDate(5, 9),
+  myDate(5, 11),
+  myDate(5, 15),
+  myDate(5, 18),
+  myDate(5, 22),
+  myDate(5, 24),
+  myDate(5, 26),
+  myDate(5, 31),
+  myDate(6, 2),
+  myDate(6, 7),
+  myDate(6, 9),
+  myDate(6, 13),
+  myDate(6, 15),
+  myDate(6, 16)
+];
+
+// DisplayDate
+  var todayDate = today.getDate();
+  var todayMonth = today.getMonth() + 1;
+  var todayYear = today.getFullYear();
+  var upperRightX = radius * 0.88;
+  var upperRightY = -radius * 0.88;
+ function drawDateButton() {
+  drawSmallCircle(upperRightX, upperRightY, smRadius, '#DDD');
+  ctx.fillStyle = '#888';
+  ctx.font = "bold " + radius*0.07 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign= "center";
+  ctx.fillText(todayMonth + "/" + todayDate + "/" + todayYear, upperRightX, upperRightY);
+ }
+
+ drawDateButton();
+
 // next three lines for XBlock day only
 // scheduleA = scheduleAX;
 // scheduleB = scheduleBX;
@@ -570,7 +633,7 @@ function drawClock() {
       drawPeriodLabel(ctx, radius, periodLabel);
       drawSpecialLabel(ctx, radius, "");
       drawSchoolTime(ctx, radius, periodIndex);
-  //    drawLunchButton(); // comment out for  all school lunch
+      //drawLunchButton(); // comment out for  all school lunch
   }
 }
 
@@ -735,6 +798,46 @@ function drawHand(ctx, pos, length, width, color) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
+
+// Black/silver button
+var lowerRightX = radius * 0.88;
+var lowerRightY = radius * 0.88;
+var blackOrSilverText = "Black Day";
+function drawBSButton() {
+  var periodIndex = getPeriodIndex();
+  var periodLabel = schedule[periodIndex].label;
+  if (!(periodLabel == "morning" || periodLabel == "after" || isWeekend() || isHoliday())){
+//  drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
+  if (isBlackDay()) {
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#333');
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');
+    blackOrSilverText = "Black Day";
+    ctx.fillStyle = '#555';
+  }
+  else {
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#BBB');
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius *.95, '#DDD');
+    blackOrSilverText = "Silver Day";
+    ctx.fillStyle = '#999';
+  }
+  ctx.font = "bold " + radius*0.07 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  ctx.fillText(blackOrSilverText, lowerRightX, lowerRightY);
+  }
+}
+
+function isBlackDay() {
+  for (i = 0; i < blackDays.length; i++) {
+    if (blackDays[i].month == today.getMonth() + 1 && blackDays[i].day == today.getDate()) {
+      return true;
+    }
+  }
+  return false;
+}
+
+drawBSButton();
+
 </script>
 
 </body>
