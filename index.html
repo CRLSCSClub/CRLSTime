@@ -807,14 +807,18 @@ function drawBSButton() {
   var periodIndex = getPeriodIndex();
   var periodLabel = schedule[periodIndex].label;
   if (!(periodLabel == "morning" || periodLabel == "after" || isWeekend() || isHoliday())){
-  drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
+//  drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
   if (isBlackDay()) {
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#333');
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');
     blackOrSilverText = "Black Day";
-    ctx.fillStyle = '#333';
+    ctx.fillStyle = '#555';
   }
   else {
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#BBB');
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius *.95, '#DDD');
     blackOrSilverText = "Silver Day";
-    ctx.fillStyle = '#888';
+    ctx.fillStyle = '#999';
   }
   ctx.font = "bold " + radius*0.07 + "px arial";
   ctx.textBaseline="middle";
