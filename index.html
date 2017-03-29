@@ -839,7 +839,7 @@ var blackOrSilverText = "Black Day";
 function drawBSButton() {
   var periodIndex = getPeriodIndex();
   var periodLabel = schedule[periodIndex].label;
-  if (!(periodLabel == "morning" || periodLabel == "after" || isWeekend() || isHoliday())){
+  if (!(periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday())){
 //  drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
   if (isBlackDay()) {
     drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#333');
@@ -862,7 +862,7 @@ function drawBSButton() {
 
 function isBlackDay() {
   for (i = 0; i < blackDays.length; i++) {
-    if (blackDays[i].month == today.getMonth() + 1 && blackDays[i].day == today.getDate()) {
+    if (blackDays[i].month === today.getMonth() + 1 && blackDays[i].day === today.getDate()) {
       return true;
     }
   }
