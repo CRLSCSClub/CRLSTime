@@ -94,6 +94,10 @@ function removeLunchButton() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#FFF');
 }
 
+function removeBSButton() {
+  drawSmallCircle(lowerRightX, lowerRightY, smRadius * .95, '#FFF');
+}
+
 // Black/silver button
 var lowerRightX = radius * 0.88;
 var lowerRightY = radius * 0.88;
@@ -583,12 +587,10 @@ var blackDays = [
   ctx.fillText(todayMonth + "/" + todayDate + "/" + todayYear, upperRightX, upperRightY);
  }
 
- drawDateButton();
-
 // for special schedules, comment out for normal days
-scheduleA = scheduleALateStart;
-scheduleB = scheduleBLateStart;
-scheduleC = scheduleCLateStart;
+// scheduleA = scheduleALateStart;
+// scheduleB = scheduleBLateStart;
+// scheduleC = scheduleCLateStart;
 
 var lunchMode = "A";
 
@@ -635,9 +637,7 @@ function getPeriodLength(i) {
 }
 
 drawCRLSTimeButton();
-
-//drawSettingsButton();
-//drawBSButton();
+drawDateButton();
 
 setInterval(drawClock, 1000);
 
@@ -656,6 +656,7 @@ function drawClock() {
       drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
       removeLunchButton();
+      removeBSButton();
   } else // display school time
   {
       var interval = 1;
@@ -667,6 +668,7 @@ function drawClock() {
       drawSpecialLabel(ctx, radius, "");
       drawSchoolTime(ctx, radius, periodIndex);
       drawLunchButton(); // comment out for  all school lunch
+      drawBSButton();
   }
 }
 
@@ -842,14 +844,14 @@ function drawBSButton() {
   if (!(periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday())){
 //  drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
   if (isBlackDay()) {
-    drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#333');
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.98, '#333');
     drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');
     blackOrSilverText = "Black Day";
     ctx.fillStyle = '#555';
   }
   else {
-    drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#BBB');
-    drawSmallCircle(lowerRightX, lowerRightY, smRadius *.95, '#DDD');
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.98, '#BBB');
+    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');
     blackOrSilverText = "Silver Day";
     ctx.fillStyle = '#999';
   }
@@ -868,8 +870,6 @@ function isBlackDay() {
   }
   return false;
 }
-
-drawBSButton();
 
 </script>
 
