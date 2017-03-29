@@ -239,6 +239,7 @@ block("after",today.setHours(12,45,0,0)),
 block("end",today.setHours(23,59,59,0))
 ];
 
+// All start with lunch A
 var scheduleDelay1 = [
 block("morning",today.setHours(0,0,0,0)),
 block("before",today.setHours(9,32,0,0)),
@@ -467,6 +468,44 @@ var scheduleCMCASShort = [
   block("end",today.setHours(23,59,59,0))
   ];
 
+  var scheduleALateStart = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(9,32,0,0)),
+  block("LA",today.setHours(11,12,0,0)),
+  block("LA-3",today.setHours(11,42,0,0)),
+  block("3",today.setHours(11,46,0,0)),
+  block("3-4",today.setHours(13,06,0,0)),
+  block("4",today.setHours(13,10,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
+  var scheduleBLateStart = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(9,32,0,0)),
+  block("3",today.setHours(11,12,0,0)),
+  block("3-LB",today.setHours(11,52,0,0)),
+  block("LB",today.setHours(11,54,0,0)),
+  block("LB-3",today.setHours(12,24,0,0)),
+  block("3",today.setHours(12,26,0,0)),
+  block("3-4",today.setHours(13,6,0,0)),
+  block("4",today.setHours(13,10,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
+  var scheduleCLateStart = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(9,32,0,0)),
+  block("3",today.setHours(11,12,0,0)),
+  block("3-LC",today.setHours(12,32,0,0)),
+  block("LC",today.setHours(12,36,0,0)),
+  block("LC-4",today.setHours(13,6,0,0)),
+  block("4",today.setHours(13,10,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
 var schoolHolidays = [
 myDate(2, 20),
 myDate(2, 21),
@@ -546,15 +585,10 @@ var blackDays = [
 
  drawDateButton();
 
-// next three lines for XBlock day only
-// scheduleA = scheduleAX;
-// scheduleB = scheduleBX;
-// scheduleC = scheduleCX;
-
-// next three lines for MCAS34 only
-// scheduleA = scheduleAMCASShort;
-// scheduleB = scheduleBMCASShort;
-// scheduleC = scheduleCMCASShort;
+// for special schedules, comment out for normal days
+scheduleA = scheduleALateStart;
+scheduleB = scheduleBLateStart;
+scheduleC = scheduleCLateStart;
 
 var lunchMode = "A";
 
@@ -564,13 +598,12 @@ if(localStorage.lunch)
 }
 
 function getSchedule(key) {
-  return scheduleEarlyRelease; // for parent conferences
-  // if(key === "A")
-  //   return scheduleA;
-  // if(key === "B")
-  //   return scheduleB;
-  // if(key === "C")
-  //   return scheduleC;
+  if(key === "A")
+    return scheduleA;
+  if(key === "B")
+    return scheduleB;
+  if(key === "C")
+    return scheduleC;
 }
 
 schedule = getSchedule(lunchMode);
@@ -633,7 +666,7 @@ function drawClock() {
       drawPeriodLabel(ctx, radius, periodLabel);
       drawSpecialLabel(ctx, radius, "");
       drawSchoolTime(ctx, radius, periodIndex);
-      //drawLunchButton(); // comment out for  all school lunch
+      drawLunchButton(); // comment out for  all school lunch
   }
 }
 
