@@ -95,7 +95,7 @@ function removeLunchButton() {
 }
 
 function removeBSButton() {
-  drawSmallCircle(lowerRightX, lowerRightY, smRadius * .95, '#FFF');
+  drawSmallCircle(lowerRightX, lowerRightY, smRadius * .98, '#FFF');
 }
 
 // Black/silver button
@@ -643,7 +643,6 @@ drawDateButton();
 
 setInterval(drawClock, 1000);
 
-
 function drawClock() {
 
   drawFace(ctx, radius);
@@ -841,10 +840,6 @@ var lowerRightX = radius * 0.88;
 var lowerRightY = radius * 0.88;
 var blackOrSilverText = "Black Day";
 function drawBSButton() {
-  var periodIndex = getPeriodIndex();
-  var periodLabel = schedule[periodIndex].label;
-  if (!(periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday())){
-//  drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
   if (isBlackDay()) {
     drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.98, '#333');
     drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');
@@ -861,7 +856,6 @@ function drawBSButton() {
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   ctx.fillText(blackOrSilverText, lowerRightX, lowerRightY);
-  }
 }
 
 function isBlackDay() {
