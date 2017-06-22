@@ -566,6 +566,20 @@ var scheduleCMCASShort = [
   block("end",today.setHours(23,59,59,0))
   ];
 
+  var scheduleLastDay = [
+    block("morning",today.setHours(0,0,0,0)),
+    block("before",today.setHours(6,25,0,0)),
+    block("1",today.setHours(8,5,0,0)),
+    block("1-2",today.setHours(9,2,0,0)),
+    block("2",today.setHours(9,6,0,0)),
+    block("2-3",today.setHours(10,4,0,0)),
+    block("3",today.setHours(10,8,0,0)),
+    block("3-4",today.setHours(11,06,0,0)),
+    block("4",today.setHours(11,10,0,0)),
+    block("after",today.setHours(12,08,0,0)),
+    block("end",today.setHours(23,59,59,0))
+  ];
+
 var schoolHolidays = [
 myDate(2, 20),
 myDate(2, 21),
@@ -646,9 +660,9 @@ var blackDays = [
  }
 
 // for special schedules, comment out for normal days
-// scheduleA = scheduleAMCAS34;
-// scheduleB = scheduleBMCAS34;
-// scheduleC = scheduleCMCAS34;
+scheduleA = scheduleLastDay;
+scheduleB = scheduleLastDay;
+scheduleC = scheduleLastDay;
 
 var lunchMode = "A";
 
