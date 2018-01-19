@@ -653,7 +653,9 @@ var blackDays = [
   myDate(1, 10),
   myDate(1, 12),
   myDate(1, 17),
-  myDate(1, 18)
+  myDate(1, 19),
+  myDate(1, 22),
+  myDate(1, 24)
 ];
 
 // DisplayDate
@@ -671,10 +673,11 @@ var blackDays = [
   ctx.fillText(todayMonth + "/" + todayDate + "/" + todayYear, upperRightX, upperRightY);
  }
 
-// for special schedules, comment out for normal days
-// scheduleA = scheduleAX2;
-// scheduleB = scheduleBX2;
-// scheduleC = scheduleCX2;
+// next three lines for special schedules, comment out for normal days
+// issue: need to automate this
+scheduleA = scheduleFinal12;
+scheduleB = scheduleFinal12;
+scheduleC = scheduleFinal12;
 
 var lunchMode = "A";
 
