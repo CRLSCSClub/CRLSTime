@@ -566,6 +566,95 @@ var scheduleCMCASShort = [
   block("end",today.setHours(23,59,59,0))
   ];
 
+  var scheduleALateStartWithConferences = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("8:10",today.setHours(8,10,0,0)),
+  block("8:20",today.setHours(8,20,0,0)),
+  block("8:30",today.setHours(8,30,0,0)),
+  block("8:40",today.setHours(8,40,0,0)),
+  block("8:50",today.setHours(8,50,0,0)),
+  block("9:00",today.setHours(9,00,0,0)),
+  block("9:10",today.setHours(9,10,0,0)),
+  block("9:20",today.setHours(9,20,0,0)),
+  block("9:30",today.setHours(9,30,0,0)),
+  block("9:40",today.setHours(9,40,0,0)),
+  block("9:50",today.setHours(9,50,0,0)),
+  block("10:00",today.setHours(10,00,0,0)),
+  block("10:10",today.setHours(10,10,0,0)),
+  block("10:20",today.setHours(10,20,0,0)),
+  block("10:30",today.setHours(10,30,0,0)),
+  block("10:40",today.setHours(10,40,0,0)),
+  block("10:50",today.setHours(10,50,0,0)),
+  block("before",today.setHours(11,00,0,0)),
+  block("LA",today.setHours(11,12,0,0)),
+  block("LA-3",today.setHours(11,42,0,0)),
+  block("3",today.setHours(11,46,0,0)),
+  block("3-4",today.setHours(13,06,0,0)),
+  block("4",today.setHours(13,10,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
+  var scheduleBLateStartWithConferences = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("8:10",today.setHours(8,10,0,0)),
+  block("8:20",today.setHours(8,20,0,0)),
+  block("8:30",today.setHours(8,30,0,0)),
+  block("8:40",today.setHours(8,40,0,0)),
+  block("8:50",today.setHours(8,50,0,0)),
+  block("9:00",today.setHours(9,00,0,0)),
+  block("9:10",today.setHours(9,10,0,0)),
+  block("9:20",today.setHours(9,20,0,0)),
+  block("9:30",today.setHours(9,30,0,0)),
+  block("9:40",today.setHours(9,40,0,0)),
+  block("9:50",today.setHours(9,50,0,0)),
+  block("10:00",today.setHours(10,00,0,0)),
+  block("10:10",today.setHours(10,10,0,0)),
+  block("10:20",today.setHours(10,20,0,0)),
+  block("10:30",today.setHours(10,30,0,0)),
+  block("10:40",today.setHours(10,40,0,0)),
+  block("10:50",today.setHours(10,50,0,0)),
+  block("before",today.setHours(11,00,0,0)),
+  block("3",today.setHours(11,12,0,0)),
+  block("3-LB",today.setHours(11,52,0,0)),
+  block("LB",today.setHours(11,54,0,0)),
+  block("LB-3",today.setHours(12,24,0,0)),
+  block("3",today.setHours(12,26,0,0)),
+  block("3-4",today.setHours(13,6,0,0)),
+  block("4",today.setHours(13,10,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
+  var scheduleCLateStartWithConferences = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("8:10",today.setHours(8,10,0,0)),
+  block("8:20",today.setHours(8,20,0,0)),
+  block("8:30",today.setHours(8,30,0,0)),
+  block("8:40",today.setHours(8,40,0,0)),
+  block("8:50",today.setHours(8,50,0,0)),
+  block("9:00",today.setHours(9,00,0,0)),
+  block("9:10",today.setHours(9,10,0,0)),
+  block("9:20",today.setHours(9,20,0,0)),
+  block("9:30",today.setHours(9,30,0,0)),
+  block("9:40",today.setHours(9,40,0,0)),
+  block("9:50",today.setHours(9,50,0,0)),
+  block("10:00",today.setHours(10,00,0,0)),
+  block("10:10",today.setHours(10,10,0,0)),
+  block("10:20",today.setHours(10,20,0,0)),
+  block("10:30",today.setHours(10,30,0,0)),
+  block("10:40",today.setHours(10,40,0,0)),
+  block("10:50",today.setHours(10,50,0,0)),
+  block("before",today.setHours(11,00,0,0)),
+  block("3",today.setHours(11,12,0,0)),
+  block("3-LC",today.setHours(12,32,0,0)),
+  block("LC",today.setHours(12,36,0,0)),
+  block("LC-4",today.setHours(13,6,0,0)),
+  block("4",today.setHours(13,10,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
+
   var scheduleLastDay = [
     block("morning",today.setHours(0,0,0,0)),
     block("before",today.setHours(6,25,0,0)),
@@ -641,9 +730,9 @@ var blackDays = [
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-scheduleA = scheduleEarlyRelease;
-scheduleB = scheduleEarlyRelease;
-scheduleC = scheduleEarlyRelease;
+scheduleA = scheduleALateStartWithConferences;
+scheduleB = scheduleBLateStartWithConferences;
+scheduleC = scheduleCLateStartWithConferences;
 
 var lunchMode = "A";
 
