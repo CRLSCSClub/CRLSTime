@@ -669,7 +669,7 @@ var scheduleCMCASShort = [
     block("end",today.setHours(23,59,59,0))
   ];
 
-  var scheduleFirstDay = [
+  var scheduleOldFirstDay = [
     block("morning",today.setHours(0,0,0,0)),
     block("before",today.setHours(6,25,0,0)),
     block("hello",today.setHours(8,5,0,0)),
@@ -680,6 +680,19 @@ var scheduleCMCASShort = [
     block("3",today.setHours(13,10,0,0)),
     block("3-4",today.setHours(13,48,0,0)),
     block("4",today.setHours(13,52,0,0)),
+    block("after",today.setHours(14,30,0,0)),
+    block("end",today.setHours(23,59,59,0))
+  ];
+
+  var scheduleFirstDay = [
+    block("morning",today.setHours(0,0,0,0)),
+    block("before",today.setHours(6,25,0,0)),
+    block("meetings",today.setHours(8,5,0,0)),
+    block("lunch",today.setHours(11,0,0,0)),
+    block("lunch-3",today.setHours(11,42,0,0)),
+    block("3",today.setHours(11,46,0,0)),
+    block("3-4",today.setHours(13,6,0,0)),
+    block("4",today.setHours(13,10,0,0)),
     block("after",today.setHours(14,30,0,0)),
     block("end",today.setHours(23,59,59,0))
   ];
@@ -696,34 +709,14 @@ myDate(6, 15)
 ];
 
 var blackDays = [
-  myDate(4, 2),
-  myDate(4, 4),
-  myDate(4, 6),
-  myDate(4, 10),
-  myDate(4, 12),
-  myDate(4, 23),
-  myDate(4, 25),
-  myDate(4, 27),
-  myDate(5, 1),
-  myDate(5, 3),
-  myDate(5, 7),
-  myDate(5, 9),
-  myDate(5, 11),
-  myDate(5, 15),
-  myDate(5, 17),
-  myDate(5, 21),
-  myDate(5, 23),
-  myDate(5, 24),
-  myDate(5, 29),
-  myDate(5, 31),
-  myDate(6, 4),
-  myDate(6, 6),
-  myDate(6, 7),
-  myDate(6, 11),
-  myDate(6, 13),
-  myDate(6, 18),
-  myDate(6, 20),
-  myDate(6, 21)
+  myDate(9, 6),
+  myDate(9, 10),
+  myDate(9, 12),
+  myDate(9, 14),
+  myDate(9, 18),
+  myDate(9, 21),
+  myDate(9, 25),
+  myDate(9, 27)
 ];
 
 // DisplayDate
@@ -743,9 +736,9 @@ var blackDays = [
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-// scheduleA = scheduleAMCASShort;
-// scheduleB = scheduleBMCASShort;
-// scheduleC = scheduleCMCASShort;
+scheduleA = scheduleFirstDay;
+scheduleB = scheduleFirstDay;
+scheduleC = scheduleFirstDay;
 
 var lunchMode = "A";
 
