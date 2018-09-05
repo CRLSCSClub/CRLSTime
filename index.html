@@ -697,15 +697,25 @@ var scheduleCMCASShort = [
     block("end",today.setHours(23,59,59,0))
   ];
 
+  var scheduleSecondDay = [
+    block("morning",today.setHours(0,0,0,0)),
+    block("before",today.setHours(6,25,0,0)),
+    block("1",today.setHours(8,5,0,0)),
+    block("1-CM",today.setHours(9,25,0,0)),
+    block("CM",today.setHours(9,29,0,0)),
+    block("CM-2",today.setHours(9,44,0,0)),
+    block("2",today.setHours(9,48,0,0)),
+    block("2-lunch",today.setHours(11,8,0,0)),
+    block("lunch",today.setHours(11,12,0,0)),
+    block("passing",today.setHours(11,42,0,0)),
+    block("CM 2022",today.setHours(11,46,0,0)),
+    block("after",today.setHours(14,30,0,0)),
+    block("end",today.setHours(23,59,59,0))
+  ];
+
 var schoolHolidays = [
-myDate(3, 30),
-myDate(4, 16),
-myDate(4, 17),
-myDate(4, 18),
-myDate(4, 19),
-myDate(4, 20),
-myDate(5, 28),
-myDate(6, 15)
+myDate(9, 19),
+myDate(10, 8)
 ];
 
 var blackDays = [
@@ -736,9 +746,9 @@ var blackDays = [
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-scheduleA = scheduleFirstDay;
-scheduleB = scheduleFirstDay;
-scheduleC = scheduleFirstDay;
+scheduleA = scheduleSecondDay;
+scheduleB = scheduleSecondDay;
+scheduleC = scheduleSecondDay;
 
 var lunchMode = "A";
 
