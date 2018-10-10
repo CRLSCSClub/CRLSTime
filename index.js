@@ -86,14 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     drawSmallCircle(lowerRightX, lowerRightY, smRadius * .98, '#FFF');
   }
 
-  // Black/silver button
-  var lowerRightX = radius * 0.88;
-  var lowerRightY = radius * 0.88;
-
-  function drawBSButton() {
-    drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
-  }
-
   function drawSmallCircle(cx, cy, r, color) {
     ctx.beginPath();
     ctx.arc(cx, cy, r, 0, 2 * Math.PI, false);
