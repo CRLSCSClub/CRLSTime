@@ -4,7 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
   var smallerDimension = Math.min(window.innerWidth, window.innerHeight);
+
   var radius = smallerDimension / 2 - 12;
+
+  var upperLeftX = -radius * 0.88;
+  var upperLeftY = -radius * 0.88;
+
+  var upperRightX = radius * 0.88;
+  var upperRightY = -radius * 0.88;
+
+  var lowerLeftX = -radius * 0.88;
+  var lowerLeftY = radius * 0.88;
+
+  var lowerRightX = radius * 0.88;
+  var lowerRightY = radius * 0.88;
 
   window.addEventListener('resize', function(event) {
     clearTimeout(resizeTimeout);
@@ -23,9 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var smRadius = radius * 0.18;
 
   // CRLSTime button
-  var upperLeftX = -radius * 0.88;
-  var upperLeftY = -radius * 0.88;
-
   function drawCRLSTimeButton() {
     drawSmallCircle(upperLeftX, upperLeftY, smRadius, '#DDD');
     ctx.font = "bold " + radius * 0.067 + "px arial";
@@ -36,9 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Info/settings button
-  var upperRightX = radius * 0.88;
-  var upperRightY = -radius * 0.88;
-
   function drawSettingsButton() {
     drawSmallCircle(upperRightX, upperRightY, smRadius, '#DDD');
     ctx.font = radius * 0.2 + "px arial";
@@ -65,9 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem("lunch", lunchMode);
     drawLunchButton();
   }
-
-  var lowerLeftX = -radius * 0.88;
-  var lowerLeftY = radius * 0.88;
 
   function drawLunchButton() {
     drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
@@ -337,9 +341,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Black/silver button
-  var lowerRightX = radius * 0.88;
-  var lowerRightY = radius * 0.88;
-
   function drawBSButton() {
     var blackOrSilverText;
     if (isBlackDay()) {
