@@ -630,6 +630,22 @@ const todayYear = today.getFullYear();
 
 let lunchMode = localStorage.lunch ? localStorage.lunch : "A";
 
+schedule = getSchedule(lunchMode);
+
+function advanceLunchMode() {
+  if (lunchMode === "A") {
+    lunchMode = "B";
+  }
+  else if (lunchMode === "B") {
+    lunchMode = "C";
+  }
+  else if (lunchMode === "C") {
+    lunchMode = "A";
+  }
+  schedule = getSchedule(lunchMode);
+  localStorage.setItem("lunch", lunchMode);
+}
+
 function getSchedule(key) {
   if (key === "A")
     return scheduleA;
@@ -638,8 +654,6 @@ function getSchedule(key) {
   if (key === "C")
     return scheduleC;
 }
-
-schedule = getSchedule(lunchMode);
 
 function isHoliday() {
   return schoolHolidays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());

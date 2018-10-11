@@ -48,21 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     ctx.fillText("", upperRightX, upperRightY);
   }
 
-  // Lunch
-  function advanceLunchMode() {
-    if (lunchMode === "A") {
-      lunchMode = "B";
-    }
-    else if (lunchMode === "B") {
-      lunchMode = "C";
-    }
-    else if (lunchMode === "C") {
-      lunchMode = "A";
-    }
-    schedule = getSchedule(lunchMode);
-    localStorage.setItem("lunch", lunchMode);
-  }
-
   const lowerLeftX = -radius * 0.88;
   const lowerLeftY = radius * 0.88;
 
@@ -116,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   //Binding the click event on the canvas
   canvas.addEventListener('click', function(evt) {
-    let mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos, rect)) {
       advanceLunchMode();
       drawLunchButton();
