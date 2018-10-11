@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
-  var smallerDimension = Math.min(window.innerWidth, window.innerHeight);
+  const smallerDimension = Math.min(window.innerWidth, window.innerHeight);
   var radius = smallerDimension / 2 - 12;
 
   window.addEventListener('resize', function(event) {
@@ -13,18 +13,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1500);
   });
 
-  var imageObj = new Image();
+  const imageObj = new Image();
   imageObj.src = 'falcon_high_res2.png';
 
-  var delta = radius;
+  const delta = radius;
   ctx.translate(delta, delta);
   var radius = radius * 0.93; // I don't get this line.
 
-  var smRadius = radius * 0.18;
+  const smRadius = radius * 0.18;
 
   // CRLSTime button
-  var upperLeftX = -radius * 0.88;
-  var upperLeftY = -radius * 0.88;
+  const upperLeftX = -radius * 0.88;
+  const upperLeftY = -radius * 0.88;
 
   function drawCRLSTimeButton() {
     drawSmallCircle(upperLeftX, upperLeftY, smRadius, '#DDD');
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Info/settings button
-  var upperRightX = radius * 0.88;
-  var upperRightY = -radius * 0.88;
+  const upperRightX = radius * 0.88;
+  const upperRightY = -radius * 0.88;
 
   function drawSettingsButton() {
     drawSmallCircle(upperRightX, upperRightY, smRadius, '#DDD');
@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
     drawLunchButton();
   }
 
-  var lowerLeftX = -radius * 0.88;
-  var lowerLeftY = radius * 0.88;
+  const lowerLeftX = -radius * 0.88;
+  const lowerLeftY = radius * 0.88;
 
   function drawLunchButton() {
     drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ////////////////////// button logic //////////////////////
   //Function to get the mouse position
   function getMousePos(canvas, event) {
-    var rect = canvas.getBoundingClientRect();
+    const rect = canvas.getBoundingClientRect();
     return {
       x: event.clientX - rect.left - delta,
       y: event.clientY - rect.top - delta
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   //The rectangle should have x,y,width,height properties
-  var rect = {
+  const rect = {
     x: lowerLeftX - smRadius,
     y: lowerLeftY - smRadius,
     width: smRadius * 2,
@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function drawClock() {
     drawFace(ctx, radius);
     ctx.drawImage(imageObj, -radius * 1.1 / 2, -1 / 2 * radius, radius, 1.27 * radius);
-    var periodIndex = getPeriodIndex();
-    var periodLabel = schedule[periodIndex].label;
-    var periodLength = getPeriodLength(periodIndex);
+    const periodIndex = getPeriodIndex();
+    const periodLabel = schedule[periodIndex].label;
+    const periodLength = getPeriodLength(periodIndex);
 
     // when to display a normal clock
     if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()) {
@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     else // display school time
     {
-      var interval = 1;
-      if (periodLength > 20) interval = 5;
-      if (periodLength > 55) interval = 10;
-      if (periodLength > 120) interval = 15;
+      const interval = periodLength > 120 ? 15 :
+        periodLength > 55 ? 10 :
+        periodLength > 20 ? 5 : 1;
+
       drawNumbersCountDown(ctx, radius, interval, periodLength);
       drawPeriodLabel(ctx, radius, periodLabel);
       drawSpecialLabel(ctx, radius, "");
@@ -175,8 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawFace(ctx, radius) {
-    var grad;
-
     // bg of face
     ctx.beginPath();
     ctx.arc(0, 0, radius, 0, 2 * Math.PI);
@@ -184,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ctx.fill();
 
     // outside ring
-    grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+    const grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
     grad.addColorStop(0, '#333');
     grad.addColorStop(0.5, '#FFF');
     grad.addColorStop(1, '#333');
@@ -204,13 +202,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // incr : increment for numbering
   // max : largest number on face (12 oclock position)
   function drawNumbersNormal(ctx, radius, incr, max) {
-    var ang;
-    var num;
     ctx.font = radius * 0.20 + "px arial";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
-    for (num = incr; num <= max; num += incr) {
-      ang = num * 2 * Math.PI / max;
+    for (let num = incr; num <= max; num += incr) {
+      let ang = num * 2 * Math.PI / max;
       ctx.rotate(ang);
       ctx.translate(0, -radius * 0.84);
       ctx.rotate(-ang);
@@ -227,18 +223,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // incr : increment for numbering
   // max : largest number on face (12 oclock position)
   function drawNumbersCountDown(ctx, radius, incr, max) {
-    var ang;
-    var num;
+    let ang;
     ctx.font = radius * 0.20 + "px arial";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     // next line assures numbering is done as multiple of incr
-    var start = (max % incr === 0) ? max - incr : max - max % incr;
+    let start = (max % incr === 0) ? max - incr : max - max % incr;
     // this checks if first angle is very small (crowding of 1st number)
     if (2 * Math.PI - (start * 2 * Math.PI / max) < .2) {
       start -= incr;
     }
-    for (num = start; num >= 0; num -= incr) {
+    for (let num = start; num >= 0; num -= incr) {
       ang = 2 * Math.PI - (num * 2 * Math.PI / max);
       ctx.rotate(ang);
       ctx.translate(0, -radius * 0.82);
@@ -252,12 +247,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawSpecialLabel(ctx, radius, label) {
-    var ang;
     ctx.font = radius * 0.25 + "px arial";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
 
-    ang = Math.PI;
+    const ang = Math.PI;
     ctx.rotate(ang);
     ctx.translate(0, radius * 0.35);
     ctx.rotate(-ang);
@@ -269,12 +263,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawPeriodLabel(ctx, radius, label) {
-    var ang;
     ctx.font = radius * 0.40 + "px arial";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
 
-    ang = Math.PI;
+    const ang = Math.PI;
     ctx.rotate(ang);
     ctx.translate(0, -radius * 0.32);
     ctx.rotate(-ang);
@@ -286,10 +279,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawNormalTime(ctx, radius) {
-    var now = ServerDate;
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
+    const now = ServerDate;
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
 
     //hour
     hour = hour % 12;
@@ -306,17 +299,17 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawSchoolTime(ctx, radius, index) {
-    var now = ServerDate;
-    var second = now.getSeconds();
+    const now = ServerDate;
+    let second = now.getSeconds();
 
     // minute
-    var minute = (now - schedule[index].start) / 60000;
-    minute = minute / getPeriodLength(index);
-    minute = minute * 2 * Math.PI;
+    let minute = (now - schedule[index].start) / 60000;
+    minute /= getPeriodLength(index);
+    minute *= 2 * Math.PI;
     drawHand(ctx, minute, radius * 0.83, radius * 0.05, 'silver');
 
     // second
-    second = (second * Math.PI / 30);
+    second *= Math.PI / 30;
     drawHand(ctx, second, radius * 0.9, radius * 0.02, 'red');
   }
 
@@ -337,11 +330,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Black/silver button
-  var lowerRightX = radius * 0.88;
-  var lowerRightY = radius * 0.88;
+  const lowerRightX = radius * 0.88;
+  const lowerRightY = radius * 0.88;
 
   function drawBSButton() {
-    var blackOrSilverText;
+    let blackOrSilverText;
     if (isBlackDay()) {
       drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.98, '#333');
       drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');

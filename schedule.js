@@ -6,12 +6,12 @@ function myDate(m, d) {
   return { month: m, day: d };
 }
 
-var today = new Date();
+const today = new Date();
 
 /////////////// schedule types //////////////////
 
 // Table of period labels and start times
-var scheduleA = [
+const scheduleA = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -29,7 +29,7 @@ var scheduleA = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleB = [
+const scheduleB = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -49,7 +49,7 @@ var scheduleB = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleC = [
+const scheduleC = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -67,7 +67,7 @@ var scheduleC = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleFinal12 = [
+const scheduleFinal12 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -81,7 +81,7 @@ var scheduleFinal12 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleFinal34 = [
+const scheduleFinal34 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("3", today.setHours(8, 5, 0, 0)),
@@ -96,7 +96,7 @@ var scheduleFinal34 = [
 ];
 
 // All start with lunch A
-var scheduleDelay1 = [
+const scheduleDelay1 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(9, 32, 0, 0)),
   block("Lunch", today.setHours(11, 12, 0, 0)),
@@ -114,7 +114,7 @@ var scheduleDelay1 = [
 
 // these next three schedules have had additional sections added
 // for Curriculum night (same day as x block Sept 20 2018)
-var scheduleAX = [
+const scheduleAX = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -142,7 +142,7 @@ var scheduleAX = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleBX = [
+const scheduleBX = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -172,7 +172,7 @@ var scheduleBX = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleCX = [
+const scheduleCX = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -200,7 +200,7 @@ var scheduleCX = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleAX2 = [
+const scheduleAX2 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -218,7 +218,7 @@ var scheduleAX2 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleBX2 = [
+const scheduleBX2 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -238,7 +238,7 @@ var scheduleBX2 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleCX2 = [
+const scheduleCX2 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -256,7 +256,7 @@ var scheduleCX2 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleAMCAS12 = [
+const scheduleAMCAS12 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -270,7 +270,7 @@ var scheduleAMCAS12 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleBMCAS12 = [
+const scheduleBMCAS12 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -286,7 +286,7 @@ var scheduleBMCAS12 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleCMCAS12 = [
+const scheduleCMCAS12 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -300,7 +300,7 @@ var scheduleCMCAS12 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleAMCAS34 = [
+const scheduleAMCAS34 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -314,7 +314,7 @@ var scheduleAMCAS34 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleBMCAS34 = [
+const scheduleBMCAS34 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -330,7 +330,7 @@ var scheduleBMCAS34 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleCMCAS34 = [
+const scheduleCMCAS34 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -344,7 +344,7 @@ var scheduleCMCAS34 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleAMCASShort = [
+const scheduleAMCASShort = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -362,7 +362,7 @@ var scheduleAMCASShort = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleBMCASShort = [
+const scheduleBMCASShort = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -382,7 +382,7 @@ var scheduleBMCASShort = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleCMCASShort = [
+const scheduleCMCASShort = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("MCAS", today.setHours(8, 5, 0, 0)),
@@ -400,7 +400,7 @@ var scheduleCMCASShort = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleEarlyRelease = [
+const scheduleEarlyRelease = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -412,7 +412,7 @@ var scheduleEarlyRelease = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleALateStart = [
+const scheduleALateStart = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(9, 32, 0, 0)),
   block("LA", today.setHours(11, 12, 0, 0)),
@@ -424,7 +424,7 @@ var scheduleALateStart = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleBLateStart = [
+const scheduleBLateStart = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(9, 32, 0, 0)),
   block("3", today.setHours(11, 12, 0, 0)),
@@ -438,7 +438,7 @@ var scheduleBLateStart = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleCLateStart = [
+const scheduleCLateStart = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(9, 32, 0, 0)),
   block("3", today.setHours(11, 12, 0, 0)),
@@ -450,7 +450,7 @@ var scheduleCLateStart = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleALateStartWithConferences = [
+const scheduleALateStartWithConferences = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("8:10", today.setHours(8, 10, 0, 0)),
   block("8:20", today.setHours(8, 20, 0, 0)),
@@ -479,7 +479,7 @@ var scheduleALateStartWithConferences = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleBLateStartWithConferences = [
+const scheduleBLateStartWithConferences = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("8:10", today.setHours(8, 10, 0, 0)),
   block("8:20", today.setHours(8, 20, 0, 0)),
@@ -510,7 +510,7 @@ var scheduleBLateStartWithConferences = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleCLateStartWithConferences = [
+const scheduleCLateStartWithConferences = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("8:10", today.setHours(8, 10, 0, 0)),
   block("8:20", today.setHours(8, 20, 0, 0)),
@@ -539,7 +539,7 @@ var scheduleCLateStartWithConferences = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleLastDay = [
+const scheduleLastDay = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -553,7 +553,7 @@ var scheduleLastDay = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleOldFirstDay = [
+const scheduleOldFirstDay = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("hello", today.setHours(8, 5, 0, 0)),
@@ -568,7 +568,7 @@ var scheduleOldFirstDay = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleFirstDay = [
+const scheduleFirstDay = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("meetings", today.setHours(8, 5, 0, 0)),
@@ -581,7 +581,7 @@ var scheduleFirstDay = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var scheduleSecondDay = [
+const scheduleSecondDay = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
   block("1", today.setHours(8, 5, 0, 0)),
@@ -597,12 +597,12 @@ var scheduleSecondDay = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-var schoolHolidays = [
+const schoolHolidays = [
   myDate(9, 19),
   myDate(10, 8)
 ];
 
-var blackDays = [
+const blackDays = [
   myDate(10, 3),
   myDate(10, 5),
   myDate(10, 11),
@@ -616,9 +616,9 @@ var blackDays = [
 ];
 
 // DisplayDate
-var todayDate = today.getDate();
-var todayMonth = today.getMonth() + 1;
-var todayYear = today.getFullYear();
+const todayDate = today.getDate();
+const todayMonth = today.getMonth() + 1;
+const todayYear = today.getFullYear();
 
 
 
@@ -628,11 +628,7 @@ var todayYear = today.getFullYear();
 //   scheduleB = scheduleBX;
 //   scheduleC = scheduleCX;
 
-var lunchMode = "A";
-
-if (localStorage.lunch) {
-  lunchMode = localStorage.lunch;
-}
+const lunchMode = localStorage.lunch ? localStorage.lunch : "A";
 
 function getSchedule(key) {
   if (key === "A")
@@ -658,7 +654,7 @@ function isWeekend() {
 }
 
 function getPeriodIndex() {
-  var now = ServerDate;
+  const now = ServerDate;
   return schedule.findIndex((element, index, array) => now > element.start && now < array[index + 1].start);
 }
 
