@@ -628,7 +628,7 @@ const todayYear = today.getFullYear();
 //   scheduleB = scheduleBX;
 //   scheduleC = scheduleCX;
 
-const lunchMode = localStorage.lunch ? localStorage.lunch : "A";
+let lunchMode = localStorage.lunch ? localStorage.lunch : "A";
 
 function getSchedule(key) {
   if (key === "A")

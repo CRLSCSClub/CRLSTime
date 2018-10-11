@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
   const smallerDimension = Math.min(window.innerWidth, window.innerHeight);
-  var radius = smallerDimension / 2 - 12;
+  let radius = smallerDimension / 2 - 12;
 
   window.addEventListener('resize', function(event) {
     clearTimeout(resizeTimeout);
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const delta = radius;
   ctx.translate(delta, delta);
-  var radius = radius * 0.93; // I don't get this line.
+  radius *= 0.93; // I don't get this line.
 
   const smRadius = radius * 0.18;
 
@@ -52,18 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
   function advanceLunchMode() {
     if (lunchMode === "A") {
       lunchMode = "B";
-      schedule = scheduleB;
     }
     else if (lunchMode === "B") {
       lunchMode = "C";
-      schedule = scheduleC;
     }
     else if (lunchMode === "C") {
       lunchMode = "A";
-      schedule = scheduleA;
     }
+    schedule = getSchedule(lunchMode);
     localStorage.setItem("lunch", lunchMode);
-    drawLunchButton();
   }
 
   const lowerLeftX = -radius * 0.88;
@@ -119,10 +116,10 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   //Binding the click event on the canvas
   canvas.addEventListener('click', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
-
+    let mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos, rect)) {
       advanceLunchMode();
+      drawLunchButton();
     }
   }, false);
   //////////////////////////////////////////////////
