@@ -646,34 +646,20 @@ function getSchedule(key) {
 schedule = getSchedule(lunchMode);
 
 function isHoliday() {
-  for (i = 0; i < schoolHolidays.length; i++) {
-    if (schoolHolidays[i].month === today.getMonth() + 1 && schoolHolidays[i].day === today.getDate()) {
-      return true;
-    }
-  }
-  return false;
+  return schoolHolidays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());
+}
+
+function isBlackDay() {
+  return blackDays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());
 }
 
 function isWeekend() {
   return today.getDay() === 0 || today.getDay() === 6;
 }
 
-function isBlackDay() {
-  for (let i = 0; i < blackDays.length; i++) {
-    if (blackDays[i].month === today.getMonth() + 1 && blackDays[i].day === today.getDate()) {
-      return true;
-    }
-  }
-  return false;
-}
-
 function getPeriodIndex() {
   var now = ServerDate;
-  for (index = 0; true; index++) {
-    if (now > schedule[index].start && now < schedule[index + 1].start) {
-      return index;
-    }
-  }
+  return schedule.findIndex((element, index, array) => now > element.start && now < array[index + 1].start);
 }
 
 function getPeriodLength(i) {
