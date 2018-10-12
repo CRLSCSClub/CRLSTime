@@ -621,7 +621,6 @@ const todayMonth = today.getMonth() + 1;
 const todayYear = today.getFullYear();
 
 
-
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
 //   scheduleA = scheduleAX;
