@@ -686,6 +686,37 @@ var scheduleCMCASShort = [
   block("after",today.setHours(14,30,0,0)),
   block("end",today.setHours(23,59,59,0))
   ];
+  
+var scheduleAfternoonConferences = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM",today.setHours(9,25,0,0)),
+block("CM",today.setHours(9,29,0,0)),
+block("CM-2",today.setHours(9,44,0,0)),
+block("2",today.setHours(9,48,0,0)),
+block("Lunch",today.setHours(11,8,0,0)),
+block("12:00",today.setHours(12,00,0,0)),
+block("12:10",today.setHours(12,10,0,0)),
+block("12:20",today.setHours(12,20,0,0)),
+block("12:30",today.setHours(12,30,0,0)),
+block("12:40",today.setHours(12,40,0,0)),
+block("12:50",today.setHours(12,50,0,0)),
+block("1:00",today.setHours(13,00,0,0)),
+block("1:10",today.setHours(13,10,0,0)),
+block("1:20",today.setHours(13,20,0,0)),
+block("1:30",today.setHours(13,30,0,0)),
+block("1:40",today.setHours(13,40,0,0)),
+block("1:50",today.setHours(13,50,0,0)),
+block("2:00",today.setHours(14,00,0,0)),
+block("2:10",today.setHours(14,10,0,0)),
+block("2:20",today.setHours(14,20,0,0)),
+block("2:30",today.setHours(14,30,0,0)),
+block("2:40",today.setHours(14,40,0,0)),
+block("2:50",today.setHours(14,50,0,0)),
+block("after",today.setHours(15,00,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
 
   var scheduleLastDay = [
     block("morning",today.setHours(0,0,0,0)),
@@ -780,9 +811,9 @@ var blackDays = [
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-//   scheduleA = scheduleAX2;
-//   scheduleB = scheduleBX2;
-//   scheduleC = scheduleCX2;
+  scheduleA = scheduleAfternoonConferences;
+  scheduleB = scheduleAfternoonConferences;
+  scheduleC = scheduleAfternoonConferences;
 
 var lunchMode = "A";
 
