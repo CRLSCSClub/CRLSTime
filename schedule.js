@@ -669,8 +669,8 @@ function isHoliday() {
   return schoolHolidays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());
 }
 
-function isBlackDay() { return 1 === 1;
- // return blackDays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDay());
+function isBlackDay() {
+  return blackDays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());
 }
 
 function isWeekend() {
