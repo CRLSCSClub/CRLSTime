@@ -598,21 +598,32 @@ const scheduleSecondDay = [
 ];
 
 const schoolHolidays = [
-  myDate(9, 19),
-  myDate(10, 8)
+  myDate(12, 24),
+  myDate(12, 25),
+  myDate(12, 26),
+  myDate(12, 27),
+  myDate(12, 28),
+  myDate(12, 31),
+  myDate(1, 1)
 ];
 
 const blackDays = [
-  myDate(10, 3),
-  myDate(10, 5),
-  myDate(10, 11),
-  myDate(10, 15),
-  myDate(10, 17),
-  myDate(10, 19),
-  myDate(10, 23),
-  myDate(10, 24),
-  myDate(10, 26),
-  myDate(10, 30)
+  myDate(11, 28),
+  myDate(11, 30),
+  myDate(12, 4),
+  myDate(12, 6),
+  myDate(12, 10),
+  myDate(12, 12),
+  myDate(12, 14),
+  myDate(12, 18),
+  myDate(12, 20),
+  myDate(1, 2),
+  myDate(1, 4),
+  myDate(1, 8),
+  myDate(1, 10),
+  myDate(1, 14),
+  myDate(1, 16),
+  myDate(1, 17)
 ];
 
 // DisplayDate
