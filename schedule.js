@@ -670,7 +670,7 @@ function isHoliday() {
 }
 
 function isBlackDay() {
-  return blackDays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());
+  return blackDays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDay());
 }
 
 function isWeekend() {
