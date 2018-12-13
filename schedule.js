@@ -634,9 +634,9 @@ const todayYear = today.getFullYear();
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-//   scheduleA = scheduleAX;
-//   scheduleB = scheduleBX;
-//   scheduleC = scheduleCX;
+   scheduleA = scheduleAX2;
+   scheduleB = scheduleBX2;
+   scheduleC = scheduleCX2;
 
 let lunchMode = localStorage.lunch ? localStorage.lunch : "A";
 
