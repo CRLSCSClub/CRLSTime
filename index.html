@@ -398,6 +398,59 @@ block("4",today.setHours(13,22,0,0)),
 block("after",today.setHours(14,30,0,0)),
 block("end",today.setHours(23,59,59,0))
 ];
+var scheduleAX3 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,16,0,0)),
+block("CM X",today.setHours(9,20,0,0)),
+block("CM X-2",today.setHours(10,10,0,0)),
+block("2",today.setHours(10,14,0,0)),
+block("2-LA",today.setHours(11,25,0,0)),
+block("LA",today.setHours(11,29,0,0)),
+block("LA-3",today.setHours(11,59,0,0)),
+block("3",today.setHours(12,3,0,0)),
+block("3-4",today.setHours(13,14,0,0)),
+block("4",today.setHours(13,19,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+var scheduleBX3 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,16,0,0)),
+block("CM X",today.setHours(9,20,0,0)),
+block("CM X-2",today.setHours(10,10,0,0)),
+block("2",today.setHours(10,14,0,0)),
+block("2-3",today.setHours(11,25,0,0)),
+block("3",today.setHours(11,29,0,0)),
+block("3-LB",today.setHours(12,5,0,0)),
+block("LB",today.setHours(12,7,0,0)),
+block("LB-3",today.setHours(12,37,0,0)),
+block("3",today.setHours(12,39,0,0)),
+block("3-4",today.setHours(13,14,0,0)),
+block("4",today.setHours(13,19,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
+var scheduleCX3 = [
+block("morning",today.setHours(0,0,0,0)),
+block("before",today.setHours(6,25,0,0)),
+block("1",today.setHours(8,5,0,0)),
+block("1-CM X",today.setHours(9,16,0,0)),
+block("CM X",today.setHours(9,20,0,0)),
+block("CM X-2",today.setHours(10,10,0,0)),
+block("2",today.setHours(10,14,0,0)),
+block("2-3",today.setHours(11,25,0,0)),
+block("3",today.setHours(11,29,0,0)),
+block("3-LC",today.setHours(12,40,0,0)),
+block("LC",today.setHours(12,44,0,0)),
+block("LC-4",today.setHours(13,14,0,0)),
+block("4",today.setHours(13,19,0,0)),
+block("after",today.setHours(14,30,0,0)),
+block("end",today.setHours(23,59,59,0))
+];
 var scheduleAMCAS12 = [
 block("morning",today.setHours(0,0,0,0)),
 block("before",today.setHours(6,25,0,0)),
@@ -782,9 +835,9 @@ var blackDays = [
  }
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-  // scheduleA = scheduleFirstDay2ndSemester;
-  // scheduleB = scheduleFirstDay2ndSemester;
-  // scheduleC = scheduleFirstDay2ndSemester;
+   scheduleA = scheduleAX3;
+   scheduleB = scheduleBX3;
+   scheduleC = scheduleCX3;
 var lunchMode = "A";
 if(localStorage.lunch)
 {
