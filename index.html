@@ -597,6 +597,20 @@ var scheduleCMCASShort = [
   block("after",today.setHours(11,8,0,0)),
   block("end",today.setHours(23,59,59,0))
   ];
+   var scheduleCurrNight = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("info",today.setHours(18,5,0,0)),
+  block("->1",today.setHours(18,30,0,0)),
+  block("1",today.setHours(18,35,0,0)),
+  block("1-2",today.setHours(18,50,0,0)),
+  block("2",today.setHours(18,55,0,0)),
+  block("2-3",today.setHours(19,10,0,0)),
+  block("3",today.setHours(19,15,0,0)),
+  block("3-4",today.setHours(19,30,0,0)),
+  block("4",today.setHours(19,35,0,0)),
+  block("after",today.setHours(19,50,0,0)),
+  block("end",today.setHours(23,59,59,0))
+  ];
   var scheduleALateStart = [
   block("morning",today.setHours(0,0,0,0)),
   block("before",today.setHours(9,32,0,0)),
@@ -835,9 +849,9 @@ var blackDays = [
  }
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-   // scheduleA = scheduleAX3;
-   // scheduleB = scheduleBX3;
-   // scheduleC = scheduleCX3;
+    scheduleA = scheduleCurrNight;
+    scheduleB = scheduleCurrNight;
+    scheduleC = scheduleCurrNight;
 var lunchMode = "A";
 if(localStorage.lunch)
 {
