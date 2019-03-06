@@ -629,8 +629,8 @@ var scheduleCMCASShort = [
   block("4",today.setHours(13,10,0,0)),
   block("after",today.setHours(14,30,0,0)),
   block("end",today.setHours(23,59,59,0))
-  ];
-  var scheduleALateStartWithConferences = [
+];
+var scheduleALateStartWithConferences = [
   block("morning",today.setHours(0,0,0,0)),
   block("8:10",today.setHours(8,10,0,0)),
   block("8:20",today.setHours(8,20,0,0)),
@@ -657,8 +657,8 @@ var scheduleCMCASShort = [
   block("4",today.setHours(13,10,0,0)),
   block("after",today.setHours(14,30,0,0)),
   block("end",today.setHours(23,59,59,0))
-  ];
-  var scheduleBLateStartWithConferences = [
+];
+var scheduleBLateStartWithConferences = [
   block("morning",today.setHours(0,0,0,0)),
   block("8:10",today.setHours(8,10,0,0)),
   block("8:20",today.setHours(8,20,0,0)),
@@ -687,8 +687,8 @@ var scheduleCMCASShort = [
   block("4",today.setHours(13,10,0,0)),
   block("after",today.setHours(14,30,0,0)),
   block("end",today.setHours(23,59,59,0))
-  ];
-  var scheduleCLateStartWithConferences = [
+];
+var scheduleCLateStartWithConferences = [
   block("morning",today.setHours(0,0,0,0)),
   block("8:10",today.setHours(8,10,0,0)),
   block("8:20",today.setHours(8,20,0,0)),
@@ -715,94 +715,93 @@ var scheduleCMCASShort = [
   block("4",today.setHours(13,10,0,0)),
   block("after",today.setHours(14,30,0,0)),
   block("end",today.setHours(23,59,59,0))
-  ];
-
-var scheduleAfternoonConferences = [
-block("morning",today.setHours(0,0,0,0)),
-block("before",today.setHours(6,25,0,0)),
-block("1",today.setHours(8,5,0,0)),
-block("1-CM",today.setHours(9,25,0,0)),
-block("CM",today.setHours(9,29,0,0)),
-block("CM-2",today.setHours(9,44,0,0)),
-block("2",today.setHours(9,48,0,0)),
-block("Lunch",today.setHours(11,8,0,0)),
-block("12:00",today.setHours(12,00,0,0)),
-block("12:10",today.setHours(12,10,0,0)),
-block("12:20",today.setHours(12,20,0,0)),
-block("12:30",today.setHours(12,30,0,0)),
-block("12:40",today.setHours(12,40,0,0)),
-block("12:50",today.setHours(12,50,0,0)),
-block("1:00",today.setHours(13,00,0,0)),
-block("1:10",today.setHours(13,10,0,0)),
-block("1:20",today.setHours(13,20,0,0)),
-block("1:30",today.setHours(13,30,0,0)),
-block("1:40",today.setHours(13,40,0,0)),
-block("1:50",today.setHours(13,50,0,0)),
-block("2:00",today.setHours(14,00,0,0)),
-block("2:10",today.setHours(14,10,0,0)),
-block("2:20",today.setHours(14,20,0,0)),
-block("2:30",today.setHours(14,30,0,0)),
-block("2:40",today.setHours(14,40,0,0)),
-block("2:50",today.setHours(14,50,0,0)),
-block("after",today.setHours(15,00,0,0)),
-block("end",today.setHours(23,59,59,0))
 ];
-  var scheduleLastDay = [
-    block("morning",today.setHours(0,0,0,0)),
-    block("before",today.setHours(6,25,0,0)),
-    block("1",today.setHours(8,5,0,0)),
-    block("1-2",today.setHours(9,2,0,0)),
-    block("2",today.setHours(9,6,0,0)),
-    block("2-3",today.setHours(10,4,0,0)),
-    block("3",today.setHours(10,8,0,0)),
-    block("3-4",today.setHours(11,06,0,0)),
-    block("4",today.setHours(11,10,0,0)),
-    block("after",today.setHours(12,08,0,0)),
-    block("end",today.setHours(23,59,59,0))
-  ];
-  var scheduleFirstDay2ndSemester = [
-    block("morning",today.setHours(0,0,0,0)),
-    block("before",today.setHours(6,25,0,0)),
-    block("prep",today.setHours(8,5,0,0)),
-    block("lunch",today.setHours(11,12,0,0)),
-    block("lunch-1",today.setHours(11,42,0,0)),
-    block("1",today.setHours(11,46,0,0)),
-    block("1-2",today.setHours(12,24,0,0)),
-    block("2",today.setHours(12,28,0,0)),
-    block("2-3",today.setHours(13,6,0,0)),
-    block("3",today.setHours(13,10,0,0)),
-    block("3-4",today.setHours(13,48,0,0)),
-    block("4",today.setHours(13,52,0,0)),
-    block("after",today.setHours(14,30,0,0)),
-    block("end",today.setHours(23,59,59,0))
-  ];
-  var scheduleFirstDay = [
-    block("morning",today.setHours(0,0,0,0)),
-    block("before",today.setHours(6,25,0,0)),
-    block("meetings",today.setHours(8,5,0,0)),
-    block("lunch",today.setHours(11,0,0,0)),
-    block("lunch-3",today.setHours(11,42,0,0)),
-    block("3",today.setHours(11,46,0,0)),
-    block("3-4",today.setHours(13,6,0,0)),
-    block("4",today.setHours(13,10,0,0)),
-    block("after",today.setHours(14,30,0,0)),
-    block("end",today.setHours(23,59,59,0))
-  ];
-  var scheduleSecondDay = [
-    block("morning",today.setHours(0,0,0,0)),
-    block("before",today.setHours(6,25,0,0)),
-    block("1",today.setHours(8,5,0,0)),
-    block("1-CM",today.setHours(9,25,0,0)),
-    block("CM",today.setHours(9,29,0,0)),
-    block("CM-2",today.setHours(9,44,0,0)),
-    block("2",today.setHours(9,48,0,0)),
-    block("2-lunch",today.setHours(11,8,0,0)),
-    block("lunch",today.setHours(11,12,0,0)),
-    block("passing",today.setHours(11,42,0,0)),
-    block("CM 2022",today.setHours(11,46,0,0)),
-    block("after",today.setHours(14,30,0,0)),
-    block("end",today.setHours(23,59,59,0))
-  ];
+var scheduleAfternoonConferences = [
+	block("morning",today.setHours(0,0,0,0)),
+	block("before",today.setHours(6,25,0,0)),
+	block("1",today.setHours(8,5,0,0)),
+	block("1-CM",today.setHours(9,25,0,0)),
+	block("CM",today.setHours(9,29,0,0)),
+	block("CM-2",today.setHours(9,44,0,0)),
+	block("2",today.setHours(9,48,0,0)),
+	block("Lunch",today.setHours(11,8,0,0)),
+	block("12:00",today.setHours(12,00,0,0)),
+	block("12:10",today.setHours(12,10,0,0)),
+	block("12:20",today.setHours(12,20,0,0)),
+	block("12:30",today.setHours(12,30,0,0)),
+	block("12:40",today.setHours(12,40,0,0)),
+	block("12:50",today.setHours(12,50,0,0)),
+	block("1:00",today.setHours(13,00,0,0)),
+	block("1:10",today.setHours(13,10,0,0)),
+	block("1:20",today.setHours(13,20,0,0)),
+	block("1:30",today.setHours(13,30,0,0)),
+	block("1:40",today.setHours(13,40,0,0)),
+	block("1:50",today.setHours(13,50,0,0)),
+	block("2:00",today.setHours(14,00,0,0)),
+	block("2:10",today.setHours(14,10,0,0)),
+	block("2:20",today.setHours(14,20,0,0)),
+	block("2:30",today.setHours(14,30,0,0)),
+	block("2:40",today.setHours(14,40,0,0)),
+	block("2:50",today.setHours(14,50,0,0)),
+	block("after",today.setHours(15,00,0,0)),
+	block("end",today.setHours(23,59,59,0))
+];
+var scheduleLastDay = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("1",today.setHours(8,5,0,0)),
+  block("1-2",today.setHours(9,2,0,0)),
+  block("2",today.setHours(9,6,0,0)),
+  block("2-3",today.setHours(10,4,0,0)),
+  block("3",today.setHours(10,8,0,0)),
+  block("3-4",today.setHours(11,06,0,0)),
+  block("4",today.setHours(11,10,0,0)),
+  block("after",today.setHours(12,08,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+var scheduleFirstDay2ndSemester = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("prep",today.setHours(8,5,0,0)),
+  block("lunch",today.setHours(11,12,0,0)),
+  block("lunch-1",today.setHours(11,42,0,0)),
+  block("1",today.setHours(11,46,0,0)),
+  block("1-2",today.setHours(12,24,0,0)),
+  block("2",today.setHours(12,28,0,0)),
+  block("2-3",today.setHours(13,6,0,0)),
+  block("3",today.setHours(13,10,0,0)),
+  block("3-4",today.setHours(13,48,0,0)),
+  block("4",today.setHours(13,52,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+var scheduleFirstDay = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("meetings",today.setHours(8,5,0,0)),
+  block("lunch",today.setHours(11,0,0,0)),
+  block("lunch-3",today.setHours(11,42,0,0)),
+  block("3",today.setHours(11,46,0,0)),
+  block("3-4",today.setHours(13,6,0,0)),
+  block("4",today.setHours(13,10,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+var scheduleSecondDay = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("1",today.setHours(8,5,0,0)),
+  block("1-CM",today.setHours(9,25,0,0)),
+  block("CM",today.setHours(9,29,0,0)),
+  block("CM-2",today.setHours(9,44,0,0)),
+  block("2",today.setHours(9,48,0,0)),
+  block("2-lunch",today.setHours(11,8,0,0)),
+  block("lunch",today.setHours(11,12,0,0)),
+  block("passing",today.setHours(11,42,0,0)),
+  block("CM 2022",today.setHours(11,46,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
 var schoolHolidays = [
   myDate(2, 18),
   myDate(2, 19),
