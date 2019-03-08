@@ -95,6 +95,33 @@ const scheduleFinal34 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
+const scheduleFinal13 = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("1",today.setHours(8,5,0,0)),
+  block("1-CM",today.setHours(9,45,0,0)),
+  block("CM",today.setHours(9,50,0,0)),
+  block("CM-3",today.setHours(10,20,0,0)),
+  block("3",today.setHours(10,25,0,0)),
+  block("3-L",today.setHours(12,5,0,0)),
+  block("Lunch",today.setHours(12,10,0,0)),
+  block("after",today.setHours(12,45,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+const scheduleFinal24 = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("2",today.setHours(8,5,0,0)),
+  block("2-CM",today.setHours(9,45,0,0)),
+  block("CM",today.setHours(9,50,0,0)),
+  block("CM-4",today.setHours(10,20,0,0)),
+  block("4",today.setHours(10,25,0,0)),
+  block("4-L",today.setHours(12,5,0,0)),
+  block("Lunch",today.setHours(12,10,0,0)),
+  block("after",today.setHours(12,45,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+
 // All start with lunch A
 const scheduleDelay1 = [
   block("morning", today.setHours(0, 0, 0, 0)),
@@ -256,6 +283,62 @@ const scheduleCX2 = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
+const scheduleAX3 = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("1",today.setHours(8,5,0,0)),
+  block("1-CM X",today.setHours(9,16,0,0)),
+  block("CM X",today.setHours(9,20,0,0)),
+  block("CM X-2",today.setHours(10,10,0,0)),
+  block("2",today.setHours(10,14,0,0)),
+  block("2-LA",today.setHours(11,25,0,0)),
+  block("LA",today.setHours(11,29,0,0)),
+  block("LA-3",today.setHours(11,59,0,0)),
+  block("3",today.setHours(12,3,0,0)),
+  block("3-4",today.setHours(13,14,0,0)),
+  block("4",today.setHours(13,19,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+
+const scheduleBX3 = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("1",today.setHours(8,5,0,0)),
+  block("1-CM X",today.setHours(9,16,0,0)),
+  block("CM X",today.setHours(9,20,0,0)),
+  block("CM X-2",today.setHours(10,10,0,0)),
+  block("2",today.setHours(10,14,0,0)),
+  block("2-3",today.setHours(11,25,0,0)),
+  block("3",today.setHours(11,29,0,0)),
+  block("3-LB",today.setHours(12,5,0,0)),
+  block("LB",today.setHours(12,7,0,0)),
+  block("LB-3",today.setHours(12,37,0,0)),
+  block("3",today.setHours(12,39,0,0)),
+  block("3-4",today.setHours(13,14,0,0)),
+  block("4",today.setHours(13,19,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+
+const scheduleCX3 = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("1",today.setHours(8,5,0,0)),
+  block("1-CM X",today.setHours(9,16,0,0)),
+  block("CM X",today.setHours(9,20,0,0)),
+  block("CM X-2",today.setHours(10,10,0,0)),
+  block("2",today.setHours(10,14,0,0)),
+  block("2-3",today.setHours(11,25,0,0)),
+  block("3",today.setHours(11,29,0,0)),
+  block("3-LC",today.setHours(12,40,0,0)),
+  block("LC",today.setHours(12,44,0,0)),
+  block("LC-4",today.setHours(13,14,0,0)),
+  block("4",today.setHours(13,19,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+
 const scheduleAMCAS12 = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(6, 25, 0, 0)),
@@ -412,6 +495,21 @@ const scheduleEarlyRelease = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
+var scheduleCurrNight = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("info",today.setHours(17,0,0,0)),
+  block("info-1",today.setHours(18,30,0,0)),
+  block("1",today.setHours(18,35,0,0)),
+  block("1-2",today.setHours(18,50,0,0)),
+  block("2",today.setHours(18,55,0,0)),
+  block("2-3",today.setHours(19,10,0,0)),
+  block("3",today.setHours(19,15,0,0)),
+  block("3-4",today.setHours(19,30,0,0)),
+  block("4",today.setHours(19,35,0,0)),
+  block("after",today.setHours(19,50,0,0)),
+  block("end",today.setHours(23,59,59,0))
+];
+
 const scheduleALateStart = [
   block("morning", today.setHours(0, 0, 0, 0)),
   block("before", today.setHours(9, 32, 0, 0)),
@@ -553,19 +651,21 @@ const scheduleLastDay = [
   block("end", today.setHours(23, 59, 59, 0))
 ];
 
-const scheduleOldFirstDay = [
-  block("morning", today.setHours(0, 0, 0, 0)),
-  block("before", today.setHours(6, 25, 0, 0)),
-  block("hello", today.setHours(8, 5, 0, 0)),
-  block("1", today.setHours(11, 46, 0, 0)),
-  block("1-2", today.setHours(12, 24, 0, 0)),
-  block("2", today.setHours(12, 28, 0, 0)),
-  block("2-3", today.setHours(13, 6, 0, 0)),
-  block("3", today.setHours(13, 10, 0, 0)),
-  block("3-4", today.setHours(13, 48, 0, 0)),
-  block("4", today.setHours(13, 52, 0, 0)),
-  block("after", today.setHours(14, 30, 0, 0)),
-  block("end", today.setHours(23, 59, 59, 0))
+var scheduleFirstDay2ndSemester = [
+  block("morning",today.setHours(0,0,0,0)),
+  block("before",today.setHours(6,25,0,0)),
+  block("prep",today.setHours(8,5,0,0)),
+  block("lunch",today.setHours(11,12,0,0)),
+  block("lunch-1",today.setHours(11,42,0,0)),
+  block("1",today.setHours(11,46,0,0)),
+  block("1-2",today.setHours(12,24,0,0)),
+  block("2",today.setHours(12,28,0,0)),
+  block("2-3",today.setHours(13,6,0,0)),
+  block("3",today.setHours(13,10,0,0)),
+  block("3-4",today.setHours(13,48,0,0)),
+  block("4",today.setHours(13,52,0,0)),
+  block("after",today.setHours(14,30,0,0)),
+  block("end",today.setHours(23,59,59,0))
 ];
 
 const scheduleFirstDay = [
@@ -598,32 +698,19 @@ const scheduleSecondDay = [
 ];
 
 const schoolHolidays = [
-  myDate(12, 24),
-  myDate(12, 25),
-  myDate(12, 26),
-  myDate(12, 27),
-  myDate(12, 28),
-  myDate(12, 31),
-  myDate(1, 1)
+  myDate(2, 18),
+  myDate(2, 19),
+  myDate(2, 20),
+  myDate(2, 21),
+  myDate(2, 22)
 ];
 
 const blackDays = [
-  myDate(11, 28),
-  myDate(11, 30),
-  myDate(12, 4),
-  myDate(12, 6),
-  myDate(12, 10),
-  myDate(12, 12),
-  myDate(12, 14),
-  myDate(12, 18),
-  myDate(12, 20),
-  myDate(1, 2),
-  myDate(1, 4),
-  myDate(1, 8),
-  myDate(1, 10),
-  myDate(1, 14),
-  myDate(1, 16),
-  myDate(1, 17)
+  myDate(2, 5),
+  myDate(2, 7),
+  myDate(2, 11),
+  myDate(2, 13),
+  myDate(2, 15)
 ];
 
 // DisplayDate
@@ -634,9 +721,9 @@ const todayYear = today.getFullYear();
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-   scheduleA = scheduleAX2;
-   scheduleB = scheduleBX2;
-   scheduleC = scheduleCX2;
+    // scheduleA = scheduleCurrNight;
+    // scheduleB = scheduleCurrNight;
+    // scheduleC = scheduleCurrNight;
 
 let lunchMode = localStorage.lunch ? localStorage.lunch : "A";
 
