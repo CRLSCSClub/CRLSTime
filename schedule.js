@@ -706,11 +706,19 @@ const schoolHolidays = [
 ];
 
 const blackDays = [
-  myDate(2, 5),
-  myDate(2, 7),
-  myDate(2, 11),
-  myDate(2, 13),
-  myDate(2, 15)
+  myDate(3, 8),
+  myDate(3, 12),
+  myDate(3, 13),
+  myDate(3, 15),
+  myDate(3, 19),
+  myDate(3, 21),
+  myDate(3, 25),
+  myDate(3, 28),
+  myDate(4, 1),
+  myDate(4, 3),
+  myDate(4, 5),
+  myDate(4, 9),
+  myDate(4, 11) 
 ];
 
 // DisplayDate
