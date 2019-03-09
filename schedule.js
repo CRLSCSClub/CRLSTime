@@ -725,7 +725,7 @@ const todayYear = today.getFullYear();
     // scheduleB = scheduleCurrNight;
     // scheduleC = scheduleCurrNight;
 
-let lunchMode = localStorage.lunch ? localStorage.lunch : "A";
+var lunchMode = localStorage.lunch ? localStorage.lunch : "A";
 
 schedule = getSchedule(lunchMode);
 

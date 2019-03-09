@@ -1,9 +1,9 @@
 const imageObj = new Image();
 imageObj.src = 'falcon_high_res2.png';
 
-let radius, delta, smRadius;
-let upperLeftX, upperLeftY, upperRightX, upperRightY, lowerLeftX, lowerLeftY, lowerRightX, lowerRightY;
-let switchLunchRect, canvas, ctx;
+var radius, delta, smRadius;
+var upperLeftX, upperLeftY, upperRightX, upperRightY, lowerLeftX, lowerLeftY, lowerRightX, lowerRightY;
+var switchLunchRect, canvas, ctx;
 
 window.addEventListener('resize', redraw);
 
@@ -17,7 +17,7 @@ function redraw() {
 function resetScale() {
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
-  let smallerDimension = Math.min(window.innerWidth, window.innerHeight);
+  var smallerDimension = Math.min(window.innerWidth, window.innerHeight);
   radius = smallerDimension / 2 - 12;
 
   delta = radius;
@@ -176,8 +176,8 @@ function drawNumbersNormal(ctx, radius, incr, max) {
   ctx.font = radius * 0.20 + "px arial";
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
-  for (let num = incr; num <= max; num += incr) {
-    let ang = num * 2 * Math.PI / max;
+  for (var num = incr; num <= max; num += incr) {
+    var ang = num * 2 * Math.PI / max;
     ctx.rotate(ang);
     ctx.translate(0, -radius * 0.84);
     ctx.rotate(-ang);
@@ -194,17 +194,17 @@ function drawNumbersNormal(ctx, radius, incr, max) {
 // incr : increment for numbering
 // max : largest number on face (12 oclock position)
 function drawNumbersCountDown(ctx, radius, incr, max) {
-  let ang;
+  var ang;
   ctx.font = radius * 0.20 + "px arial";
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
   // next line assures numbering is done as multiple of incr
-  let start = (max % incr === 0) ? max - incr : max - max % incr;
+  var start = (max % incr === 0) ? max - incr : max - max % incr;
   // this checks if first angle is very small (crowding of 1st number)
   if (2 * Math.PI - (start * 2 * Math.PI / max) < .2) {
     start -= incr;
   }
-  for (let num = start; num >= 0; num -= incr) {
+  for (var num = start; num >= 0; num -= incr) {
     ang = 2 * Math.PI - (num * 2 * Math.PI / max);
     ctx.rotate(ang);
     ctx.translate(0, -radius * 0.82);
@@ -251,9 +251,9 @@ function drawPeriodLabel(ctx, radius, label) {
 
 function drawNormalTime(ctx, radius) {
   const now = ServerDate;
-  let hour = now.getHours();
-  let minute = now.getMinutes();
-  let second = now.getSeconds();
+  var hour = now.getHours();
+  var minute = now.getMinutes();
+  var second = now.getSeconds();
 
   //hour
   hour = hour % 12;
@@ -271,10 +271,10 @@ function drawNormalTime(ctx, radius) {
 
 function drawSchoolTime(ctx, radius, index) {
   const now = ServerDate;
-  let second = now.getSeconds();
+  var second = now.getSeconds();
 
   // minute
-  let minute = (now - schedule[index].start) / 60000;
+  var minute = (now - schedule[index].start) / 60000;
   minute /= getPeriodLength(index);
   minute *= 2 * Math.PI;
   drawHand(ctx, minute, radius * 0.83, radius * 0.05, 'silver');
@@ -302,7 +302,7 @@ function drawHand(ctx, pos, length, width, color) {
 
 // Black/silver button
 function drawBSButton() {
-  let blackOrSilverText;
+  var blackOrSilverText;
   if (isBlackDay()) {
     drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.98, '#333');
     drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');
