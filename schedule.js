@@ -607,23 +607,9 @@ const schoolHolidays = [
   myDate(1, 1)
 ];
 
-const blackDays = [
-  myDate(11, 28),
-  myDate(11, 30),
-  myDate(12, 4),
-  myDate(12, 6),
-  myDate(12, 10),
-  myDate(12, 12),
-  myDate(12, 14),
-  myDate(12, 18),
-  myDate(12, 20),
-  myDate(1, 2),
-  myDate(1, 4),
-  myDate(1, 8),
-  myDate(1, 10),
-  myDate(1, 14),
-  myDate(1, 16),
-  myDate(1, 17)
+const daysToNotChange = [
+     // Put days where black/silver days do not change as myDate
+     // Or we could phase out myDate function in favor of arrays with 2 ints
 ];
 
 // DisplayDate
@@ -634,10 +620,10 @@ const todayYear = today.getFullYear();
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-   scheduleA = scheduleAX2;
+/**   scheduleA = scheduleAX2;
    scheduleB = scheduleBX2;
    scheduleC = scheduleCX2;
-
+**/
 let lunchMode = localStorage.lunch ? localStorage.lunch : "A";
 
 schedule = getSchedule(lunchMode);
@@ -669,8 +655,8 @@ function isHoliday() {
   return schoolHolidays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());
 }
 
-function isBlackDay() {
-  return blackDays.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());
+function isDayDontChange() { // If returns false, then day changes from black to silver
+  return daysToNotChange.some(day => day.month === today.getMonth() + 1 && day.day === today.getDate());
 }
 
 function isWeekend() {
