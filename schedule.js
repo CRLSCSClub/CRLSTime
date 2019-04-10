@@ -784,6 +784,10 @@ var dontSwitch = [
   
 ];
 
+function getStart(block) {
+  return today.setHours(block[1], block[2], 0, 0);
+}
+
 // DisplayDate
   var todayDate = today.getDate();
   var todayMonth = today.getMonth() + 1;
@@ -795,16 +799,15 @@ var dontSwitch = [
 //     scheduleB = scheduleBLateStartWithConferences;
 //     scheduleC = scheduleCLateStartWithConferences;
 var lunchMode = "A";
-if(localStorage.lunch)
-{
+if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
 }
 function getSchedule(key) {
-  if(key === "A")
+  if (key === "A")
     return scheduleA;
-  if(key === "B")
+  if (key === "B")
     return scheduleB;
-  if(key === "C")
+  if (key === "C")
     return scheduleC;
 }
 schedule = getSchedule(lunchMode);
@@ -820,15 +823,15 @@ function isWeekend() {
   return today.getDay() === 0 || today.getDay() === 6;
 }
 function getPeriodIndex() {
-    var now = ServerDate;
-    for(index = 0; true; index++){
-      if (now > schedule[index].start && now < schedule[index + 1].start) {
-        return index;
-      }
+  var now = ServerDate;
+  for (i = 0; true; index++) {
+    if (now > getStart(schedule[i]) && now < getStart(schedule[i])) {
+      return index;
     }
+  }
 }
 function getPeriodLength(i) {
-  return (schedule[i + 1].start - schedule[i].start) / 60000;  // in minutes
+  return (getStart(schedule[i + 1]) - getStart(schedule[i])) / 60000; // in minutes
 }
 function isDayDontChange() {
   return (dontSwitch.includes(myDate(today.getMonth() + 1, today.getDay()))) // main code should be something like: if (!isDayDontChange()) {if (bOrS == "Black") {bOrS = "Silver"} else {bOrS = "Black"}}
