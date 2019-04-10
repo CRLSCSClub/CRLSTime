@@ -712,20 +712,8 @@ var schoolHolidays = [
   myDate(2, 21),
   myDate(2, 22)
 ];
-var blackDays = [
-  myDate(3, 8),
-  myDate(3, 12),
-  myDate(3, 13),
-  myDate(3, 15),
-  myDate(3, 19),
-  myDate(3, 21),
-  myDate(3, 25),
-  myDate(3, 28),
-  myDate(4, 1),
-  myDate(4, 3),
-  myDate(4, 5),
-  myDate(4, 9),
-  myDate(4, 11) 
+var dontSwitch = [
+  
 ];
 
 // DisplayDate
@@ -774,12 +762,14 @@ function getPeriodIndex() {
 function getPeriodLength(i) {
   return (schedule[i + 1].start - schedule[i].start) / 60000;  // in minutes
 }
-
-function isBlackDay() {
+function isDayDontChange() {
+  return (dontSwitch.includes(myDate(today.getMonth() + 1, today.getDay()))) // main code should be something like: if (!isDayDontChange()) {if (bOrS == "Black") {bOrS = "Silver"} else {bOrS = "Black"}}
+}
+/**function isBlackDay() {
   for (i = 0; i < blackDays.length; i++) {
     if (blackDays[i].month === today.getMonth() + 1 && blackDays[i].day === today.getDate()) {
       return true;
     }
   }
   return false;
-}
+}**/
