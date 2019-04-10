@@ -116,7 +116,7 @@ function drawClock() {
   drawFace(ctx, radius);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
   var periodIndex = getPeriodIndex();
-  var periodLabel = schedule[periodIndex].label;
+  var periodLabel = schedule[periodIndex][0];
   var periodLength = getPeriodLength(periodIndex);
   // when to display a normal clock
   if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
@@ -262,7 +262,7 @@ function drawSchoolTime(ctx, radius, index){
     var now = ServerDate;
     var second = now.getSeconds();
     // minute
-    var minute = (now - schedule[index].start)/60000;
+    var minute = (now - getStart(schedule[index]))/60000;
     minute = minute/getPeriodLength(index);
     minute = minute * 2 * Math.PI;
     drawHand(ctx, minute, radius*0.83, radius*0.05, 'silver');
