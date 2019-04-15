@@ -16,12 +16,6 @@ function advanceLunchMode() {
   drawLunchButton();
 }
 
-function block(lbl,srt,ed) {
-  return {label:lbl,start:srt};
-}
-function myDate(m, d) {
-  return {month:m, day:d};
-}
 var today = new Date();
 /////////////// schedule types //////////////////
 // Table of period labels and start times
