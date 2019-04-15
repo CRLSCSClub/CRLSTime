@@ -739,26 +739,26 @@ var scheduleSecondDay = [
 ];
 
 var schoolHolidays = [
-  myDate(2, 18),
-  myDate(2, 19),
-  myDate(2, 20),
-  myDate(2, 21),
-  myDate(2, 22)
+  [2, 18],
+  [2, 19],
+  [2, 20],
+  [2, 21],
+  [2, 22]
 ];
 var blackDays = [
-  myDate(3, 8),
-  myDate(3, 12),
-  myDate(3, 13),
-  myDate(3, 15),
-  myDate(3, 19),
-  myDate(3, 21),
-  myDate(3, 25),
-  myDate(3, 28),
-  myDate(4, 1),
-  myDate(4, 3),
-  myDate(4, 5),
-  myDate(4, 9),
-  myDate(4, 11) 
+  [3, 8],
+  [3, 12],
+  [3, 13],
+  [3, 15],
+  [3, 19],
+  [3, 21],
+  [3, 25],
+  [3, 28],
+  [4, 1],
+  [4, 3],
+  [4, 5],
+  [4, 9],
+  [4, 11]
 ];
 
 function getStart(block) {
@@ -790,7 +790,7 @@ function getSchedule(key) {
 schedule = getSchedule(lunchMode);
 function isHoliday() {
   for (i = 0; i < schoolHolidays.length; i++) {
-    if (schoolHolidays[i].month === today.getMonth() + 1 && schoolHolidays[i].day === today.getDate()) {
+    if (schoolHolidays[i][0] === today.getMonth() + 1 && schoolHolidays[i][1] === today.getDate()) {
       return true;
     }
   }
@@ -813,7 +813,7 @@ function getPeriodLength(i) {
 
 function isBlackDay() {
   for (i = 0; i < blackDays.length; i++) {
-    if (blackDays[i].month === today.getMonth() + 1 && blackDays[i].day === today.getDate()) {
+    if (blackDays[i][0] === today.getMonth() + 1 && blackDays[i][1] === today.getDate()) {
       return true;
     }
   }
