@@ -825,8 +825,8 @@ function isWeekend() {
 function getPeriodIndex() {
   var now = ServerDate;
   for (i = 0; true; i++) {
-    if (now > getStart(schedule[i]) && now < getStart(schedule[i])) {
-      return index;
+    if (now > getStart(schedule[i]) && now < getStart(schedule[i + 1])) {
+      return i;
     }
   }
 }
