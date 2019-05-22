@@ -109,9 +109,12 @@ function drawDateButton() {
  ctx.fillText(todayMonth + "/" + todayDate + "/" + todayYear, upperRightX, upperRightY);
 }
 
-drawCRLSTimeButton();
-drawDateButton();
-setInterval(drawClock, 1000);
+imageObj.addEventListener('load', function() {
+  drawCRLSTimeButton();
+  drawDateButton();
+  drawClock();
+  setInterval(drawClock, 1000);
+});
 function drawClock() {
   drawFace(ctx, radius);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
