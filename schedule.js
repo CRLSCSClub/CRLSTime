@@ -771,7 +771,8 @@ var blackDays = [
   [6, 7],
   [6, 11],
   [6, 13],
-  [6, 14]
+  [6, 14],
+  [6, 18]
 ];
 
 function getStart(block) {
