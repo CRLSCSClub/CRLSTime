@@ -682,13 +682,13 @@ var scheduleLastDay = [
   ["morning", 0, 0],
   ["before", 6, 25],
   ["1", 8, 5],
-  ["1-2", 9, 2],
-  ["2", 9, 6],
-  ["2-3", 10, 4],
-  ["3", 10, 8],
-  ["3-4", 11, 06],
-  ["4", 11, 10],
-  ["after", 12, 08],
+  ["1-2", 9, 1],
+  ["2", 9, 5],
+  ["2-3", 10, 1],
+  ["3", 10, 5],
+  ["3-4", 11, 01],
+  ["4", 11, 05],
+  ["after", 12, 01],
   ["end", 23, 59]
 ];
 
@@ -786,9 +786,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-     scheduleA = scheduleFinal24;
-     scheduleB = scheduleFinal24;
-     scheduleC = scheduleFinal24;
+     scheduleA = scheduleLastDay;
+     scheduleB = scheduleLastDay;
+     scheduleC = scheduleLastDay;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
