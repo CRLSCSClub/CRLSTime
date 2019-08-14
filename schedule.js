@@ -781,9 +781,11 @@ function isHoliday() {
   }
   return false;
 }
+
 function isWeekend() {
   return today.getDay() === 0 || today.getDay() === 6;
 }
+
 function getPeriodIndex() {
   var now = ServerDate;
   for (i = 0; true; i++) {
@@ -792,6 +794,7 @@ function getPeriodIndex() {
     }
   }
 }
+
 function getPeriodLength(i) {
   return (getStart(schedule[i + 1]) - getStart(schedule[i])) / 60000; // in minutes
 }
