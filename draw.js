@@ -320,4 +320,5 @@ function devOverrideDate(date) {
    && !isNaN(date.getTime())) // https://stackoverflow.com/a/1353711/
       offset = +date - +now;
   else console.log("Invalid Date");
+  drawClock();
 }
