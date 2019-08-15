@@ -115,12 +115,12 @@ function drawDateButton() {
 
 imageObj.addEventListener('load', function() {
   drawCRLSTimeButton();
-  drawDateButton();
   drawClock();
   setInterval(drawClock, 1000);
 });
 function drawClock() {
   now = new Date(+ServerDate + offset);
+  drawDateButton();
   drawFace(ctx, radius);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
   var periodIndex = getPeriodIndex();
