@@ -739,40 +739,42 @@ var scheduleSecondDay = [
 ];
 
 var schoolHolidays = [
-  [4, 15],
-  [4, 16],
-  [4, 17],
-  [4, 18],
-  [4, 19],
-  [5, 27],
-  [6, 5]
+  [9, 2],
+  [10, 9],
+  [10, 14],
+  [11, 11],
+  [11, 28],
+  [11, 29]
 ];
 var blackDays = [
-  [4, 1],
-  [4, 3],
-  [4, 5],
-  [4, 9],
-  [4, 11],
-  [4, 22],
-  [4, 24],
-  [4, 26],
-  [4, 30],
-  [5, 2],
-  [5, 6],
-  [5, 8],
-  [5, 10],
-  [5, 14],
-  [5, 16],
-  [5, 20],
-  [5, 23],
-  [5, 28],
-  [5, 30],
-  [6, 3],
-  [6, 7],
-  [6, 11],
-  [6, 13],
-  [6, 14],
-  [6, 18]
+  [9, 5],
+  [9, 9],
+  [9, 11],
+  [9, 13],
+  [9, 17],
+  [9, 19],
+  [9, 23],
+  [9, 25],
+  [9, 27],
+  [10, 1],
+  [10, 3],
+  [10, 7],
+  [10, 10],
+  [10, 15],
+  [10, 18],
+  [10, 22],
+  [10, 24],
+  [10, 28],
+  [10, 30],
+  [11, 1],
+  [11, 5],
+  [11, 7],
+  [11, 12],
+  [11, 14],
+  [11, 18],
+  [11, 20],
+  [11, 22],
+  [11, 26]
 ];
 
 function getStart(block) {
@@ -786,9 +788,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-     scheduleA = scheduleLastDay;
-     scheduleB = scheduleLastDay;
-     scheduleC = scheduleLastDay;
+     scheduleA = scheduleFirstDay;
+     scheduleB = scheduleFirstDay;
+     scheduleC = scheduleFirstDay;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
