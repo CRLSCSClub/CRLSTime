@@ -733,7 +733,7 @@ var scheduleSecondDay = [
   ["2-lunch", 11, 8],
   ["lunch", 11, 12],
   ["passing", 11, 42],
-  ["CM 2022", 11, 46],
+  ["CM 2023", 11, 46],
   ["after", 14, 30],
   ["end", 23, 59]
 ];
