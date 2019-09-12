@@ -349,6 +349,63 @@ var scheduleCX3 = [
   ["end", 23, 59]
 ];
 
+// Book discussion 9/12/2019
+var scheduleAX4 = [
+  ["morning", 0, 0],
+  ["before", 6, 25],
+  ["1", 8, 5],
+  ["1-CM X", 9, 14],
+  ["CM X", 9, 18],
+  ["CM X-2", 10, 16],
+  ["2", 10, 20],
+  ["2-LA", 11, 29],
+  ["LA", 11, 33],
+  ["LA-3", 12, 3],
+  ["3", 12, 7],
+  ["3-4", 13, 17],
+  ["4", 13, 21],
+  ["after", 14, 30],
+  ["end", 23, 59]
+];
+
+var scheduleBX4 = [
+  ["morning", 0, 0],
+  ["before", 6, 25],
+  ["1", 8, 5],
+  ["1-CM X", 9, 14],
+  ["CM X", 9, 18],
+  ["CM X-2", 10, 16],
+  ["2", 10, 20],
+  ["2-3", 11, 29],
+  ["3", 11, 33],
+  ["3-LB", 12, 7],
+  ["LB", 12, 10],
+  ["LB-3", 12, 40],
+  ["3", 12, 43],
+  ["3-4", 13, 17],
+  ["4", 13, 21],
+  ["after", 14, 30],
+  ["end", 23, 59]
+];
+
+var scheduleCX4 = [
+  ["morning", 0, 0],
+  ["before", 6, 25],
+  ["1", 8, 5],
+  ["1-CM X", 9, 14],
+  ["CM X", 9, 18],
+  ["CM X-2", 10, 16],
+  ["2", 10, 20],
+  ["2-3", 11, 29],
+  ["3", 11, 33],
+  ["3-LC", 12, 44],
+  ["LC", 12, 47],
+  ["LC-4", 13, 17],
+  ["4", 13, 21],
+  ["after", 14, 30],
+  ["end", 23, 59]
+];
+
 var scheduleAMCAS12 = [
   ["morning", 0, 0],
   ["before", 6, 25],
@@ -788,9 +845,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-//     scheduleA = scheduleSecondDay;
-//     scheduleB = scheduleSecondDay;
-//     scheduleC = scheduleSecondDay;
+     scheduleA = scheduleAX4;
+     scheduleB = scheduleBX4;
+     scheduleC = scheduleCX4;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
