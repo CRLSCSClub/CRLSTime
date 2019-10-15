@@ -615,6 +615,40 @@ var scheduleCLateStart = [
   ["end", 23, 59]
 ];
 
+// fall 2019: All lunch A, short periods
+var scheduleF19LateStartWithConferences = [
+  ["morning", 0, 0],
+  ["8:10", 8, 10],
+  ["8:20", 8, 20],
+  ["8:30", 8, 30],
+  ["8:40", 8, 40],
+  ["8:50", 8, 50],
+  ["9:00", 9, 00],
+  ["9:10", 9, 10],
+  ["9:20", 9, 20],
+  ["9:30", 9, 30],
+  ["9:40", 9, 40],
+  ["9:50", 9, 50],
+  ["10:00", 10, 00],
+  ["10:10", 10, 10],
+  ["10:20", 10, 20],
+  ["10:30", 10, 30],
+  ["10:40", 10, 40],
+  ["10:50", 10, 50],
+  ["before", 11, 00],
+  ["LA", 11, 12],
+  ["LA-3", 11, 42],
+  ["3", 11, 46],
+  ["3-4", 12, 24],
+  ["4", 12, 28],
+  ["4-1", 13, 06],
+  ["1", 13, 10],
+  ["1-2", 13, 48],
+  ["2", 13, 52],
+  ["after", 14, 30],
+  ["end", 23, 59]
+];
+
 var scheduleALateStartWithConferences = [
   ["morning", 0, 0],
   ["8:10", 8, 10],
@@ -845,9 +879,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-//     scheduleA = scheduleAX4;
-//     scheduleB = scheduleBX4;
-//     scheduleC = scheduleCX4;
+     scheduleA = scheduleF19LateStartWithConferences;
+     scheduleB = scheduleF19LateStartWithConferences;
+     scheduleC = scheduleF19LateStartWithConferences;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
