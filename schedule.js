@@ -649,6 +649,18 @@ var scheduleF19LateStartWithConferences = [
   ["end", 23, 59]
 ];
 
+var scheduleF19LateStartPSAT = [
+  ["morning", 0, 0],
+  ["PSAT", 8, 5],
+  ["LA", 11, 12],
+  ["LA-3", 11, 42],
+  ["3", 11, 46],
+  ["3-4", 13, 06],
+  ["4", 13, 10],
+  ["after", 14, 30],
+  ["end", 23, 59]
+];
+
 var scheduleALateStartWithConferences = [
   ["morning", 0, 0],
   ["8:10", 8, 10],
@@ -879,9 +891,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-     scheduleA = scheduleF19LateStartWithConferences;
-     scheduleB = scheduleF19LateStartWithConferences;
-     scheduleC = scheduleF19LateStartWithConferences;
+     scheduleA = scheduleF19LateStartPSAT;
+     scheduleB = scheduleF19LateStartPSAT;
+     scheduleC = scheduleF19LateStartPSAT;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
