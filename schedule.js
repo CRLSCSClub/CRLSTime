@@ -795,6 +795,20 @@ var scheduleLastDay = [
   ["end", 23, 59]
 ];
 
+var scheduleHalfDay = [
+  ["morning", 0, 0],
+  ["before", 6, 25],
+  ["1", 8, 5],
+  ["1-2", 8, 52],
+  ["2", 8, 56],
+  ["2-3", 9, 43],
+  ["3", 9, 47],
+  ["3-4", 10, 34],
+  ["4", 10, 38],
+  ["after", 11, 25],
+  ["end", 23, 59]
+];
+
 var scheduleFirstDay2ndSemester = [
   ["morning", 0, 0],
   ["before", 6, 25],
@@ -891,9 +905,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
- //    scheduleA = scheduleAfternoonConferences;
- //    scheduleB = scheduleAfternoonConferences;
- //    scheduleC = scheduleAfternoonConferences;
+     scheduleA = scheduleHalfDay;
+     scheduleB = scheduleHalfDay;
+     scheduleC = scheduleHalfDay;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
