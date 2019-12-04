@@ -864,34 +864,13 @@ var schoolHolidays = [
   [11, 29]
 ];
 var blackDays = [
-  [9, 5],
-  [9, 9],
-  [9, 11],
-  [9, 13],
-  [9, 17],
-  [9, 19],
-  [9, 23],
-  [9, 25],
-  [9, 27],
-  [10, 1],
-  [10, 3],
-  [10, 7],
-  [10, 10],
-  [10, 15],
-  [10, 18],
-  [10, 22],
-  [10, 24],
-  [10, 28],
-  [10, 30],
-  [11, 1],
-  [11, 5],
-  [11, 7],
-  [11, 12],
-  [11, 14],
-  [11, 18],
-  [11, 20],
-  [11, 22],
-  [11, 26]
+  [12, 4],
+  [12, 6],
+  [12, 10],
+  [12, 12],
+  [12, 16],
+  [12, 18],
+  [12, 20]
 ];
 
 function getStart(block) {
@@ -905,9 +884,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-     scheduleA = scheduleHalfDay;
-     scheduleB = scheduleHalfDay;
-     scheduleC = scheduleHalfDay;
+//    scheduleA = scheduleHalfDay;
+//     scheduleB = scheduleHalfDay;
+//     scheduleC = scheduleHalfDay;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
