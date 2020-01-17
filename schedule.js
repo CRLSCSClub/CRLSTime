@@ -903,9 +903,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-    scheduleA = scheduleFinal24;
-    scheduleB = scheduleFinal24;
-    scheduleC = scheduleFinal24;
+//    scheduleA = scheduleFinal24;
+//    scheduleB = scheduleFinal24;
+//    scheduleC = scheduleFinal24;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
