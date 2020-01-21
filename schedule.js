@@ -135,7 +135,8 @@ var scheduleFinal24 = [
 // All start with lunch A
 var scheduleDelay1 = [
   ["morning", 0, 0],
-  ["before", 9, 32],
+  ["before", 6, 25],
+  ["early", 8, 5],
   ["Lunch", 11, 12],
   ["Lunch-3", 11, 42],
   ["3", 11, 46],
