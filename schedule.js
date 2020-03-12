@@ -905,9 +905,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-   scheduleA = scheduleALateStartWithConferences;
-   scheduleB = scheduleBLateStartWithConferences;
-   scheduleC = scheduleCLateStartWithConferences;
+//    scheduleA = scheduleALateStartWithConferences;
+//    scheduleB = scheduleBLateStartWithConferences;
+//    scheduleC = scheduleCLateStartWithConferences;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
