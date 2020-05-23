@@ -1,3 +1,7 @@
+var now = ServerDate;
+var offset = 0;
+// in case `now` needs to be manually changed for development purposes
+
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 ctx.canvas.width  = window.innerWidth;
@@ -106,16 +110,17 @@ function drawDateButton() {
  ctx.font = "bold " + radius*0.07 + "px arial";
  ctx.textBaseline="middle";
  ctx.textAlign= "center";
- ctx.fillText(todayMonth + "/" + todayDate + "/" + todayYear, upperRightX, upperRightY);
+ ctx.fillText((now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear(), upperRightX, upperRightY);
 }
 
 imageObj.addEventListener('load', function() {
   drawCRLSTimeButton();
-  drawDateButton();
   drawClock();
   setInterval(drawClock, 1000);
 });
 function drawClock() {
+  now = new Date(+ServerDate + offset);
+  drawDateButton();
   drawFace(ctx, radius);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
   var periodIndex = getPeriodIndex();
@@ -244,7 +249,6 @@ function drawPeriodLabel(ctx, radius, label) {
     ctx.rotate(-ang);
 }
 function drawNormalTime(ctx, radius){
-    var now = ServerDate;
     var hour = now.getHours();
     var minute = now.getMinutes();
     var second = now.getSeconds();
@@ -262,7 +266,6 @@ function drawNormalTime(ctx, radius){
     drawHand(ctx, second, radius*0.9, radius*0.02, 'red');
 }
 function drawSchoolTime(ctx, radius, index){
-    var now = ServerDate;
     var second = now.getSeconds();
     // minute
     var minute = (now - getStart(schedule[index]))/60000;
@@ -309,4 +312,13 @@ function drawBSButton() {
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   ctx.fillText(blackOrSilverText, lowerRightX, lowerRightY);
+}
+
+function devOverrideDate(date) {
+  date = new Date(date)
+  if (Object.prototype.toString.call(date) === "[object Date]"
+   && !isNaN(date.getTime())) // https://stackoverflow.com/a/1353711/
+      offset = +date - +now;
+  else console.log("Invalid Date");
+  drawClock();
 }

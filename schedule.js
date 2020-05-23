@@ -16,7 +16,6 @@ function advanceLunchMode() {
   drawLunchButton();
 }
 
-var today = new Date();
 /////////////// schedule types //////////////////
 // Table of period labels and start times
 
@@ -895,13 +894,8 @@ var blackDays = [
 ];
 
 function getStart(block) {
-  return today.setHours(block[1], block[2], 0, 0);
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate(), block[1], block[2], 0, 0);
 }
-
-// DisplayDate
-  var todayDate = today.getDate();
-  var todayMonth = today.getMonth() + 1;
-  var todayYear = today.getFullYear();
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
@@ -923,20 +917,19 @@ function getSchedule(key) {
 schedule = getSchedule(lunchMode);
 function isHoliday() {
   for (i = 0; i < schoolHolidays.length; i++) {
-    if (schoolHolidays[i][0] === today.getMonth() + 1 && schoolHolidays[i][1] === today.getDate()) {
+    if (schoolHolidays[i][0] === now.getMonth() + 1 && schoolHolidays[i][1] === now.getDate()) {
       return true;
     }
   }
-  if (today.getMonth() + 1 === 7 || today.getMonth() + 1 === 8) {
+  if (now.getMonth() + 1 === 7 || now.getMonth() + 1 === 8) {
     return true;
   }
   return false;
 }
 function isWeekend() {
-  return today.getDay() === 0 || today.getDay() === 6;
+  return now.getDay() === 0 || now.getDay() === 6;
 }
 function getPeriodIndex() {
-  var now = ServerDate;
   for (i = 0; true; i++) {
     if (now > getStart(schedule[i]) && now < getStart(schedule[i + 1])) {
       return i;
@@ -949,7 +942,7 @@ function getPeriodLength(i) {
 
 function isBlackDay() {
   for (i = 0; i < blackDays.length; i++) {
-    if (blackDays[i][0] === today.getMonth() + 1 && blackDays[i][1] === today.getDate()) {
+    if (blackDays[i][0] === now.getMonth() + 1 && blackDays[i][1] === now.getDate()) {
       return true;
     }
   }
