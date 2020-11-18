@@ -138,7 +138,7 @@ function drawClock() {
       drawPeriodLabel(ctx, radius, periodLabel);
       drawSpecialLabel(ctx, radius, "");
       drawSchoolTime(ctx, radius, periodIndex);
-      drawLunchButton(); // comment out for  all school lunch
+      // drawLunchButton(); // comment out for  all school lunch and remote teaching
       drawBSButton();
   }
 }
