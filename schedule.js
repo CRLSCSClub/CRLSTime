@@ -38,6 +38,23 @@ var scheduleA = [
   ["end", 23, 59]
 ];
 
+var schedule2020remote = [
+  ["morning", 0, 0],
+  ["before", 7, 00],
+  ["CM/Adv", 8, 35],
+  ["Adv-1", 9, 00],
+  ["1", 9, 10],
+  ["1-2", 10, 00],
+  ["2", 10, 10],
+  ["2-3", 11, 00],
+  ["3", 11, 10],
+  ["Lunch", 12, 00],
+  ["4", 13, 10],
+  ["Study", 14, 00],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
 var scheduleB = [
   ["morning", 0, 0],
   ["before", 6, 25],
@@ -782,6 +799,24 @@ var scheduleAfternoonConferences = [
   ["end", 23, 59]
 ];
 
+var scheduleWednesdayConferences2020 = [
+  ["morning", 0, 0],
+  ["before", 6, 25],
+  ["8:35", 8, 35],
+  ["8:45", 8, 45],
+  ["8:55", 8, 55],
+  ["Staff", 9, 05],
+  ["Lunch", 12, 00],
+  ["2:00", 14, 00],
+  ["2:10", 14, 10],
+  ["2:20", 14, 20],
+  ["2:30", 14, 30],
+  ["2:40", 14, 40],
+  ["2:50", 14, 50],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
 var scheduleLastDay = [
   ["morning", 0, 0],
   ["before", 6, 25],
@@ -857,41 +892,49 @@ var scheduleSecondDay = [
 ];
 
 var schoolHolidays = [
+  [11, 26],
+  [11, 27],
+  [12, 24],
+  [12, 25],
+  [12, 28],
+  [12, 29],
+  [12, 30],
+  [12, 31],
   [1, 1],
-  [1, 20],
+  [1, 18],
+  [2, 15],
+  [2, 16],
   [2, 17],
   [2, 18],
   [2, 19],
-  [2, 20],
-  [2, 21],
-  [4, 10],
+  [4, 2],
+  [4, 19],
   [4, 20],
   [4, 21],
   [4, 22],
   [4, 23],
-  [4, 24],
-  [5, 25]
+  [5, 13],
+  [5, 31],
+  [6, 18]
 ];
 var blackDays = [
-  [3, 2],
-  [3, 4],
-  [3, 6],
-  [3, 10],
-  [3, 11],
-  [3, 17],
-  [3, 19],
-  [3, 23],
-  [3, 26],
-  [3, 30],
-  [4, 1],
-  [4, 3],
-  [4, 7],
-  [4, 9],
-  [4, 14],
-  [4, 16],
-  [4, 27],
-  [4, 29],
-  [5, 1]
+  [11, 20],
+  [11, 24],
+  [12, 1],
+  [12, 4],
+  [12, 8],
+  [12, 11],
+  [12, 15],
+  [12, 18],
+  [12, 22],
+  [1, 5],
+  [1, 8],
+  [1, 12],
+  [1, 15],
+  [1, 19],
+  [1, 22],
+  [1, 26],
+  [1, 29]
 ];
 
 function getStart(block) {
@@ -905,9 +948,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-//    scheduleA = scheduleALateStartWithConferences;
-//    scheduleB = scheduleBLateStartWithConferences;
-//    scheduleC = scheduleCLateStartWithConferences;
+    scheduleA = scheduleWednesdayConferences2020;
+    scheduleB = scheduleWednesdayConferences2020;
+    scheduleC = scheduleWednesdayConferences2020;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
