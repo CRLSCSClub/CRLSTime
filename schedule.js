@@ -40,7 +40,7 @@ var scheduleA = [
 
 var schedule2020remote = [
   ["morning", 0, 0],
-  ["before", 7, 00],
+  ["before", 7, 35],
   ["CM/Adv", 8, 35],
   ["Adv-1", 9, 00],
   ["1", 9, 10],
@@ -49,7 +49,8 @@ var schedule2020remote = [
   ["2-3", 11, 00],
   ["3", 11, 10],
   ["Lunch", 12, 00],
-  ["4", 13, 10],
+  ["4", 13, 00],
+  ["4-SS", 13, 50],
   ["Study", 14, 00],
   ["after", 15, 00],
   ["end", 23, 59]
@@ -953,9 +954,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-    scheduleA = scheduleWednesdayConferences2020;
-    scheduleB = scheduleWednesdayConferences2020;
-    scheduleC = scheduleWednesdayConferences2020;
+    scheduleA = schedule2020remote;
+    scheduleB = schedule2020remote;
+    scheduleC = schedule2020remote;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
@@ -981,7 +982,7 @@ function isHoliday() {
   return false;
 }
 function isWeekend() {
-  return today.getDay() === 0 || today.getDay() === 6;
+  return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in 2020
 }
 function getPeriodIndex() {
   var now = ServerDate;
