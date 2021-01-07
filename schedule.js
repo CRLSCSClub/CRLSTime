@@ -982,8 +982,8 @@ function isHoliday() {
   return false;
 }
 function isWeekend() {
-  //return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in 2020
-  return today.getDay() === 0 || today.getDay() === 6;
+  return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in 2020
+  //return today.getDay() === 0 || today.getDay() === 6;
 }
 function getPeriodIndex() {
   var now = ServerDate;
