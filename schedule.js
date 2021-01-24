@@ -56,6 +56,18 @@ var schedule2020remote = [
   ["end", 23, 59]
 ];
 
+var scheduleRemoteFinalsMon = [
+  ["morning", 0, 0],
+  ["before", 8, 0],
+  ["Study", 9, 0],
+  ["Study-1", 10, 00],
+  ["1", 10, 20],
+  ["Lunch", 12, 00],
+  ["3", 13, 0],
+  ["after", 14, 40],
+  ["end", 23, 59]
+];
+
 var scheduleB = [
   ["morning", 0, 0],
   ["before", 6, 25],
@@ -954,9 +966,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-    scheduleA = schedule2020remote;
-    scheduleB = schedule2020remote;
-    scheduleC = schedule2020remote;
+    scheduleA = scheduleRemoteFinalsMon;
+    scheduleB = scheduleRemoteFinalsMon;
+    scheduleC = scheduleRemoteFinalsMon;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
