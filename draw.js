@@ -131,8 +131,9 @@ function drawClock() {
   } else // display school time
   {
       var interval = 1;
-      if (periodLength > 18) interval = 5;
-      if (periodLength > 55) interval = 10;
+      if (periodLength > 15) interval = 2;
+      if (periodLength > 30) interval = 5;
+      if (periodLength > 75) interval = 10;
       if (periodLength > 120) interval = 15;
       drawNumbersCountDown(ctx, radius, interval, periodLength);
       drawPeriodLabel(ctx, radius, periodLabel);
