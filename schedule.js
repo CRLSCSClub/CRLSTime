@@ -38,7 +38,46 @@ var scheduleA = [
   ["end", 23, 59]
 ];
 
-var schedule2020remote = [
+var scheduleB = [
+  ["morning", 0, 0],
+  ["before", 6, 25],
+  ["1", 8, 5],
+  ["1-CM", 9, 25],
+  ["CM", 9, 29],
+  ["CM-2", 9, 44],
+  ["2", 9, 48],
+  ["2-3", 11, 8],
+  ["3", 11, 12],
+  ["3-LB", 11, 52],
+  ["LB", 11, 54],
+  ["LB-3", 12, 24],
+  ["3", 12, 26],
+  ["3-4", 13, 6],
+  ["4", 13, 10],
+  ["after", 14, 30],
+  ["end", 23, 59]
+];
+
+var scheduleC = [
+  ["morning", 0, 0],
+  ["before", 6, 25],
+  ["1", 8, 5],
+  ["1-CM", 9, 25],
+  ["CM", 9, 29],
+  ["CM-2", 9, 44],
+  ["2", 9, 48],
+  ["2-3", 11, 8],
+  ["3", 11, 12],
+  ["3-LC", 12, 32],
+  ["LC", 12, 36],
+  ["LC-4", 13, 6],
+  ["4", 13, 10],
+  ["after", 14, 30],
+  ["end", 23, 59]
+];
+
+// COVID schedules   vvvvvvvvvvvvvvvvv
+var scheduleFall2020remote = [
   ["morning", 0, 0],
   ["before", 7, 35],
   ["CM/Adv", 8, 35],
@@ -80,43 +119,99 @@ var scheduleRemoteFinalsTue = [
   ["end", 23, 59]
 ];
 
-var scheduleB = [
+var scheduleRemoteFeb1 = [
   ["morning", 0, 0],
-  ["before", 6, 25],
-  ["1", 8, 5],
-  ["1-CM", 9, 25],
-  ["CM", 9, 29],
-  ["CM-2", 9, 44],
-  ["2", 9, 48],
-  ["2-3", 11, 8],
-  ["3", 11, 12],
-  ["3-LB", 11, 52],
-  ["LB", 11, 54],
-  ["LB-3", 12, 24],
-  ["3", 12, 26],
-  ["3-4", 13, 6],
-  ["4", 13, 10],
-  ["after", 14, 30],
+  ["before", 8, 0],
+  ["1 (S)", 9, 0],
+  ["Break", 9, 30],
+  ["1 (B)", 9, 40],
+  ["Break", 10, 10],
+  ["2 (S)", 10, 20],
+  ["Break", 10, 50],
+  ["2 (B)", 11, 0],
+  ["after", 11, 30],
   ["end", 23, 59]
 ];
 
-var scheduleC = [
+var scheduleRemoteFeb2 = [
   ["morning", 0, 0],
-  ["before", 6, 25],
-  ["1", 8, 5],
-  ["1-CM", 9, 25],
-  ["CM", 9, 29],
-  ["CM-2", 9, 44],
-  ["2", 9, 48],
-  ["2-3", 11, 8],
-  ["3", 11, 12],
-  ["3-LC", 12, 32],
-  ["LC", 12, 36],
-  ["LC-4", 13, 6],
-  ["4", 13, 10],
-  ["after", 14, 30],
+  ["before", 8, 0],
+  ["3 (S)", 9, 0],
+  ["Break", 9, 30],
+  ["3 (B)", 9, 40],
+  ["Break", 10, 10],
+  ["4 (S)", 10, 20],
+  ["Break", 10, 50],
+  ["4 (B)", 11, 0],
+  ["after", 11, 30],
   ["end", 23, 59]
 ];
+
+var scheduleSpring21Mon = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["1", 8, 35],
+  ["Passing", 9, 55],
+  ["2", 10, 05],
+  ["Passing", 11, 25],
+  ["Study 1", 11, 35],
+  ["Lunch", 12, 15],
+  ["3", 13, 15],
+  ["Break", 14, 05],
+  ["4", 14, 10],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var scheduleSpring21Tue = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["1", 8, 35],
+  ["Passing", 9, 55],
+  ["2", 10, 05],
+  ["Passing", 11, 25],
+  ["Study 2", 11, 35],
+  ["Lunch", 12, 15],
+  ["3", 13, 15],
+  ["Break", 14, 05],
+  ["4", 14, 10],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var scheduleSpring21Thu = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["3", 8, 35],
+  ["Passing", 9, 55],
+  ["4", 10, 05],
+  ["Passing", 11, 25],
+  ["Study 3", 11, 35],
+  ["Lunch", 12, 15],
+  ["1", 13, 15],
+  ["Break", 14, 05],
+  ["2", 14, 10],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var scheduleSpring21Fri = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["3", 8, 35],
+  ["Passing", 9, 55],
+  ["4", 10, 05],
+  ["Passing", 11, 25],
+  ["Study 4", 11, 35],
+  ["Lunch", 12, 15],
+  ["1", 13, 15],
+  ["Break", 14, 05],
+  ["2", 14, 10],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+// COVID schedules   ^^^^^^^^^^^^^^^^
 
 var scheduleFinal12 = [
   ["morning", 0, 0],
@@ -978,9 +1073,9 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-    scheduleA = scheduleRemoteFinalsMon;
-    scheduleB = scheduleRemoteFinalsMon;
-    scheduleC = scheduleRemoteFinalsMon;
+    scheduleA = scheduleRemoteFeb1;
+    scheduleB = scheduleRemoteFeb1;
+    scheduleC = scheduleRemoteFeb1;
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
@@ -1006,8 +1101,8 @@ function isHoliday() {
   return false;
 }
 function isWeekend() {
- // return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in 2020
-  return today.getDay() === 0 || today.getDay() === 6;
+  return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in 2020-21
+  // return today.getDay() === 0 || today.getDay() === 6;  // Sunday & Saturday
 }
 function getPeriodIndex() {
   var now = ServerDate;
@@ -1022,10 +1117,14 @@ function getPeriodLength(i) {
 }
 
 function isBlackDay() {
-  for (i = 0; i < blackDays.length; i++) {
-    if (blackDays[i][0] === today.getMonth() + 1 && blackDays[i][1] === today.getDate()) {
-      return true;
-    }
-  }
-  return false;
+// when looking up Black days in a table 
+//   for (i = 0; i < blackDays.length; i++) {
+//     if (blackDays[i][0] === today.getMonth() + 1 && blackDays[i][1] === today.getDate()) {
+//       return true;
+//     }
+//   }
+//   return false;
+  
+// for Spring 21 (COVID) Black days are always Tue and Fri
+  return today.getDay() === 2 || today.getDay() === 5;
 }
