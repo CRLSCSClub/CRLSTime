@@ -1044,23 +1044,30 @@ var schoolHolidays = [
 ];
 var blackDays = [
   [11, 20],
-  [11, 24],
-  [12, 1],
-  [12, 4],
-  [12, 8],
-  [12, 11],
-  [12, 15],
-  [12, 18],
-  [12, 22],
-  [1, 5],
-  [1, 8],
-  [1, 12],
-  [1, 15],
-  [1, 19],
-  [1, 22],
-  [1, 26],
-  [1, 29]
 ];
+
+var specialSchedules = [
+   [2, 1, scheduleRemoteFeb1],
+  [2, 2, scheduleRemoteFeb2]
+  ];
+
+var regularSchedules = [
+  scheduleSpring21Mon,
+  scheduleSpring21Tue,
+  scheduleSpring21Mon, // should never be used for Wed
+  scheduleSpring21Thu,
+  scheduleSpring21Fri,
+  ];
+
+// first check for a special schedule, otherwise return a regular schedule
+function scheduleLookup() {
+  for (i = 0; i < specialSchedules.length; i++) {
+    if (specialSchedules[i][0] === today.getMonth() + 1 && specialSchedules[i][1] === today.getDate()) {
+       return specialSchedules[i][2];
+     }
+   }
+   return regularSchedules[today.getDay() - 1]; // Mon will be 0
+}
 
 function getStart(block) {
   return today.setHours(block[1], block[2], 0, 0);
@@ -1073,9 +1080,14 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-    scheduleA = scheduleRemoteFeb1;
-    scheduleB = scheduleRemoteFeb1;
-    scheduleC = scheduleRemoteFeb1;
+//     scheduleA = scheduleRemoteFeb1;
+//     scheduleB = scheduleRemoteFeb1;
+//     scheduleC = scheduleRemoteFeb1;
+// automation attempt:
+scheduleA = scheduleLookup();
+scheduleB = scheduleLookup();
+scheduleC = scheduleLookup();
+
 var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
