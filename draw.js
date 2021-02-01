@@ -75,7 +75,7 @@ function drawUpNext(perIndex) {
 }
 
 function removeLunchButton() {
-  drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#FFF');
+  drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .98, '#FFF');
 }
 
 function removeBSButton() {
