@@ -1080,13 +1080,13 @@ function getStart(block) {
 
 // next three lines for special schedules, comment out for normal days
 // issue: need to automate this
-//     scheduleA = scheduleRemoteFeb1;
-//     scheduleB = scheduleRemoteFeb1;
-//     scheduleC = scheduleRemoteFeb1;
+    scheduleA = scheduleRemoteFeb1;
+    scheduleB = scheduleRemoteFeb1;
+    scheduleC = scheduleRemoteFeb1;
 // automation attempt:
-scheduleA = scheduleLookup();
-scheduleB = scheduleLookup();
-scheduleC = scheduleLookup();
+// scheduleA = scheduleLookup();
+// scheduleB = scheduleLookup();
+// scheduleC = scheduleLookup();
 
 var lunchMode = "A";
 if(localStorage.lunch) {
