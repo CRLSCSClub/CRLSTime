@@ -1046,28 +1046,28 @@ var blackDays = [
   [11, 20],
 ];
 
-var specialSchedules = [
-   [2, 1, scheduleRemoteFeb1],
-  [2, 2, scheduleRemoteFeb2]
-  ];
+// var specialSchedules = [
+//    [2, 1, scheduleRemoteFeb1],
+//   [2, 2, scheduleRemoteFeb2]
+//   ];
 
-var regularSchedules = [
-  scheduleSpring21Mon,
-  scheduleSpring21Tue,
-  scheduleSpring21Mon, // should never be used for Wed
-  scheduleSpring21Thu,
-  scheduleSpring21Fri,
-  ];
+// var regularSchedules = [
+//   scheduleSpring21Mon,
+//   scheduleSpring21Tue,
+//   scheduleSpring21Mon, // should never be used for Wed
+//   scheduleSpring21Thu,
+//   scheduleSpring21Fri,
+//   ];
 
-// first check for a special schedule, otherwise return a regular schedule
-function scheduleLookup() {
-  for (i = 0; i < specialSchedules.length; i++) {
-    if (specialSchedules[i][0] === today.getMonth() + 1 && specialSchedules[i][1] === today.getDate()) {
-       return specialSchedules[i][2];
-     }
-   }
-   return regularSchedules[today.getDay() - 1]; // Mon will be 0
-}
+// // first check for a special schedule, otherwise return a regular schedule
+// function scheduleLookup() {
+//   for (i = 0; i < specialSchedules.length; i++) {
+//     if (specialSchedules[i][0] === today.getMonth() + 1 && specialSchedules[i][1] === today.getDate()) {
+//        return specialSchedules[i][2];
+//      }
+//    }
+//    return regularSchedules[today.getDay() - 1]; // Mon will be 0
+// }
 
 function getStart(block) {
   return today.setHours(block[1], block[2], 0, 0);
