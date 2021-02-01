@@ -17,9 +17,17 @@ ctx.translate(delta, delta);
 var radius = radius * 0.93
 var smRadius = radius * 0.18;
 
-// CRLSTime button
+// Variable for positions of small circles in corners
 var upperLeftX = -radius * 0.88;
 var upperLeftY = -radius * 0.88;
+var upperRightX = radius * 0.88;
+var upperRightY = -radius * 0.88;
+var lowerLeftX = -radius * 0.88;
+var lowerLeftY = radius * 0.88;
+var lowerRightX = radius * 0.88;
+var lowerRightY = radius * 0.88;
+
+// CRLSTime button
 function drawCRLSTimeButton() {
   drawSmallCircle(upperLeftX, upperLeftY, smRadius, '#DDD');
   ctx.font = "bold " + radius*0.067 + "px arial";
@@ -29,9 +37,7 @@ function drawCRLSTimeButton() {
   ctx.fillText("CRLSTime", upperLeftX, upperLeftY);
 }
 
-// Info/settings button
-var upperRightX = radius * 0.88;
-var upperRightY = -radius * 0.88;
+// Info/settings button.... not used
 function drawSettingsButton() {
   drawSmallCircle(upperRightX, upperRightY, smRadius, '#DDD');
   ctx.font = radius*0.2 + "px arial";
@@ -41,8 +47,6 @@ function drawSettingsButton() {
   ctx.fillText("", upperRightX, upperRightY);
 }
 
-var lowerLeftX = -radius * 0.88;
-var lowerLeftY = radius * 0.88;
 // this function not used during COVID (call commented out in drawClock)
 function drawLunchButton() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
@@ -55,7 +59,7 @@ function drawLunchButton() {
 
 // this function will used used to indicate next block in place of lunch button
 function drawUpNext(perIndex) {
-  drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
+  drawSmallCircle(lowerRightX, lowerRightY, smRadius * .95, '#DDD');
   ctx.font = "bold " + radius*0.07 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
@@ -64,7 +68,7 @@ function drawUpNext(perIndex) {
   if (nextLabel.length < 3) {
     ctx.font = "bold " + radius*0.15 + "px arial";
   }
-  ctx.fillText(nextLabel, lowerLeftX, lowerLeftY);
+  ctx.fillText(nextLabel, lowerRightX, lowerRightY);
 }
 
 function removeLunchButton() {
@@ -76,10 +80,8 @@ function removeBSButton() {
 }
 
 // Black/silver button
-var lowerRightX = radius * 0.88;
-var lowerRightY = radius * 0.88;
 function drawBSButton() {
-  drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
+  drawSmallCircle(lowerLeftX, lowerLeftY, smRadius, '#DDD');
 }
 
 function drawSmallCircle(cx, cy, r, color) {
@@ -123,8 +125,6 @@ canvas.addEventListener('click', function(evt) {
     }
 }, false);
 
-var upperRightX = radius * 0.88;
-var upperRightY = -radius * 0.88;
 function drawDateButton() {
  drawSmallCircle(upperRightX, upperRightY, smRadius, '#DDD');
  ctx.fillStyle = '#888';
@@ -326,24 +326,22 @@ function drawHand(ctx, pos, length, width, color) {
 }
 
 // Black/silver button
-var lowerRightX = radius * 0.88;
-var lowerRightY = radius * 0.88;
 var blackOrSilverText = "Black Day";
 function drawBSButton() {
   if (isBlackDay()) {
-    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.98, '#333');
-    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');
+    drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * 0.98, '#333');
+    drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * 0.95, '#DDD');
     blackOrSilverText = "Black Day";
     ctx.fillStyle = '#555';
   }
   else {
-    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.98, '#BBB');
-    drawSmallCircle(lowerRightX, lowerRightY, smRadius * 0.95, '#DDD');
+    drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * 0.98, '#BBB');
+    drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * 0.95, '#DDD');
     blackOrSilverText = "Silver Day";
     ctx.fillStyle = '#999';
   }
   ctx.font = "bold " + radius*0.07 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
-  ctx.fillText(blackOrSilverText, lowerRightX, lowerRightY);
+  ctx.fillText(blackOrSilverText, lowerLeftX, lowerLeftY);
 }
