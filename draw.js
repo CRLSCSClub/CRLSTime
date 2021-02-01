@@ -16,6 +16,7 @@ var delta = radius;
 ctx.translate(delta, delta);
 var radius = radius * 0.93
 var smRadius = radius * 0.18;
+
 // CRLSTime button
 var upperLeftX = -radius * 0.88;
 var upperLeftY = -radius * 0.88;
@@ -27,6 +28,7 @@ function drawCRLSTimeButton() {
   ctx.fillStyle = '#888';
   ctx.fillText("CRLSTime", upperLeftX, upperLeftY);
 }
+
 // Info/settings button
 var upperRightX = radius * 0.88;
 var upperRightY = -radius * 0.88;
@@ -41,6 +43,7 @@ function drawSettingsButton() {
 
 var lowerLeftX = -radius * 0.88;
 var lowerLeftY = radius * 0.88;
+
 function drawLunchButton() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
   ctx.font = radius*0.25 + "px arial";
@@ -49,18 +52,22 @@ function drawLunchButton() {
   ctx.fillStyle = '#888';
   ctx.fillText(lunchMode, lowerLeftX, lowerLeftY);
 }
+
 function removeLunchButton() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#FFF');
 }
+
 function removeBSButton() {
   drawSmallCircle(lowerRightX, lowerRightY, smRadius * .98, '#FFF');
 }
+
 // Black/silver button
 var lowerRightX = radius * 0.88;
 var lowerRightY = radius * 0.88;
 function drawBSButton() {
   drawSmallCircle(lowerRightX, lowerRightY, smRadius, '#DDD');
 }
+
 function drawSmallCircle(cx, cy, r, color) {
   ctx.beginPath();
   ctx.arc(cx, cy, r, 0, 2 * Math.PI, false);
@@ -70,6 +77,7 @@ function drawSmallCircle(cx, cy, r, color) {
   ctx.strokeStyle = color; //'#DDD';
   ctx.stroke();
 }
+
 ////////////////////// button logic //////////////////////
 //Function to get the mouse position
 function getMousePos(canvas, event) {
@@ -79,10 +87,12 @@ function getMousePos(canvas, event) {
         y: event.clientY - rect.top - delta
     };
 }
+
 //Function to check whether a point is inside a rectangle
 function isInside(pos, rect){
     return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
 }
+
 //The rectangle should have x,y,width,height properties
 var rect = {
     x:lowerLeftX - smRadius,
@@ -90,6 +100,7 @@ var rect = {
     width:smRadius * 2,
     height:smRadius * 2
 };
+
 //Binding the click event on the canvas
 canvas.addEventListener('click', function(evt) {
     var mousePos = getMousePos(canvas, evt);
@@ -115,6 +126,7 @@ imageObj.addEventListener('load', function() {
   drawClock();
   setInterval(drawClock, 1000);
 });
+
 function drawClock() {
   drawFace(ctx, radius);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
@@ -143,6 +155,7 @@ function drawClock() {
       drawBSButton();
   }
 }
+
 function drawFace(ctx, radius) {
   var grad;
   // bg of face
@@ -164,6 +177,7 @@ function drawFace(ctx, radius) {
   ctx.fillStyle = '#666';
   ctx.fill();
 }
+
 // ctx : canvas context
 // radius of writable clock face
 // incr : increment for numbering
@@ -186,6 +200,7 @@ function drawNumbersNormal(ctx, radius, incr, max) {
     ctx.rotate(-ang);
   }
 }
+
 // ctx : canvas context
 // radius of writable clock face
 // incr : increment for numbering
@@ -214,6 +229,7 @@ function drawNumbersCountDown(ctx, radius, incr, max) {
     ctx.rotate(-ang);
   }
 }
+
 function drawSpecialLabel(ctx, radius, label) {
   var ang;
   ctx.font = radius*0.25 + "px arial";
@@ -229,6 +245,7 @@ function drawSpecialLabel(ctx, radius, label) {
     ctx.translate(0, -radius*0.35);
     ctx.rotate(-ang);
 }
+
 function drawPeriodLabel(ctx, radius, label) {
   var ang;
   ctx.font = radius*0.40 + "px arial";
@@ -244,6 +261,7 @@ function drawPeriodLabel(ctx, radius, label) {
     ctx.translate(0, radius*0.32);
     ctx.rotate(-ang);
 }
+
 function drawNormalTime(ctx, radius){
     var now = ServerDate;
     var hour = now.getHours();
@@ -262,6 +280,7 @@ function drawNormalTime(ctx, radius){
     second=(second*Math.PI/30);
     drawHand(ctx, second, radius*0.9, radius*0.02, 'red');
 }
+
 function drawSchoolTime(ctx, radius, index){
     var now = ServerDate;
     var second = now.getSeconds();
@@ -274,6 +293,7 @@ function drawSchoolTime(ctx, radius, index){
     second=(second*Math.PI/30);
     drawHand(ctx, second, radius*0.9, radius*0.02, 'red');
 }
+
 // ctx : canvas context
 // pos : angle out of 360, 90 is east
 // length, width : self explanatory
@@ -289,6 +309,7 @@ function drawHand(ctx, pos, length, width, color) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
+
 // Black/silver button
 var lowerRightX = radius * 0.88;
 var lowerRightY = radius * 0.88;
