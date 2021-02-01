@@ -1061,11 +1061,11 @@ var regularSchedules = [
 
 // first check for a special schedule, otherwise return a regular schedule
 function scheduleLookup() {
-  for (i = 0; i < specialSchedules.length; i++) {
-    if (specialSchedules[i][0] === today.getMonth() + 1 && specialSchedules[i][1] === today.getDate()) {
-       return specialSchedules[i][2];
-     }
-   }
+//   for (i = 0; i < specialSchedules.length; i++) {
+//     if (specialSchedules[i][0] === today.getMonth() + 1 && specialSchedules[i][1] === today.getDate()) {
+//        return specialSchedules[i][2];
+//      }
+//    }
    return regularSchedules[today.getDay() - 1]; // Mon will be 0
 }
 
