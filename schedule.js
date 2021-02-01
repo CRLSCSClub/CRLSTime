@@ -136,13 +136,13 @@ var scheduleRemoteFeb1 = [
 var scheduleRemoteFeb2 = [
   ["morning", 0, 0],
   ["before", 8, 0],
-  ["3 (S)", 9, 0],
+  ["3:S", 9, 0],
   ["Break", 9, 30],
-  ["3 (B)", 9, 40],
+  ["3:B", 9, 40],
   ["Break", 10, 10],
-  ["4 (S)", 10, 20],
+  ["4:S", 10, 20],
   ["Break", 10, 50],
-  ["4 (B)", 11, 0],
+  ["4:B", 11, 0],
   ["after", 11, 30],
   ["end", 23, 59]
 ];
@@ -1061,11 +1061,11 @@ var regularSchedules = [
 
 // first check for a special schedule, otherwise return a regular schedule
 function scheduleLookup() {
-//   for (i = 0; i < specialSchedules.length; i++) {
-//     if (specialSchedules[i][0] === today.getMonth() + 1 && specialSchedules[i][1] === today.getDate()) {
-//        return specialSchedules[i][2];
-//      }
-//    }
+  for (i = 0; i < specialSchedules.length; i++) {
+    if (specialSchedules[i][0] === today.getMonth() + 1 && specialSchedules[i][1] === today.getDate()) {
+       return specialSchedules[i][2];
+     }
+   }
    return regularSchedules[today.getDay() - 1]; // Mon will be 0
 }
 
