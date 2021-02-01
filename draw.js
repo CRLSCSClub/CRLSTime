@@ -62,7 +62,7 @@ function drawUpNext(perIndex) {
   ctx.fillStyle = '#888';
   var nextLabel = schedule[perIndex + 1][0]
   if (nextLabel.length < 3) {
-    ctx.font = "bold " + radius*0.2 + "px arial";
+    ctx.font = "bold " + radius*0.15 + "px arial";
   }
   ctx.fillText(nextLabel, lowerLeftX, lowerLeftY);
 }
