@@ -56,11 +56,14 @@ function drawLunchButton() {
 // this function will used used to indicate next block in place of lunch button
 function drawUpNext(perIndex) {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
-  ctx.font = "bold " + radius*0.067 + "px arial";
+  ctx.font = "bold " + radius*0.07 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   ctx.fillStyle = '#888';
   var nextLabel = schedule[perIndex + 1][0]
+  if (nextLabel.length < 3) {
+    ctx.font = "bold " + radius*0.2 + "px arial";
+  }
   ctx.fillText(nextLabel, lowerLeftX, lowerLeftY);
 }
 
