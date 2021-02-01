@@ -65,6 +65,9 @@ function drawUpNext(perIndex) {
   ctx.textAlign="center";
   ctx.fillStyle = '#888';
   var nextLabel = schedule[perIndex + 1][0]
+  if (nextLabel === "after") {
+    nextLabel = "";
+  }
   if (nextLabel.length < 3) {
     ctx.font = "bold " + radius*0.15 + "px arial";
   }
