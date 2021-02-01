@@ -1046,18 +1046,18 @@ var blackDays = [
   [11, 20],
 ];
 
-// var specialSchedules = [
-//    [2, 1, scheduleRemoteFeb1],
-//   [2, 2, scheduleRemoteFeb2]
-//   ];
+var specialSchedules = [
+   [2, 1, scheduleRemoteFeb1],
+  [2, 2, scheduleRemoteFeb2]
+  ];
 
-// var regularSchedules = [
-//   scheduleSpring21Mon,
-//   scheduleSpring21Tue,
-//   scheduleSpring21Mon, // should never be used for Wed
-//   scheduleSpring21Thu,
-//   scheduleSpring21Fri,
-//   ];
+var regularSchedules = [
+  scheduleSpring21Mon,
+  scheduleSpring21Tue,
+  scheduleSpring21Mon, // should never be used for Wed
+  scheduleSpring21Thu,
+  scheduleSpring21Fri,
+  ];
 
 // // first check for a special schedule, otherwise return a regular schedule
 // function scheduleLookup() {
