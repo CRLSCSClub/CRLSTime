@@ -68,7 +68,7 @@ function drawUpNext(perIndex) {
   if (nextLabel === "after") {
     nextLabel = "";
   }
-  if (nextLabel.length < 3) {
+  if (nextLabel.length < 4) {
     ctx.font = "bold " + radius*0.15 + "px arial";
   }
   ctx.fillText(nextLabel, lowerRightX, lowerRightY);
