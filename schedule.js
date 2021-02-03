@@ -179,22 +179,6 @@ var scheduleSpring21Tue = [
   ["end", 23, 59]
 ];
 
-var scheduleSpring21Wed = [
-  ["morning", 0, 0],
-  ["before", 7, 35],
-  ["TAT", 8, 35],
-  ["Break", 9, 30],
-  ["CM", 9, 35],
-  ["Staff1", 10, 0],
-  ["Staff2", 10, 50],
-  ["Lunch", 11, 45],
-  ["Staff3", 12, 15],
-  ["Staff4", 13 00],
-  ["Adv", 13, 50],
-  ["after", 15, 00],
-  ["end", 23, 59]
-];
-
 var scheduleSpring21Thu = [
   ["morning", 0, 0],
   ["before", 7, 35],
@@ -1060,7 +1044,7 @@ var schoolHolidays = [
   [6, 18]
 ];
 
-var blackDays = [ // not used spring 2021
+var blackDays = [
   [11, 20],
 ];
 
@@ -1072,7 +1056,7 @@ var specialSchedules = [
 var regularSchedules = [
   scheduleSpring21Mon,
   scheduleSpring21Tue,
-  scheduleSpring21Wed,
+  scheduleSpring21Mon, // there was a comment here
   scheduleSpring21Thu,
   scheduleSpring21Fri,
   ];
@@ -1135,8 +1119,8 @@ function isHoliday() {
 }
 
 function isWeekend() {
-//   return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in Fall n2020-21
-  return today.getDay() === 0 || today.getDay() === 6;  // Sunday & Saturday
+  return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in Fall n2020-21
+//   return today.getDay() === 0 || today.getDay() === 6;  // Sunday & Saturday
 }
 
 function getPeriodIndex() {
