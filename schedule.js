@@ -179,6 +179,22 @@ var scheduleSpring21Tue = [
   ["end", 23, 59]
 ];
 
+var scheduleSpring21Wed = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["TAT", 8, 35],
+  ["Break", 9, 30],
+  ["CM", 9, 35],
+  ["Staff1", 10, 0],
+  ["Staff2", 10, 50],
+  ["Lunch", 11, 45],
+  ["Staff3", 12, 15],
+  ["Staff4", 13 00],
+  ["Adv", 13, 50],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
 var scheduleSpring21Thu = [
   ["morning", 0, 0],
   ["before", 7, 35],
@@ -1027,6 +1043,7 @@ var schoolHolidays = [
   [12, 31],
   [1, 1],
   [1, 18],
+  [2, 3],
   [2, 15],
   [2, 16],
   [2, 17],
@@ -1042,7 +1059,8 @@ var schoolHolidays = [
   [5, 31],
   [6, 18]
 ];
-var blackDays = [
+
+var blackDays = [ // not used spring 2021
   [11, 20],
 ];
 
@@ -1054,7 +1072,7 @@ var specialSchedules = [
 var regularSchedules = [
   scheduleSpring21Mon,
   scheduleSpring21Tue,
-  scheduleSpring21Mon, // should never be used for Wed
+  scheduleSpring21Wed,
   scheduleSpring21Thu,
   scheduleSpring21Fri,
   ];
@@ -1092,6 +1110,7 @@ var lunchMode = "A";
 if(localStorage.lunch) {
   lunchMode = localStorage.lunch;
 }
+
 function getSchedule(key) {
   if (key === "A")
     return scheduleA;
@@ -1100,7 +1119,9 @@ function getSchedule(key) {
   if (key === "C")
     return scheduleC;
 }
+
 schedule = getSchedule(lunchMode);
+
 function isHoliday() {
   for (i = 0; i < schoolHolidays.length; i++) {
     if (schoolHolidays[i][0] === today.getMonth() + 1 && schoolHolidays[i][1] === today.getDate()) {
@@ -1112,10 +1133,12 @@ function isHoliday() {
   }
   return false;
 }
+
 function isWeekend() {
-  return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in 2020-21
-  // return today.getDay() === 0 || today.getDay() === 6;  // Sunday & Saturday
+//   return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in Fall n2020-21
+  return today.getDay() === 0 || today.getDay() === 6;  // Sunday & Saturday
 }
+
 function getPeriodIndex() {
   var now = ServerDate;
   for (i = 0; true; i++) {
@@ -1124,6 +1147,7 @@ function getPeriodIndex() {
     }
   }
 }
+
 function getPeriodLength(i) {
   return (getStart(schedule[i + 1]) - getStart(schedule[i])) / 60000; // in minutes
 }
