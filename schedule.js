@@ -1125,11 +1125,13 @@ function isWeekend() {
 
 function getPeriodIndex() {
   var now = ServerDate;
-  for (i = 0; true; i++) {
+//   for (i = 0; true; i++) {
+  for (i = 0; i < schedule.length - 1; i++) { 
     if (now > getStart(schedule[i]) && now < getStart(schedule[i + 1])) {
       return i;
     }
   }
+  return 0;
 }
 
 function getPeriodLength(i) {
