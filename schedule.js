@@ -195,6 +195,23 @@ var scheduleSpring21Thu = [
   ["end", 23, 59]
 ];
 
+var thurPlusTeenHealth = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["3", 8, 35],
+  ["Passing", 9, 55],
+  ["4", 10, 05],
+  ["T.H.S.", 11, 0],
+  ["Passing", 11, 25],
+  ["Study 3", 11, 35],
+  ["Lunch", 12, 15],
+  ["1", 13, 15],
+  ["Break", 14, 05],
+  ["2", 14, 10],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
 var scheduleSpring21Fri = [
   ["morning", 0, 0],
   ["before", 7, 35],
@@ -1050,7 +1067,8 @@ var blackDays = [
 
 var specialSchedules = [
    [2, 1, scheduleRemoteFeb1],
-  [2, 2, scheduleRemoteFeb2]
+  [2, 2, scheduleRemoteFeb2],
+  [5, 6, thurPlusTeenHealth]
   ];
 
 var regularSchedules = [
