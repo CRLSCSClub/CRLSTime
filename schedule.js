@@ -1,21 +1,33 @@
-// Lunch
+// Lunch (old schedule)
+// function advanceLunchMode() {
+//   if (lunchMode === "A") {
+//     lunchMode = "B";
+//     schedule = scheduleB;
+//   }
+//   else if (lunchMode === "B") {
+//     lunchMode = "C";
+//     schedule = scheduleC;
+//     }
+//   else if (lunchMode === "C") {
+//     lunchMode = "A";
+//     schedule = scheduleA;
+//   }
+//   localStorage.setItem("lunch", lunchMode);
+//   drawLunchButton();
+// }
+// Lunch for 2021 May 10 - June 23, just two lunches
 function advanceLunchMode() {
   if (lunchMode === "A") {
     lunchMode = "B";
-    schedule = scheduleB;
+    schedule = end2021scheduleB;
   }
   else if (lunchMode === "B") {
-    lunchMode = "C";
-    schedule = scheduleC;
-    }
-  else if (lunchMode === "C") {
     lunchMode = "A";
-    schedule = scheduleA;
+    schedule = end2021scheduleA;
   }
   localStorage.setItem("lunch", lunchMode);
   drawLunchButton();
 }
-
 var today = new Date();
 /////////////// schedule types //////////////////
 // Table of period labels and start times
@@ -77,6 +89,266 @@ var scheduleC = [
 ];
 
 // COVID schedules   vvvvvvvvvvvvvvvvv
+var studyLookup = ["Study 1", "Study 2", "-", "Study 3", "Study 4"];
+
+var end2021scheduleA = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["1", 8, 35],
+  ["1-2", 9, 45],
+  ["2", 9, 50],
+  ["LA", 11, 0],
+  ["LA-3", 11, 30],
+  ["3", 11, 35],
+  ["3-4", 12, 45],
+  ["4", 12, 50],
+  ["Passing", 14, 0],
+  [studyLookup[today.getDay() - 1], 14, 5],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var end2021scheduleB = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["1", 8, 35],
+  ["1-2", 9, 45],
+  ["2", 9, 50],
+  ["2-3", 11, 0],
+  ["3", 11, 5],
+  ["LB", 12, 15],
+  ["LB-4", 12, 45],
+  ["4", 12, 50],
+  ["Passing", 14, 0],
+  [studyLookup[today.getDay() - 1], 14, 5],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var end2021WedSchedA = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["CM", 8, 35],
+  ["CM-1", 9, 0],
+  ["1", 9, 5],
+  ["1-2", 9, 55],
+  ["2", 10, 0],
+  ["LA", 10, 50],
+  ["LA-3", 11, 20],
+  ["3", 11, 25],
+  ["3-4", 12, 15],
+  ["4", 12, 20],
+  ["Passing", 13, 10],
+  ["Adv", 13, 15],
+  ["after", 14, 40],
+  ["end", 23, 59]
+];
+
+var end2021WedSchedB = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["CM", 8, 35],
+  ["CM-1", 9, 0],
+  ["1", 9, 5],
+  ["1-2", 9, 55],
+  ["2", 10, 0],
+  ["2-3", 10, 50],
+  ["3", 10, 55],
+  ["LB", 11, 45],
+  ["LB-4", 12, 15],
+  ["4", 12, 20],
+  ["Passing", 13, 10],
+  ["Adv", 13, 15],
+  ["after", 14, 40],
+  ["end", 23, 59]
+];
+
+var may122021scheduleA = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["CM-MCAS", 8, 35],
+  ["CM-1", 9, 35],
+  ["1", 9, 40],
+  ["1-2", 10, 20],
+  ["2", 10, 25],
+  ["LA", 11, 5],
+  ["LA-3", 11, 35],
+  ["3", 11, 40],
+  ["3-4", 12, 20],
+  ["4", 12, 25],
+  ["Passing", 13, 5],
+  ["Adv", 13, 10],
+  ["after", 14, 35],
+  ["end", 23, 59]
+];
+
+var may122021scheduleB = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["CM-MCAS", 8, 35],
+  ["CM-1", 9, 35],
+  ["1", 9, 40],
+  ["1-2", 10, 20],
+  ["2", 10, 25],
+  ["2-3", 11, 5],
+  ["3", 11, 10],
+  ["LB", 11, 50],
+  ["LB-4", 12, 20],
+  ["4", 12, 25],
+  ["Passing", 13, 5],
+  ["Adv", 13, 10],
+  ["after", 14, 35],
+  ["end", 23, 59]
+];
+
+var may242021schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["MCAS", 8, 35],
+  ["MCAS-L", 12, 15],
+  ["Lunch", 12, 20],
+  ["L-1", 12, 50],
+  ["1", 12, 55],
+  ["1-2", 13, 55],
+  ["2", 14, 0],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var may252021schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["MCAS", 8, 35],
+  ["MCAS-L", 12, 15],
+  ["Lunch", 12, 20],
+  ["L-3", 12, 50],
+  ["3", 12, 55],
+  ["3-4", 13, 55],
+  ["4", 14, 0],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var may272021schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["MCAS", 8, 35],
+  ["MCAS-L", 11, 35],
+  ["Lunch", 11, 40],
+  ["L-3", 12, 10],
+  ["3", 12, 15],
+  ["3-4", 13, 35],
+  ["4", 13, 40],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var may282021schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["MCAS", 8, 35],
+  ["MCAS-L", 11, 35],
+  ["Lunch", 11, 40],
+  ["L-1", 12, 10],
+  ["1", 12, 15],
+  ["1-2", 13, 35],
+  ["2", 13, 40],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var june32021schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["MCAS", 8, 35],
+  ["MCAS-L", 11, 35],
+  ["Lunch", 11, 40],
+  ["L-2", 12, 10],
+  ["2", 12, 15],
+  ["2-4", 13, 35],
+  ["4", 13, 40],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var june42021schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["MCAS", 8, 35],
+  ["MCAS-L", 11, 35],
+  ["Lunch", 11, 40],
+  ["L-1", 12, 10],
+  ["1", 12, 15],
+  ["1-3", 13, 35],
+  ["3", 13, 40],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var june152021schedule = [
+  ["morning", 0, 0],
+  ["before", 8, 0],
+  ["Study", 9, 0],
+  ["Pass-2", 10, 0],
+  ["2", 10, 20],
+  ["Lunch", 12, 0],
+  ["4", 13, 0],
+  ["after", 14, 40],
+  ["end", 23, 59]
+];
+
+var june162021schedule = [
+  ["morning", 0, 0],
+  ["before", 8, 0],
+  ["Study", 9, 0],
+  ["Pass-1", 10, 0],
+  ["1", 10, 20],
+  ["Lunch", 12, 0],
+  ["3", 13, 0],
+  ["after", 14, 40],
+  ["end", 23, 59]
+];
+
+var june172021schedule = [
+  ["morning", 0, 0],
+  ["before", 8, 0],
+  ["Study", 9, 0],
+  ["Pass-1", 10, 0],
+  ["1", 10, 20],
+  ["Lunch", 12, 0],
+  ["3", 13, 0],
+  ["after", 14, 40],
+  ["end", 23, 59]
+];
+
+var june212021schedule = [
+  ["morning", 0, 0],
+  ["before", 8, 0],
+  ["Study", 9, 0],
+  ["Pass-2", 10, 0],
+  ["2", 10, 20],
+  ["Lunch", 12, 0],
+  ["4", 13, 0],
+  ["after", 14, 40],
+  ["end", 23, 59]
+];
+
+
+var june232021schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["1", 8, 35],
+  ["1-2", 9, 15],
+  ["2", 9, 20],
+  ["2-3", 10, 0],
+  ["3", 10, 5],
+  ["3-4", 10, 45],
+  ["4", 10, 50],
+  ["Woohoo", 11, 30],
+  ["after", 12, 30],
+  ["end", 23, 59]
+];
+
 var scheduleFall2020remote = [
   ["morning", 0, 0],
   ["before", 7, 35],
@@ -1062,31 +1334,63 @@ var schoolHolidays = [
 ];
 
 var blackDays = [
-  [11, 20],
+  [5, 11],
+  [5, 14],
+  [5, 18],
+  [5, 19],
+  [5, 21],
+  [5, 25],
+  [5, 28],
+  [6, 1],
+  [6, 2],
+  [6, 4],
+  [6, 8],
+  [6, 11],
+  [6, 15],
+  [6, 17],
+  [6, 22]
 ];
 
 var specialSchedules = [
-   [2, 1, scheduleRemoteFeb1],
-  [2, 2, scheduleRemoteFeb2],
-  [5, 6, thurPlusTeenHealth]
+   [5, 12, may122021scheduleA, may122021scheduleB],
+  [5, 24, may242021schedule, may242021schedule],  
+  [5, 25, may252021schedule, may252021schedule],
+  [5, 27, may272021schedule, may272021schedule],
+  [5, 28, may282021schedule, may282021schedule],
+  [6, 3, june32021schedule, june32021schedule],
+  [6, 4, june42021schedule, june42021schedule],
+  [6, 15, june152021schedule, june152021schedule],
+  [6, 16, june162021schedule, june162021schedule],
+  [6, 17, june172021schedule, june172021schedule],
+  [6, 21, june212021schedule, june212021schedule],
+  [6, 23, june232021schedule, june232021schedule]
   ];
 
+// var regularSchedules = [
+//   scheduleSpring21Mon,
+//   scheduleSpring21Tue,
+//   scheduleSpring21Mon, // there was a comment here
+//   scheduleSpring21Thu,
+//   scheduleSpring21Fri,
+//   ];
+
 var regularSchedules = [
-  scheduleSpring21Mon,
-  scheduleSpring21Tue,
-  scheduleSpring21Mon, // there was a comment here
-  scheduleSpring21Thu,
-  scheduleSpring21Fri,
+  [end2021scheduleA, end2021scheduleB],
+  [end2021scheduleA, end2021scheduleB],
+  [end2021WedSchedA, end2021WedSchedB],
+  [end2021scheduleA, end2021scheduleB],
+  [end2021scheduleA, end2021scheduleB]
   ];
 
 // first check for a special schedule, otherwise return a regular schedule
-function scheduleLookup() {
+// offset: 2 for A lunch, 3 for B lunch (index in special schedule table)
+function scheduleLookup(offset) {
   for (i = 0; i < specialSchedules.length; i++) {
     if (specialSchedules[i][0] === today.getMonth() + 1 && specialSchedules[i][1] === today.getDate()) {
-       return specialSchedules[i][2];
+       return specialSchedules[i][offset];
      }
    }
-   return regularSchedules[today.getDay() - 1]; // Mon will be 0
+   return regularSchedules[today.getDay() - 1][offset - 2]; // Mon will be 0
 }
 
 function getStart(block) {
@@ -1104,9 +1408,9 @@ function getStart(block) {
 //     scheduleB = scheduleRemoteFeb1;
 //     scheduleC = scheduleRemoteFeb1;
 // automation attempt:
-    scheduleA = scheduleLookup();
-    scheduleB = scheduleLookup();
-    scheduleC = scheduleLookup();
+//     scheduleA = scheduleLookup();  scheduleLookup now called in getSchedule function
+//     scheduleB = scheduleLookup();
+//     scheduleC = scheduleLookup();
 
 var lunchMode = "A";
 if(localStorage.lunch) {
@@ -1115,11 +1419,13 @@ if(localStorage.lunch) {
 
 function getSchedule(key) {
   if (key === "A")
-    return scheduleA;
+    return scheduleLookup(2);
+//     return scheduleA;
   if (key === "B")
-    return scheduleB;
-  if (key === "C")
-    return scheduleC;
+    return scheduleLoopup(3);
+//     return scheduleB;
+//   if (key === "C")
+//     return scheduleC;
 }
 
 schedule = getSchedule(lunchMode);
@@ -1137,8 +1443,8 @@ function isHoliday() {
 }
 
 function isWeekend() {
-  return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in Fall n2020-21
-//   return today.getDay() === 0 || today.getDay() === 6;  // Sunday & Saturday
+//   return today.getDay() === 0 || today.getDay() === 6 || today.getDay() === 3;  //No school time on Wed in Fall n2020-21
+  return today.getDay() === 0 || today.getDay() === 6;  // Sunday & Saturday
 }
 
 function getPeriodIndex() {
@@ -1158,13 +1464,13 @@ function getPeriodLength(i) {
 
 function isBlackDay() {
 // when looking up Black days in a table 
-//   for (i = 0; i < blackDays.length; i++) {
-//     if (blackDays[i][0] === today.getMonth() + 1 && blackDays[i][1] === today.getDate()) {
-//       return true;
-//     }
-//   }
-//   return false;
+  for (i = 0; i < blackDays.length; i++) {
+    if (blackDays[i][0] === today.getMonth() + 1 && blackDays[i][1] === today.getDate()) {
+      return true;
+    }
+  }
+  return false;
   
 // for Spring 21 (COVID) Black days are always Tue and Fri
-  return today.getDay() === 2 || today.getDay() === 5;
+//   return today.getDay() === 2 || today.getDay() === 5;
 }
