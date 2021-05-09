@@ -48,6 +48,7 @@ function drawSettingsButton() {
 }
 
 // this function not used during COVID (call commented out in drawClock)
+// revived for end of 2020-2021 for A & B lunch
 function drawLunchButton() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
   ctx.font = radius*0.25 + "px arial";
@@ -58,6 +59,7 @@ function drawLunchButton() {
 }
 
 // this function will used used to indicate next block in place of lunch button
+// not called at the end of 2021 - replaced by revived lunch button
 function drawUpNext(perIndex) {
   drawSmallCircle(lowerRightX, lowerRightY, smRadius * .95, '#DDD');
   ctx.font = "bold " + radius*0.07 + "px arial";
@@ -168,8 +170,8 @@ function drawClock() {
       drawPeriodLabel(ctx, radius, periodLabel);
       drawSpecialLabel(ctx, radius, "");
       drawSchoolTime(ctx, radius, periodIndex);
-      // drawLunchButton(); // comment out for all school lunch and remote teaching
-      drawUpNext(periodIndex);
+      drawLunchButton(); // comment out for remote teaching
+//       drawUpNext(periodIndex);
       drawBSButton();
   }
 }
