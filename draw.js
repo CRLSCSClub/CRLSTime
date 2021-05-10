@@ -149,9 +149,6 @@ imageObj.addEventListener('load', function() {
 function drawClock() {
   drawFace(ctx, radius);
   ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
-  var periodIndex = getPeriodIndex();
-  var periodLabel = schedule[periodIndex][0];
-  var periodLength = getPeriodLength(periodIndex);
   // when to display a normal clock
   if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
       drawNumbersNormal(ctx, radius, 1, 12);
@@ -161,6 +158,9 @@ function drawClock() {
       removeBSButton();
   } else // display school time
   {
+      var periodIndex = getPeriodIndex();
+      var periodLabel = schedule[periodIndex][0];
+      var periodLength = getPeriodLength(periodIndex);
       var interval = 1;
       if (periodLength > 15) interval = 2;
       if (periodLength > 30) interval = 5;
