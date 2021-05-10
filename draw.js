@@ -50,7 +50,7 @@ function drawSettingsButton() {
 // this function not used during COVID (call commented out in drawClock)
 // revived for end of 2020-2021 for A & B lunch
 function drawLunchButton() {
-  drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
+  drawSmallCircle(lowerRightX, lowerRightY, smRadius * .95, '#DDD');
   ctx.font = radius*0.25 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
