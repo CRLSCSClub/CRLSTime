@@ -55,7 +55,7 @@ function drawLunchButton() {
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   ctx.fillStyle = '#888';
-  ctx.fillText(lunchMode, lowerLeftX, lowerLeftY);
+  ctx.fillText(lunchMode, lowerRightX, lowerRightY);
 }
 
 // this function will used used to indicate next block in place of lunch button
