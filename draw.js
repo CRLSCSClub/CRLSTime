@@ -50,7 +50,7 @@ function drawSettingsButton() {
 // this function not used during COVID (call commented out in drawClock)
 // revived for end of 2020-2021 for A & B lunch
 function drawLunchButton() {
-  drawSmallCircle(lowerRightX, lowerRightY, smRadius * .95, '#DDD');
+  drawSmallCircle(lowerLeftX, lowerLeftY, smRadius * .95, '#DDD');
   ctx.font = radius*0.25 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
@@ -146,52 +146,33 @@ imageObj.addEventListener('load', function() {
   setInterval(drawClock, 1000);
 });
 
-function displayNormalTime()
-{
+function drawClock() {
+  drawFace(ctx, radius);
+  ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
+  var periodIndex = getPeriodIndex();
+  var periodLabel = schedule[periodIndex][0];
+  var periodLength = getPeriodLength(periodIndex);
+  // when to display a normal clock
+  if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
       drawNumbersNormal(ctx, radius, 1, 12);
       drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
       removeLunchButton();
       removeBSButton();
-}
-
-function drawClock()
-{
-  drawFace(ctx, radius);
-  ctx.drawImage(imageObj, -radius*1.1/2, -1/2 * radius, radius, 1.27 * radius);
-  
-    // debugging
-  displayNormalTime();
-  return;
-  
-  // when to display a normal clock
-  if (isWeekend() || isHoliday()){
-      displayNormalTime();
-  }
-  else // its a school day
+  } else // display school time
   {
-      var periodIndex = getPeriodIndex();
-      var periodLabel = schedule[periodIndex][0];
-      var periodLength = getPeriodLength(periodIndex);
-      if (periodLabel === "morning" || periodLabel === "after")
-      {
-        displayNormalTime();
-      }
-      else // display school time
-      {
-        var interval = 1;
-        if (periodLength > 15) interval = 2;
-        if (periodLength > 30) interval = 5;
-        if (periodLength > 75) interval = 10;
-        if (periodLength > 120) interval = 15;
-        drawNumbersCountDown(ctx, radius, interval, periodLength);
-        drawPeriodLabel(ctx, radius, periodLabel);
-        drawSpecialLabel(ctx, radius, "");
-        drawSchoolTime(ctx, radius, periodIndex);
-        drawLunchButton(); // comment out for remote teaching
+      var interval = 1;
+      if (periodLength > 15) interval = 2;
+      if (periodLength > 30) interval = 5;
+      if (periodLength > 75) interval = 10;
+      if (periodLength > 120) interval = 15;
+      drawNumbersCountDown(ctx, radius, interval, periodLength);
+      drawPeriodLabel(ctx, radius, periodLabel);
+      drawSpecialLabel(ctx, radius, "");
+      drawSchoolTime(ctx, radius, periodIndex);
+      drawLunchButton(); // comment out for remote teaching
 //       drawUpNext(periodIndex);
-        drawBSButton();
-     }
+      drawBSButton();
   }
 }
 
