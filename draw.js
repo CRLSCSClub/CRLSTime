@@ -116,8 +116,8 @@ function isInside(pos, rect){
 
 //The rectangle should have x,y,width,height properties
 var rect = {
-    x:lowerLeftX - smRadius,
-    y:lowerLeftY - smRadius,
+    x:lowerRightX - smRadius,
+    y:lowerRightY - smRadius,
     width:smRadius * 2,
     height:smRadius * 2
 };
