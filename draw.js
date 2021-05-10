@@ -191,6 +191,7 @@ function drawClock()
         drawLunchButton(); // comment out for remote teaching
 //       drawUpNext(periodIndex);
         drawBSButton();
+     }
   }
 }
 
