@@ -1422,7 +1422,7 @@ function getSchedule(key) {
     return scheduleLookup(2);
 //     return scheduleA;
   if (key === "B")
-    return scheduleLoopup(3);
+    return scheduleLookup(3);
 //     return scheduleB;
 //   if (key === "C")
 //     return scheduleC;
