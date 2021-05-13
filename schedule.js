@@ -1329,7 +1329,7 @@ var schoolHolidays = [
   [4, 21],
   [4, 22],
   [4, 23],
-  [5, 13],
+//  [5, 13],
   [5, 31],
   [6, 18]
 ];
@@ -1354,6 +1354,7 @@ var blackDays = [
 
 var specialSchedules = [
    [5, 12, may122021scheduleA, may122021scheduleB],
+    [5, 13, may122021scheduleA, may122021scheduleB],
   [5, 24, may242021schedule, may242021schedule],  
   [5, 25, may252021schedule, may252021schedule],
   [5, 27, may272021schedule, may272021schedule],
