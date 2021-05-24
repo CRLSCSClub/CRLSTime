@@ -166,6 +166,7 @@ function drawClock() {
       if (periodLength > 30) interval = 5;
       if (periodLength > 75) interval = 10;
       if (periodLength > 120) interval = 15;
+      if (periodLength > 180) interval = 20;
       drawNumbersCountDown(ctx, radius, interval, periodLength);
       drawPeriodLabel(ctx, radius, periodLabel);
       drawSpecialLabel(ctx, radius, "");
