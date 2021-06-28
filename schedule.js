@@ -1433,6 +1433,9 @@ function getSchedule(key) {
 schedule = getSchedule(lunchMode);
 
 function isHoliday() {
+  // for summer just return true
+  return true;
+  // code below this line will be unreachable during summertime
   for (i = 0; i < schoolHolidays.length; i++) {
     if (schoolHolidays[i][0] === today.getMonth() + 1 && schoolHolidays[i][1] === today.getDate()) {
       return true;
