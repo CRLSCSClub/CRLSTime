@@ -134,11 +134,48 @@ var scheduleWedC = [
   ["end", 23, 59]
 ];
 
-var schedule992021 = [
+var schedule992021Frosh = [
   ["morning", 0, 0],
-  ["before", 6, 55],
-  ["CM + L", 8, 35],
-  ["-> 1", 12, 0],
+  ["before", 7, 30],
+  ["CM", 8, 35],
+  ["Lunch", 11, 0],
+  ["CM", 11, 30],
+  ["CM-1", 12, 0],
+  ["1", 12, 5],
+  ["1-2", 12, 45],
+  ["2", 12, 50],
+  ["2-3", 13, 30],
+  ["3", 13, 35],
+  ["3-4", 14, 15],
+  ["4", 14, 20],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var schedule992021Soph = [
+  ["morning", 0, 0],
+  ["before", 7, 30],
+  ["CM", 9, 0],
+  ["Lunch", 11, 0],
+  ["CM", 11, 30],
+  ["CM-1", 12, 0],
+  ["1", 12, 5],
+  ["1-2", 12, 45],
+  ["2", 12, 50],
+  ["2-3", 13, 30],
+  ["3", 13, 35],
+  ["3-4", 14, 15],
+  ["4", 14, 20],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var schedule992021Upper = [
+  ["morning", 0, 0],
+  ["before", 7, 30],
+  ["CM", 10, 30],
+  ["Lunch", 11, 30],
+  ["L-1", 12, 0],
   ["1", 12, 5],
   ["1-2", 12, 45],
   ["2", 12, 50],
@@ -1476,7 +1513,7 @@ var blackDays = [
 ];
 
 var specialSchedules = [
-  [9, 9, schedule992021, schedule992021, schedule992021],
+  [9, 9, schedule992021Frosh, schedule992021Soph, schedule992021Upper],
   [9, 10, scheduleWedA, scheduleWedB, scheduleWedC],
   [9, 13, scheduleWedA, scheduleWedB, scheduleWedC],
   [9, 14, scheduleWedA, scheduleWedB, scheduleWedC],  
