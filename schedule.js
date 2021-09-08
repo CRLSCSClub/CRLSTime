@@ -2,16 +2,17 @@
 function advanceLunchMode() {
   if (lunchMode === "A") {
     lunchMode = "B";
-    schedule = scheduleB;
+//     schedule = scheduleB;
   }
   else if (lunchMode === "B") {
     lunchMode = "C";
-    schedule = scheduleC;
+//     schedule = scheduleC;
     }
   else if (lunchMode === "C") {
     lunchMode = "A";
-    schedule = scheduleA;
+//     schedule = scheduleA;
   }
+  schedule = getSchedule(lunchMode);
   localStorage.setItem("lunch", lunchMode);
   drawLunchButton();
 }
