@@ -134,6 +134,59 @@ var scheduleWedC = [
   ["end", 23, 59]
 ];
 
+var scheduleMonConfA = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["Conf", 8, 30],
+  ["LA", 11, 30],
+  ["LA-3", 12, 0],
+  ["3", 12, 5],
+  ["3-4", 13, 30],
+  ["4", 13, 35],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var scheduleMonConfB = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["Conf", 8, 30],
+  ["-> 3", 11, 30],
+  ["3", 11, 32],
+  ["LB", 12, 17],
+  ["LB-3", 12, 47],
+  ["3", 12, 50],
+  ["3-4", 13, 30],
+  ["4", 13, 35],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var scheduleMonConfC = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["Conf", 8, 30],
+  ["-> 3", 11, 30],
+  ["3", 11, 35],
+  ["LC", 13, 0],
+  ["LC-4", 13, 30],
+  ["4", 13, 35],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var scheduleThuConfNoLunch = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["1", 8, 35],
+  ["1-2", 10, 0],
+  ["2", 10, 5],
+  ["Lunch", 11, 30],
+  ["Conf", 12, 00],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
 var schedule992021Frosh = [
   ["morning", 0, 0],
   ["before", 7, 30],
@@ -1462,6 +1515,7 @@ var schedule992021Upper = [
 var schoolHolidays = [
   [9, 16],
   [10, 11],
+  [10, 26], // not really a holiday... no classes PSAT
   [11, 11],
   [11, 25],
   [11, 26],
@@ -1517,7 +1571,9 @@ var specialSchedules = [
   [9, 10, scheduleWedA, scheduleWedB, scheduleWedC],
   [9, 13, scheduleWedA, scheduleWedB, scheduleWedC],
   [9, 14, scheduleWedA, scheduleWedB, scheduleWedC],  
-  [9, 15, scheduleWedA, scheduleWedB, scheduleWedC]
+  [9, 15, scheduleWedA, scheduleWedB, scheduleWedC],
+  [10, 25, scheduleMonConfA, scheduleMonConfB, scheduleMonConfC],
+  [10, 28, scheduleThuConfNoLunch, scheduleThuConfNoLunch, scheduleThuConfNoLunch]
 ];
 
 // var regularSchedules = [
