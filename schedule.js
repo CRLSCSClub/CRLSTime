@@ -187,6 +187,22 @@ var scheduleThuConfNoLunch = [
   ["end", 23, 59]
 ];
 
+var schedule11242021 = [
+  ["morning", 0, 0],
+  ["before", 7, 30],
+  ["1", 8, 35],
+  ["1-CM", 9, 15],
+  ["CM", 9, 20],
+  ["CM-2", 9, 35],
+  ["2", 9, 40],
+  ["2-3", 10, 20],
+  ["3", 10, 25],
+  ["3-4", 11, 5],
+  ["4", 11, 10],
+  ["after", 11, 50],
+  ["end", 23, 59]
+  ];
+
 var schedule992021Frosh = [
   ["morning", 0, 0],
   ["before", 7, 30],
@@ -1573,7 +1589,8 @@ var specialSchedules = [
   [9, 14, scheduleWedA, scheduleWedB, scheduleWedC],  
   [9, 15, scheduleWedA, scheduleWedB, scheduleWedC],
   [10, 25, scheduleMonConfA, scheduleMonConfB, scheduleMonConfC],
-  [10, 28, scheduleThuConfNoLunch, scheduleThuConfNoLunch, scheduleThuConfNoLunch]
+  [10, 28, scheduleThuConfNoLunch, scheduleThuConfNoLunch, scheduleThuConfNoLunch],
+  [11, 24, schedule11242021, schedule11242021, schedule11242021]
 ];
 
 // var regularSchedules = [
