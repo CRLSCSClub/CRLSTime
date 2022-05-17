@@ -335,6 +335,32 @@ var schedule01172022C = [
   ["end", 23, 59]
 ];
 
+var may182022schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["MCAS", 8, 35],
+  ["Lunch", 11, 35],
+  ["L-3", 12, 10],
+  ["3", 12, 15],
+  ["3-4", 13, 35],
+  ["4", 13, 40],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
+var may172022schedule = [
+  ["morning", 0, 0],
+  ["before", 7, 35],
+  ["MCAS", 8, 35],
+  ["Lunch", 11, 35],
+  ["L-1", 12, 10],
+  ["1", 12, 15],
+  ["1-2", 13, 35],
+  ["2", 13, 40],
+  ["after", 15, 00],
+  ["end", 23, 59]
+];
+
 var mar222022schedule = [
   ["morning", 0, 0],
   ["before", 7, 35],
@@ -1727,7 +1753,9 @@ var specialSchedules = [
   [3, 22, mar222022schedule, mar222022schedule, mar222022schedule],
   [3, 23, mar232022schedule, mar232022schedule, mar232022schedule],
   [3, 24, mar242022schedule, mar242022schedule, mar242022schedule],
-  [3, 25, mar252022schedule, mar252022schedule, mar252022schedule]
+  [3, 25, mar252022schedule, mar252022schedule, mar252022schedule],
+  [5, 17, may172022schedule, may172022schedule, may172022schedule],
+  [5, 18, may182022schedule, may182022schedule, may182022schedule]
 ];
 
 // var regularSchedules = [
