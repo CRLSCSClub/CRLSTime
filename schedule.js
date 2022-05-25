@@ -1856,7 +1856,6 @@ var specialSchedules = [
   [3, 25, mar252022schedule, mar252022schedule, mar252022schedule],
   [5, 17, may172022schedule, may172022schedule, may172022schedule],
   [5, 18, may182022schedule, may182022schedule, may182022schedule],
-  [5, 25, may252022scheduleA, may252022scheduleB, may252022scheduleC],
   [5, 26, may262022scheduleA, may262022scheduleB, may262022scheduleC]
 ];
 
