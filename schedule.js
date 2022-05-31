@@ -134,7 +134,7 @@ var scheduleWedC = [
   ["end", 23, 59]
 ];
 
-var may252022scheduleA = [
+var jun012022scheduleA = [
   ["morning", 0, 0],
   ["before", 6, 55],
   ["1", 8, 35],
@@ -151,7 +151,7 @@ var may252022scheduleA = [
   ["end", 23, 59]
   ];
 
-var may252022scheduleB = [
+var jun012022scheduleB = [
   ["morning", 0, 0],
   ["before", 6, 55],
   ["1", 8, 35],
@@ -170,7 +170,7 @@ var may252022scheduleB = [
   ["end", 23, 59]
   ];
 
-var may252022scheduleC = [
+var jun012022scheduleC = [
   ["morning", 0, 0],
   ["before", 6, 55],
   ["1", 8, 35],
@@ -1859,7 +1859,8 @@ var specialSchedules = [
   [3, 25, mar252022schedule, mar252022schedule, mar252022schedule],
   [5, 17, may172022schedule, may172022schedule, may172022schedule],
   [5, 18, may182022schedule, may182022schedule, may182022schedule],
-  [5, 26, may262022scheduleA, may262022scheduleB, may262022scheduleC]
+  [5, 26, may262022scheduleA, may262022scheduleB, may262022scheduleC],
+  [6, 1, jun012022scheduleA, jun012022scheduleB, jun012022scheduleC]
 ];
 
 // var regularSchedules = [
