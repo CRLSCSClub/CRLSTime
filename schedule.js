@@ -81,13 +81,13 @@ var scheduleC = [
   ["end", 23, 59]
 ];
 
-var scheduleWedA = [
+var scheduleThuA = [
   ["morning", 0, 0],
   ["before", 6, 55],
   ["1", 8, 35],
-  ["1-CM", 9, 50],
-  ["CM", 9, 55],
-  ["CM-2", 10, 30],
+  ["1-FPB", 9, 50],
+  ["FPB", 9, 55],
+  ["FPB-2", 10, 30],
   ["2", 10, 35],
   ["LA", 11, 50],
   ["LA-3", 12, 20],
@@ -98,13 +98,13 @@ var scheduleWedA = [
   ["end", 23, 59]
 ];
 
-var scheduleWedB = [
+var scheduleThuB = [
   ["morning", 0, 0],
   ["before", 6, 55],
   ["1", 8, 35],
-  ["1-CM", 9, 50],
-  ["CM", 9, 55],
-  ["CM-2", 10, 30],
+  ["1-FPB", 9, 50],
+  ["FPB", 9, 55],
+  ["FPB-2", 10, 30],
   ["2", 10, 35],
   ["2-3", 11, 50],
   ["3", 11, 52],
@@ -117,13 +117,66 @@ var scheduleWedB = [
   ["end", 23, 59]
 ];
 
-var scheduleWedC = [
+var scheduleThuC = [
   ["morning", 0, 0],
   ["before", 6, 55],
   ["1", 8, 35],
-  ["1-CM", 9, 50],
-  ["CM", 9, 55],
-  ["CM-2", 10, 30],
+  ["1-FPB", 9, 50],
+  ["FPB", 9, 55],
+  ["FPB-2", 10, 30],
+  ["2", 10, 35],
+  ["2-3", 11, 50],
+  ["3", 11, 55],
+  ["LC", 13, 10],
+  ["LC-4", 13, 40],
+  ["4", 13, 45],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var scheduleFriA = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["1", 8, 35],
+  ["1-FBB", 9, 50],
+  ["FBB", 9, 55],
+  ["FBB-2", 10, 30],
+  ["2", 10, 35],
+  ["LA", 11, 50],
+  ["LA-3", 12, 20],
+  ["3", 12, 25],
+  ["3-4", 13, 40],
+  ["4", 13, 45],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var scheduleFriB = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["1", 8, 35],
+  ["1-FBB", 9, 50],
+  ["FBB", 9, 55],
+  ["FBB-2", 10, 30],
+  ["2", 10, 35],
+  ["2-3", 11, 50],
+  ["3", 11, 52],
+  ["LB", 12, 32],
+  ["LB-3", 13, 2],
+  ["3", 13, 5],
+  ["3-4", 13, 40],
+  ["4", 13, 45],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+var scheduleFriC = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["1", 8, 35],
+  ["1-FBB", 9, 50],
+  ["FBB", 9, 55],
+  ["FBB-2", 10, 30],
   ["2", 10, 35],
   ["2-3", 11, 50],
   ["3", 11, 55],
@@ -1912,12 +1965,20 @@ var specialSchedules = [
 //   scheduleSpring21Fri,
 //   ];
 
+// var regularSchedules = [
+//   [scheduleA, scheduleB, scheduleC],
+//   [scheduleA, scheduleB, scheduleC],
+//   [scheduleWedA, scheduleWedB, scheduleWedC],
+//   [scheduleA, scheduleB, scheduleC],
+//   [scheduleA, scheduleB, scheduleC]
+// ];
+
 var regularSchedules = [
   [scheduleA, scheduleB, scheduleC],
   [scheduleA, scheduleB, scheduleC],
-  [scheduleWedA, scheduleWedB, scheduleWedC],
   [scheduleA, scheduleB, scheduleC],
-  [scheduleA, scheduleB, scheduleC]
+  [scheduleThuA, scheduleThuB, scheduleThuC],
+  [scheduleFriA, scheduleFriB, scheduleFriC]
 ];
 
 // first check for a special schedule, otherwise return a regular schedule
