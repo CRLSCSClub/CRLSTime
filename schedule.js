@@ -2038,9 +2038,9 @@ function isHoliday() {
       return true;
     }
   }
-  if (today.getMonth() + 1 === 7 || today.getMonth() + 1 === 8) { // July or August
-    return true;
-  }
+//   if (today.getMonth() + 1 === 7 || today.getMonth() + 1 === 8) { // July or August
+//     return true;
+//   }
   return false;
 }
 
