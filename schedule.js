@@ -423,13 +423,32 @@ var schedule10192022C = [
   ["after", 15, 0],
   ["end", 23, 59]
   ];
+
+var schedule11232022 = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["FB", 8, 30],
+  ["to S1", 8, 40],
+  ["S1", 8, 45],
+  ["to S2", 9, 20],
+  ["S2", 9, 25],
+  ["to S3", 10, 0],
+  ["S3", 10, 5],
+  ["to S4", 10, 40],
+  ["S4", 10, 45],
+  ["to PR", 11, 15],
+  ["PR", 11, 25],
+  ["after", 12, 0],
+  ["end", 23, 59]
+  ];
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
   [10, 14, schedule10142022A, schedule10142022B, schedule10142022C],
   [10, 18, schedule10182022, schedule10182022, schedule10182022],
   [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
-  [10, 25, schedule10252022, schedule10252022, schedule10252022] 
+  [10, 25, schedule10252022, schedule10252022, schedule10252022],
+  [11, 23, schedule11232022, schedule11232022, schedule11232022]
 ];
 
 // var regularSchedules = [
