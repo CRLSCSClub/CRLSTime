@@ -522,6 +522,8 @@ var specialSchedules = [
   [1, 23, schedule12323, schedule12323, schedule12323],
   [2, 1, schedule020123, schedule020123, schedule020123],
   [2, 2, schedule020223, schedule020223, schedule020223],
+  [3, 21, schedule10182022, schedule10182022, schedule10182022], // same as Oct conf schedule
+  [3, 22, schedule10192022A, schedule10192022B, schedule10192022C] // same as Oct conf schedule
 ];
 
 // var regularSchedules = [
