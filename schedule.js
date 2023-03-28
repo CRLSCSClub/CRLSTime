@@ -509,6 +509,32 @@ var schedule020223 = [
   ["after", 15, 0],
   ["end", 23, 59]
   ];
+
+var schedule032823 = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["MCAS", 8, 35],
+  ["Lunch", 12, 15],
+  ["L-1", 12, 50],
+  ["1", 12, 55],
+  ["1-2", 13, 55],
+  ["2", 14, 0],
+  ["after", 15, 0],
+  ["end", 23, 59]
+  ];
+
+var schedule032923 = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["MCAS", 8, 35],
+  ["Lunch", 12, 15],
+  ["L-3", 12, 50],
+  ["3", 12, 55],
+  ["3-4", 13, 55],
+  ["4", 14, 0],
+  ["after", 15, 0],
+  ["end", 23, 59]
+  ];
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
@@ -523,7 +549,9 @@ var specialSchedules = [
   [2, 1, schedule020123, schedule020123, schedule020123],
   [2, 2, schedule020223, schedule020223, schedule020223],
   [3, 21, schedule10182022, schedule10182022, schedule10182022], // same as Oct conf schedule
-  [3, 22, schedule10192022A, schedule10192022B, schedule10192022C] // same as Oct conf schedule
+  [3, 22, schedule10192022A, schedule10192022B, schedule10192022C], // same as Oct conf schedule
+  [3, 28, schedule032823, schedule032823, schedule032823],
+  [3, 29, schedule032923, schedule032923, schedule032923]
 ];
 
 // var regularSchedules = [
