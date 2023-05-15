@@ -577,7 +577,9 @@ var specialSchedules = [
   [3, 22, schedule10192022A, schedule10192022B, schedule10192022C], // same as Oct conf schedule
   [3, 28, schedule032823, schedule032823, schedule032823],
   [3, 29, schedule032923, schedule032923, schedule032923],
-  [4, 13, schedule041323, schedule041323, schedule041323]
+  [4, 13, schedule041323, schedule041323, schedule041323],
+  [5, 16, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
+  [5, 17, schedule020223, schedule020223, schedule020223] // same as MCAS on Feb 2
 ];
 
 // var regularSchedules = [
