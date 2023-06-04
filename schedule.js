@@ -2,15 +2,12 @@
 function advanceLunchMode() {
   if (lunchMode === "A") {
     lunchMode = "B";
-//     schedule = scheduleB;
   }
   else if (lunchMode === "B") {
     lunchMode = "C";
-//     schedule = scheduleC;
     }
   else if (lunchMode === "C") {
     lunchMode = "A";
-//     schedule = scheduleA;
   }
   schedule = getSchedule(lunchMode);
   localStorage.setItem("lunch", lunchMode);
@@ -579,7 +576,9 @@ var specialSchedules = [
   [3, 29, schedule032923, schedule032923, schedule032923],
   [4, 13, schedule041323, schedule041323, schedule041323],
   [5, 16, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
-  [5, 17, schedule020223, schedule020223, schedule020223] // same as MCAS on Feb 2
+  [5, 17, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
+  [6, 6, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
+  [6, 7, schedule020223, schedule020223, schedule020223] // same as MCAS on Feb 2
 ];
 
 // var regularSchedules = [
