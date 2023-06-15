@@ -235,8 +235,7 @@ var blackDays = [
   [4, 26],
   [5, 10],
   [5, 24],
-  [6, 7],
-  [6, 21]
+  [6, 7]
 ];
 
 var schedule962022Frosh = [
@@ -557,6 +556,18 @@ var schedule041323 = [
   ["after", 15, 0],
   ["end", 23, 59]
 ];
+
+var schedule06152023 = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["Exam 1", 8, 35],
+  ["1-FPB", 10, 15],
+  ["FPB", 10, 20],
+  ["FPB-2", 10, 45],
+  ["Exam 2", 10, 50],
+  ["after", 12, 30],
+  ["end", 23, 59]
+];
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
@@ -578,7 +589,8 @@ var specialSchedules = [
   [5, 16, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
   [5, 17, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
   [6, 6, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
-  [6, 7, schedule020223, schedule020223, schedule020223] // same as MCAS on Feb 2
+  [6, 7, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
+  [6, 15, schedule06152023, schedule06152023, schedule06152023]
 ];
 
 // var regularSchedules = [
