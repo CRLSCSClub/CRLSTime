@@ -568,6 +568,18 @@ var schedule06152023 = [
   ["after", 12, 30],
   ["end", 23, 59]
 ];
+
+var schedule06162023 = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["Exam 3", 8, 35],
+  ["1-FPB", 10, 15],
+  ["FPB", 10, 20],
+  ["FPB-4", 10, 45],
+  ["Exam 4", 10, 50],
+  ["after", 12, 30],
+  ["end", 23, 59]
+];
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
@@ -590,7 +602,8 @@ var specialSchedules = [
   [5, 17, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
   [6, 6, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
   [6, 7, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
-  [6, 15, schedule06152023, schedule06152023, schedule06152023]
+  [6, 15, schedule06152023, schedule06152023, schedule06152023],
+  [6, 16, schedule06162023, schedule06162023, schedule06162023]
 ];
 
 // var regularSchedules = [
