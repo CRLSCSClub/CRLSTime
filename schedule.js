@@ -580,6 +580,20 @@ var schedule06162023 = [
   ["after", 12, 30],
   ["end", 23, 59]
 ];
+
+var lastday = [
+  ["morning", 0, 0],
+  ["before", 6, 55],
+  ["1", 8, 35],
+  ["1-2", 9, 15],
+  ["2", 9, 20],
+  ["2-3", 10, 0],
+  ["3", 10, 5],
+  ["3-4", 10, 45],
+  ["4", 10, 50],
+  ["after", 11, 30],
+  ["end", 23, 59]
+];
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
@@ -603,7 +617,8 @@ var specialSchedules = [
   [6, 6, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
   [6, 7, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
   [6, 15, schedule06152023, schedule06152023, schedule06152023],
-  [6, 16, schedule06162023, schedule06162023, schedule06162023]
+  [6, 16, schedule06162023, schedule06162023, schedule06162023],
+  [6, 22, lastday, lastday, lastday]
 ];
 
 // var regularSchedules = [
