@@ -185,57 +185,30 @@ var scheduleFriC = [
 ];
 
 var schoolHolidays = [
-  [10, 5],
-  [10, 10],
-  [11, 8],
-  [11, 11],
-  [11, 24],
-  [11, 25],
-  [12, 26],
-  [12, 27],
-  [12, 28],
-  [12, 29],
-  [12, 30],
-  [1, 2],
-  [1, 3],
-  [1, 16],
-  [2, 20],
-  [2, 21],
-  [2, 22],
-  [2, 23],
-  [2, 24],
-  [3, 20],
-  [4, 7],
-  [4, 17],
-  [4, 18],
-  [4, 19],
-  [4, 20],
-  [4, 21],
-  [5, 29],
-  [6, 19]
+  [10, 9]
 ];
 
 // This table only contains blacks days on Wed, otherwise all Tues and Fri are black days
 var blackDays = [
   [9, 14],
-  [9, 28],
-  [10, 19],
-  [10, 26],
-  [11, 2],
-  [11, 9],
-  [11, 30],
-  [12, 14],
-  [1, 4],
-  [2, 1],
-  [2, 15],
-  [3, 8],
-  [3, 22],
-  [3, 29],
-  [4, 5],
-  [4, 26],
-  [5, 10],
-  [5, 24],
-  [6, 7]
+  // [9, 28],
+  // [10, 19],
+  // [10, 26],
+  // [11, 2],
+  // [11, 9],
+  // [11, 30],
+  // [12, 14],
+  // [1, 4],
+  // [2, 1],
+  // [2, 15],
+  // [3, 8],
+  // [3, 22],
+  // [3, 29],
+  // [4, 5],
+  // [4, 26],
+  // [5, 10],
+  // [5, 24],
+  // [6, 7]
 ];
 
 var schedule962022Frosh = [
@@ -597,28 +570,28 @@ var lastday = [
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
-  [10, 14, schedule10142022A, schedule10142022B, schedule10142022C],
-  [10, 18, schedule10182022, schedule10182022, schedule10182022],
-  [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
-  [10, 25, schedule10252022, schedule10252022, schedule10252022],
-  [11, 23, schedule11232022, schedule11232022, schedule11232022],
-  [1, 18, schedule11823, schedule11823, schedule11823],
-  [1, 19, schedule11923, schedule11923, schedule11923],
-  [1, 23, schedule12323, schedule12323, schedule12323],
-  [2, 1, schedule020123, schedule020123, schedule020123],
-  [2, 2, schedule020223, schedule020223, schedule020223],
-  [3, 21, schedule10182022, schedule10182022, schedule10182022], // same as Oct conf schedule
-  [3, 22, schedule10192022A, schedule10192022B, schedule10192022C], // same as Oct conf schedule
-  [3, 28, schedule032823, schedule032823, schedule032823],
-  [3, 29, schedule032923, schedule032923, schedule032923],
-  [4, 13, schedule041323, schedule041323, schedule041323],
-  [5, 16, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
-  [5, 17, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
-  [6, 6, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
-  [6, 7, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
-  [6, 15, schedule06152023, schedule06152023, schedule06152023],
-  [6, 16, schedule06162023, schedule06162023, schedule06162023],
-  [6, 22, lastday, lastday, lastday]
+  // [10, 14, schedule10142022A, schedule10142022B, schedule10142022C],
+  // [10, 18, schedule10182022, schedule10182022, schedule10182022],
+  // [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
+  // [10, 25, schedule10252022, schedule10252022, schedule10252022],
+  // [11, 23, schedule11232022, schedule11232022, schedule11232022],
+  // [1, 18, schedule11823, schedule11823, schedule11823],
+  // [1, 19, schedule11923, schedule11923, schedule11923],
+  // [1, 23, schedule12323, schedule12323, schedule12323],
+  // [2, 1, schedule020123, schedule020123, schedule020123],
+  // [2, 2, schedule020223, schedule020223, schedule020223],
+  // [3, 21, schedule10182022, schedule10182022, schedule10182022], // same as Oct conf schedule
+  // [3, 22, schedule10192022A, schedule10192022B, schedule10192022C], // same as Oct conf schedule
+  // [3, 28, schedule032823, schedule032823, schedule032823],
+  // [3, 29, schedule032923, schedule032923, schedule032923],
+  // [4, 13, schedule041323, schedule041323, schedule041323],
+  // [5, 16, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
+  // [5, 17, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
+  // [6, 6, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
+  // [6, 7, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
+  // [6, 15, schedule06152023, schedule06152023, schedule06152023],
+  // [6, 16, schedule06162023, schedule06162023, schedule06162023],
+  // [6, 22, lastday, lastday, lastday]
 ];
 
 // var regularSchedules = [
