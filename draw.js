@@ -173,7 +173,8 @@ function drawClock() {
       drawSchoolTime(ctx, radius, periodIndex);
       drawLunchButton(); // comment out for remote teaching
 //       drawUpNext(periodIndex);
-      drawBSButton();
+      // drawBSButton(); // black and silver schedule unknow. Replacing with day of week
+      drawDayOfWeek();
   }
 }
 
@@ -350,4 +351,14 @@ function drawBSButton() {
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   ctx.fillText(blackOrSilverText, lowerLeftX, lowerLeftY);
+}
+
+var dayLabel = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+function drawDayOfWeek() {
+  drawSmallCircle(lowerLeftX, lowerLeftY, smRadius, '#DDD');
+  ctx.font = "bold " + radius*0.067 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  ctx.fillStyle = '#888';
+  ctx.fillText("DoW", lowerLeftX, lowerLeftY);
 }
