@@ -353,7 +353,7 @@ function drawBSButton() {
   ctx.fillText(blackOrSilverText, lowerLeftX, lowerLeftY);
 }
 
-var dayLabel = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var dayLabel = ["Sun", "MON", "TUE", "WED", "THU", "FRI", "Sat"];
 var today = new Date();
 function drawDayOfWeek() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius, '#DDD');
