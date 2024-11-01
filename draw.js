@@ -353,12 +353,13 @@ function drawBSButton() {
   ctx.fillText(blackOrSilverText, lowerLeftX, lowerLeftY);
 }
 
-var dayLabel = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+var dayLabel = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var today = new Date();
 function drawDayOfWeek() {
   drawSmallCircle(lowerLeftX, lowerLeftY, smRadius, '#DDD');
   ctx.font = "bold " + radius*0.067 + "px arial";
   ctx.textBaseline="middle";
   ctx.textAlign="center";
   ctx.fillStyle = '#888';
-  ctx.fillText("DoW", lowerLeftX, lowerLeftY);
+  ctx.fillText(dayLabel[today.getDay()], lowerLeftX, lowerLeftY);
 }
