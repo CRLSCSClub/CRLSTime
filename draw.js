@@ -153,7 +153,7 @@ function drawClock() {
   var periodLabel = schedule[periodIndex][0];
   var periodLength = getPeriodLength(periodIndex);
   // when to display a normal clock
-  if (periodLabel === "morning" || periodLabel === "after" || isWeekend() || isHoliday()){
+  if (periodLabel === "morning" || periodLabel === "after" || isWeekend()){
       drawNumbersNormal(ctx, radius, 1, 12);
       drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
@@ -362,4 +362,8 @@ function drawDayOfWeek() {
   ctx.textAlign="center";
   ctx.fillStyle = '#888';
   ctx.fillText(dayLabel[today.getDay()], lowerLeftX, lowerLeftY);
+}
+
+function isWeekend(){
+  return today.getDay() === 0 || today.getDay() === 6;
 }
