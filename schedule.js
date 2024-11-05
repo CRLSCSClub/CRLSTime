@@ -194,30 +194,42 @@ var scheduleFriC = [
 ];
 
 var schoolHolidays = [
-  [10, 9]
+  [11, 28],
+  [11, 29],
+  [12, 24],
+  [12, 25],
+  [12, 26],
+  [12, 27],
+  [12, 30],
+  [12, 29],
+  [12, 31],
+  [1, 1],
+  [1, 2]
 ];
 
-// This table only contains blacks days on Wed, otherwise all Tues and Fri are black days
 var blackDays = [
   [9, 14],
-  // [9, 28],
-  // [10, 19],
-  // [10, 26],
-  // [11, 2],
-  // [11, 9],
-  // [11, 30],
-  // [12, 14],
-  // [1, 4],
-  // [2, 1],
-  // [2, 15],
-  // [3, 8],
-  // [3, 22],
-  // [3, 29],
-  // [4, 5],
-  // [4, 26],
-  // [5, 10],
-  // [5, 24],
-  // [6, 7]
+  [11, 6],
+  [11, 8],
+  [11, 13],
+  [11, 15],
+  [11, 19],
+  [11, 21],
+  [11, 25],
+  [11, 27],
+  [12, 3],
+  [12, 5],
+  [12, 9],
+  [12, 11],
+  [12, 13],
+  [12, 17],
+  [12, 19],
+  [12, 23],
+  [1, 6],
+  [1, 8],
+  [1, 10],
+  [1, 14],
+  [1, 16]
 ];
 
 var schedule962022Frosh = [
@@ -420,8 +432,8 @@ function isBlackDay() {
       return true;
     }
   }
-  // if not found in the table (Wednesdays) return true if Tue or Fri
+  // if not found in the table return true if Tue or Fri
   // return today.getDay() === 2 || today.getDay() === 5; // Tue or Fri
   // commented out obsolete line above
-  return true; // black/silver day schedule unknown at this time
+  return false;
 }
