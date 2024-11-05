@@ -173,8 +173,8 @@ function drawClock() {
       drawSchoolTime(ctx, radius, periodIndex);
       drawLunchButton(); // comment out for remote teaching
 //       drawUpNext(periodIndex);
-      // drawBSButton(); // black and silver schedule unknow. Replacing with day of week
-      drawDayOfWeek();
+      drawBSButton();
+      // drawDayOfWeek(); // would replace black/silver circle if BS not used
   }
 }
 
