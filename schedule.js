@@ -194,6 +194,7 @@ var scheduleFriC = [
 ];
 
 var schoolHolidays = [
+  [11, 27],
   [11, 28],
   [11, 29],
   [12, 24],
