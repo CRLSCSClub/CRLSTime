@@ -418,12 +418,39 @@ var lastday = [
   ["after", 11, 30],
   ["end", 23, 59]
 ];
+
+var schedule031125 = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["1", 8, 30],
+  ["1-2", 9, 55],
+  ["2", 10, 0],
+  ["2-L", 11, 25],
+  ["Lunch", 11, 30],
+  ["after", 12, 0],
+  ["end", 23, 59]
+];
+
+var schedule031225 = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["delayed", 8, 30],
+  ["Lunch", 11, 30],
+  ["L-3", 12, 0],
+  ["3", 12, 05],
+  ["3-4", 13, 30],
+  ["4", 13, 35],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
   [1, 16, schedule011625A, schedule011625B, schedule011625C],
   [1, 17, schedule011725A, schedule011725B, schedule011725C],
   [1, 22, schedule012225, schedule012225, schedule012225],
+  [3, 11, schedule031125, schedule031125, schedule031125],
+  [3, 12, schedule031225, schedule031225, schedule031225],
   // [10, 14, schedule10142022A, schedule10142022B, schedule10142022C],
   // [10, 18, schedule10182022, schedule10182022, schedule10182022],
   // [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
