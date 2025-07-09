@@ -153,7 +153,7 @@ function drawClock() {
   var periodLabel = schedule[periodIndex][0];
   var periodLength = getPeriodLength(periodIndex);
   // when to display a normal clock
-  if (periodLabel === "morning" || periodLabel === "after" || isWeekendNew() || isVacation()){
+  if (periodLabel === "morning" || periodLabel === "after" || isWeekendNew() || isHoliday()){
       drawNumbersNormal(ctx, radius, 1, 12);
       drawSpecialLabel(ctx, radius, "");
       drawNormalTime(ctx, radius);
