@@ -194,19 +194,22 @@ var scheduleFriC = [
 ];
 
 var schoolHolidays = [
+  [10, 2],
+  [10, 13],
+  [11, 4],
+  [11, 11],
   [11, 27],
   [11, 28],
-  [11, 29],
   [12, 24],
   [12, 25],
   [12, 26],
-  [12, 27],
-  [12, 30],
   [12, 29],
+  [12, 30],
   [12, 31],
   [1, 1],
   [1, 2],
-  [6, 19]
+  [1, 5],
+  [1, 19]
 ];
 
 var blackDays = [
@@ -671,7 +674,7 @@ schedule = getSchedule(lunchMode);
 
 function isHoliday() {
   // for summer just return true
-  return true;
+  // return true;
   // code below this line will be unreachable during summertime
   for (i = 0; i < schoolHolidays.length; i++) {
     if (schoolHolidays[i][0] === today.getMonth() + 1 && schoolHolidays[i][1] === today.getDate()) {
