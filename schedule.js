@@ -200,6 +200,7 @@ var schoolHolidays = [
   [11, 11],
   [11, 27],
   [11, 28],
+  [11, 29],
   [12, 24],
   [12, 25],
   [12, 26],
@@ -536,6 +537,7 @@ var lastday = [
   ["end", 23, 59]
 ];
 
+// afternoon conf
 var schedule031125 = [
   ["morning", 0, 0],
   ["before", 7, 0],
@@ -548,6 +550,7 @@ var schedule031125 = [
   ["end", 23, 59]
 ];
 
+// morning conf
 var schedule031225 = [
   ["morning", 0, 0],
   ["before", 7, 0],
@@ -591,15 +594,8 @@ var schedule052125 = [
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
-  [1, 16, schedule011625A, schedule011625B, schedule011625C],
-  [1, 17, schedule011725A, schedule011725B, schedule011725C],
-  [1, 22, schedule012225, schedule012225, schedule012225],
-  [3, 11, schedule031125, schedule031125, schedule031125],
-  [3, 12, schedule031225, schedule031225, schedule031225],
-  [5, 20, schedule052025, schedule052025, schedule052025],
-  [5, 21, schedule052125, schedule052125, schedule052125],
-  [6, 17, schedule061725A, schedule061725B, schedule061725C],
-  [6, 18, schedule061825C, schedule061825C, schedule061825C],
+  [10, 9, schedule031225, schedule031225, schedule031225], // morning conferences
+  [10, 10, schedule031125, schedule031125, schedule031125], // afternoon confreences
   // [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
   // [10, 25, schedule10252022, schedule10252022, schedule10252022],
   // [11, 23, schedule11232022, schedule11232022, schedule11232022],
