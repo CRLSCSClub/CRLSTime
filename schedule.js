@@ -613,7 +613,7 @@ var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
   [10, 9, schedule031225, schedule031225, schedule031225], // morning conferences
   [10, 10, schedule031125, schedule031125, schedule031125], // afternoon conferences
-  [11. 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
+  [11, 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
   // [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
   // [10, 25, schedule10252022, schedule10252022, schedule10252022],
   // [11, 23, schedule11232022, schedule11232022, schedule11232022],
