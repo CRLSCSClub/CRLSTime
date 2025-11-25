@@ -591,11 +591,29 @@ var schedule052125 = [
   ["after", 15, 0],
   ["end", 23, 59]
 ];
+
+//thanksgiving falcon day
+var schedule112625 = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["FB", 8, 30],
+  ["-> 1", 9, 5],
+  ["Rot 1", 9, 10],
+  ["1-2", 9, 45],
+  ["Rot 2", 9, 50],
+  ["2-3", 10, 25],
+  ["Rot 3", 10, 30],
+  ["3-4", 11, 5],
+  ["Rot 4", 11, 10],
+  ["after", 11, 45],
+  ["end", 23, 59]
+];
   
 var specialSchedules = [
   [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
   [10, 9, schedule031225, schedule031225, schedule031225], // morning conferences
-  [10, 10, schedule031125, schedule031125, schedule031125], // afternoon confreences
+  [10, 10, schedule031125, schedule031125, schedule031125], // afternoon conferences
+  [11. 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
   // [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
   // [10, 25, schedule10252022, schedule10252022, schedule10252022],
   // [11, 23, schedule11232022, schedule11232022, schedule11232022],
