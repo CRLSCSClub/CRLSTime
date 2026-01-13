@@ -268,6 +268,48 @@ var blackDays = [
 ];
 
 // Exams -- start sem 1 and 2
+var schedule011426 = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["1 Exam", 8, 30],
+  ["1-P", 10, 10],
+  ["Path", 10, 15],
+  ["P-2", 10, 45],
+  ["2 Exam", 10, 50],
+  ["Lunch", 12, 30],
+  ["after", 13, 30],
+  ["end", 23, 59]
+];
+
+var schedule011526 = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["3 Exam", 8, 30],
+  ["3-P", 10, 10],
+  ["Path", 10, 15],
+  ["P-4", 10, 45],
+  ["4 Exam", 10, 50],
+  ["Lunch", 12, 30],
+  ["after", 13, 30],
+  ["end", 23, 59]
+];
+
+var schedule012026 = [  // start of sem 2 2026
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["Lunch", 11, 30],
+  ["L-1", 12, 0],
+  ["1", 12, 5],
+  ["1-2", 12, 45],
+  ["2", 12, 50],
+  ["2-3", 13, 30],
+  ["3", 13, 35],
+  ["3-4", 14, 15],
+  ["4", 14, 20],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
 var schedule011625A = [
   ["morning", 0, 0],
   ["before", 7, 0],
@@ -633,6 +675,8 @@ var specialSchedules = [
   [10, 9, schedule031225, schedule031225, schedule031225], // morning conferences
   [10, 10, schedule031125, schedule031125, schedule031125], // afternoon conferences
   [11, 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
+  [1, 14, schedule011426, schedule011426, schedule011426], // sem 1 exams
+  [1, 15, schedule011526, schedule011526, schedule011526], // sem 1 exams
   // [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
   // [10, 25, schedule10252022, schedule10252022, schedule10252022],
   // [11, 23, schedule11232022, schedule11232022, schedule11232022],
