@@ -677,6 +677,7 @@ var specialSchedules = [
   [11, 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
   [1, 14, schedule011426, schedule011426, schedule011426], // sem 1 exams
   [1, 15, schedule011526, schedule011526, schedule011526], // sem 1 exams
+  [1, 20, schedule012026, schedule012026, schedule012026], // sem 1 exams
   // [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
   // [10, 25, schedule10252022, schedule10252022, schedule10252022],
   // [11, 23, schedule11232022, schedule11232022, schedule11232022],
