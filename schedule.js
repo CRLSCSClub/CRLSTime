@@ -210,7 +210,17 @@ var schoolHolidays = [
   [1, 1],
   [1, 2],
   [1, 5],
-  [1, 19]
+  [1, 19],
+  [3, 18],
+  [3, 20],
+  [4, 3],
+  [4, 20],
+  [4, 21],
+  [4, 22],
+  [4, 23],
+  [4, 24],
+  [5, 25],
+  [6, 19]
 ];
 
 var blackDays = [
@@ -599,7 +609,7 @@ var lastday = [
 ];
 
 // afternoon conf
-var schedule031125 = [
+var schedule031326 = [
   ["morning", 0, 0],
   ["before", 7, 0],
   ["1", 8, 30],
@@ -612,15 +622,45 @@ var schedule031125 = [
 ];
 
 // morning conf
-var schedule031225 = [
+var schedule031226 = [
   ["morning", 0, 0],
   ["before", 7, 0],
-  ["delayed", 8, 30],
+  ["Conf", 8, 30],
   ["Lunch", 11, 30],
   ["L-3", 12, 0],
   ["3", 12, 05],
   ["3-4", 13, 30],
   ["4", 13, 35],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+// ELA MCAS Sess 1
+var schedule032426 = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["MCAS", 8, 30],
+  ["-> L", 12, 15],
+  ["Lunch", 12, 20],
+  ["L-1", 12, 50],
+  ["1", 12, 55],
+  ["1-2", 13, 55],
+  ["2", 14, 0],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
+
+// ELA MCAS Sess 2
+var schedule032526 = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["MCAS", 8, 30],
+  ["-> L", 12, 15],
+  ["Lunch", 12, 20],
+  ["L-3", 12, 50],
+  ["3", 12, 55],
+  ["3-4", 13, 55],
+  ["4", 14, 0],
   ["after", 15, 0],
   ["end", 23, 59]
 ];
@@ -671,13 +711,13 @@ var schedule112625 = [
 ];
   
 var specialSchedules = [
-  [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
-  [10, 9, schedule031225, schedule031225, schedule031225], // morning conferences
-  [10, 10, schedule031125, schedule031125, schedule031125], // afternoon conferences
-  [11, 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
-  [1, 14, schedule011426, schedule011426, schedule011426], // sem 1 exams
-  [1, 15, schedule011526, schedule011526, schedule011526], // sem 1 exams
-  [1, 20, schedule012026, schedule012026, schedule012026], // start of sem 2
+  // [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
+  // [10, 9, schedule031225, schedule031225, schedule031225], // morning conferences
+  // [10, 10, schedule031125, schedule031125, schedule031125], // afternoon conferences
+  // [11, 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
+  // [1, 14, schedule011426, schedule011426, schedule011426], // sem 1 exams
+  // [1, 15, schedule011526, schedule011526, schedule011526], // sem 1 exams
+  // [1, 20, schedule012026, schedule012026, schedule012026], // start of sem 2
   // [10, 19, schedule10192022A, schedule10192022B, schedule10192022C],
   // [10, 25, schedule10252022, schedule10252022, schedule10252022],
   // [11, 23, schedule11232022, schedule11232022, schedule11232022],
@@ -686,8 +726,10 @@ var specialSchedules = [
   // [1, 23, schedule12323, schedule12323, schedule12323],
   // [2, 1, schedule020123, schedule020123, schedule020123],
   // [2, 2, schedule020223, schedule020223, schedule020223],
-  // [3, 21, schedule10182022, schedule10182022, schedule10182022], // same as Oct conf schedule
-  // [3, 22, schedule10192022A, schedule10192022B, schedule10192022C], // same as Oct conf schedule
+  [3, 12, schedule031226, schedule031226, schedule031226], // Spring Family Conferences morning
+  [3, 13, schedule031326, schedule031326, schedule031326], // Spring Family Conferences afternoon
+  [3, 24, schedule032426, schedule032426, schedule032426], // ELA MCAS Session 1
+  [3, 25, schedule032526, schedule032526, schedule032526], // ELA MCAS Session 2
   // [3, 28, schedule032823, schedule032823, schedule032823],
   // [3, 29, schedule032923, schedule032923, schedule032923],
   // [4, 13, schedule041323, schedule041323, schedule041323],
