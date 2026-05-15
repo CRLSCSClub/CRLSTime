@@ -273,7 +273,9 @@ var blackDays = [
   [6, 11],
   [6, 15],
   [6, 17],
-  [6, 22]
+  [6, 22],
+  [6, 24],
+  [6, 26]
 ];
 
 // Exams -- start sem 1 and 2
@@ -319,7 +321,7 @@ var schedule012026 = [  // start of sem 2 2026
   ["end", 23, 59]
 ];
 
-var schedule011625A = [
+var scheduleExam13A = [
   ["morning", 0, 0],
   ["before", 7, 0],
   ["1 Exam", 8, 30],
@@ -335,57 +337,7 @@ var schedule011625A = [
   ["end", 23, 59]
 ];
 
-var schedule011625B = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1 Exam", 8, 30],
-  ["1-2", 10, 10],
-  ["2", 10, 15],
-  ["2-3", 11, 25],
-  ["3.1 Ex", 11, 30],
-  ["3-LB", 12, 20],
-  ["LB", 12, 22],
-  ["LB-3", 12, 52],
-  ["3.2 Ex", 12, 55],
-  ["3-4", 13, 45],
-  ["4", 13, 50],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var schedule011625C = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1 Exam", 8, 30],
-  ["1-2", 10, 10],
-  ["2", 10, 15],
-  ["2-3", 11, 25],
-  ["3 Exam", 11, 30],
-  ["3-LC", 13, 10],
-  ["LC", 13, 15],
-  ["LC-4", 13, 45],
-  ["4", 13, 50],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var schedule061725A = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1 Exam", 8, 30],
-  ["1-2", 10, 10],
-  ["2", 10, 15],
-  ["2-LA", 11, 25],
-  ["LA", 11, 30],
-  ["LA-3", 12, 0],
-  ["3 Exam", 12, 5],
-  ["3-4", 13, 45],
-  ["4", 13, 50],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var schedule061725B = [
+var scheduleExam13B = [ // Period 3 exam goes to either Lunch A or C
   ["morning", 0, 0],
   ["before", 7, 0],
   ["1 Exam", 8, 30],
@@ -403,7 +355,7 @@ var schedule061725B = [
   ["end", 23, 59]
 ];
 
-var schedule061725C = [
+var scheduleExam13C = [
   ["morning", 0, 0],
   ["before", 7, 0],
   ["1 Exam", 8, 30],
@@ -419,7 +371,7 @@ var schedule061725C = [
   ["end", 23, 59]
 ];
 
-var schedule011725A = [
+var scheduleExam24A = [
   ["morning", 0, 0],
   ["before", 7, 0],
   ["1", 8, 30],
@@ -435,7 +387,7 @@ var schedule011725A = [
   ["end", 23, 59]
 ];
 
-var schedule011725B = [
+var scheduleExam24B = [
   ["morning", 0, 0],
   ["before", 7, 0],
   ["1", 8, 30],
@@ -453,7 +405,7 @@ var schedule011725B = [
   ["end", 23, 59]
 ];
 
-var schedule011725C = [
+var scheduleExam24C = [
   ["morning", 0, 0],
   ["before", 7, 0],
   ["1", 8, 30],
@@ -469,55 +421,6 @@ var schedule011725C = [
   ["end", 23, 59]
 ];
 
-var schedule061825A = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1", 8, 30],
-  ["1-2", 9, 40],
-  ["2 Exam", 9, 45],
-  ["2-LA", 11, 25],
-  ["LA", 11, 30],
-  ["LA-3", 12, 0],
-  ["3", 12, 5],
-  ["3-4", 13, 15],
-  ["4 Exam", 13, 20],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var schedule061825B = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1", 8, 30],
-  ["1-2", 9, 40],
-  ["2 Exam", 9, 45],
-  ["2-3", 11, 25],
-  ["3.1", 11, 30],
-  ["3-LB", 12, 5],
-  ["LB", 12, 7],
-  ["LB-3", 12, 37],
-  ["3.2", 12, 40],
-  ["3-4", 13, 15],
-  ["4 Exam", 13, 20],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var schedule061825C = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1", 8, 30],
-  ["1-2", 9, 40],
-  ["2 Exam", 9, 45],
-  ["2-3", 11, 25],
-  ["3", 11, 30],
-  ["3-LC", 12, 40],
-  ["LC", 12, 45],
-  ["LC-4", 13, 15],
-  ["4 Exam", 13, 20],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
 // End Exams
 
 var schedule012225 = [
@@ -596,14 +499,14 @@ var schedule962022Upper = [
 var lastday = [
   ["morning", 0, 0],
   ["before", 6, 55],
-  ["1", 8, 35],
-  ["1-2", 9, 15],
-  ["2", 9, 20],
-  ["2-3", 10, 0],
-  ["3", 10, 5],
-  ["3-4", 10, 45],
-  ["4", 10, 50],
-  ["after", 11, 30],
+  ["1", 8, 30],
+  ["1-2", 9, 10],
+  ["2", 9, 15],
+  ["2-3", 9, 55],
+  ["3", 10, 0],
+  ["3-4", 10, 40],
+  ["4", 10, 45],
+  ["after", 11, 25],
   ["end", 23, 59]
 ];
 
@@ -664,10 +567,10 @@ var schedule032526 = [
   ["end", 23, 59]
 ];
 
-var schedule052025 = [
+var scheduleMCAS12 = [
   ["morning", 0, 0],
   ["before", 7, 0],
-  ["MCAS", 8, 35],
+  ["MCAS", 8, 30],
   ["-> L", 11, 30],
   ["Lunch", 11, 40],
   ["L-1", 12, 10],
@@ -678,10 +581,10 @@ var schedule052025 = [
   ["end", 23, 59]
 ];
 
-var schedule052125 = [
+var scheduleMCAS34 = [
   ["morning", 0, 0],
   ["before", 7, 0],
-  ["MCAS", 8, 35],
+  ["MCAS", 8, 30],
   ["-> L", 11, 30],
   ["Lunch", 11, 40],
   ["L-3", 12, 10],
@@ -732,13 +635,13 @@ var specialSchedules = [
   // [3, 28, schedule032823, schedule032823, schedule032823],
   // [3, 29, schedule032923, schedule032923, schedule032923],
   // [4, 13, schedule041323, schedule041323, schedule041323],
-  // [5, 16, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
-  // [5, 17, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
-  // [6, 6, schedule020123, schedule020123, schedule020123], // same as MCAS on Feb 1
-  // [6, 7, schedule020223, schedule020223, schedule020223], // same as MCAS on Feb 2
-  // [6, 15, schedule06152023, schedule06152023, schedule06152023],
-  // [6, 16, schedule06162023, schedule06162023, schedule06162023],
-  [6, 24, lastday, lastday, lastday]
+  [5, 19, scheduleMCAS12, scheduleMCAS12, scheduleMCAS12], // Math
+  [5, 20, scheduleMCAS34, scheduleMCAS34, scheduleMCAS34], 
+  [6, 8, scheduleMCAS12, scheduleMCAS12, scheduleMCAS12], // Science
+  [6, 9, scheduleMCAS34, scheduleMCAS34, scheduleMCAS34], 
+  [6, 23, scheduleExam13A, scheduleExam13B, scheduleExam13C], // Finals
+  [6, 24, scheduleExam24A, scheduleExam24B, scheduleExam24B],
+  [6, 26, lastday, lastday, lastday]
 ];
 
 // var regularSchedules = [
