@@ -340,36 +340,16 @@ var blackDays = [
   [6, 26]
 ];
 
-// Exams -- start sem 1 and 2
-var schedule011426 = [
+// special schedules
+var firstDayFrosh = [
   ["morning", 0, 0],
   ["before", 7, 0],
-  ["1 Exam", 8, 30],
-  ["1-P", 10, 10],
-  ["Path", 10, 15],
-  ["P-2", 10, 45],
-  ["2 Exam", 10, 50],
-  ["Lunch", 12, 30],
-  ["after", 13, 30],
-  ["end", 23, 59]
-];
-
-var schedule011526 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["3 Exam", 8, 30],
-  ["3-P", 10, 10],
-  ["Path", 10, 15],
-  ["P-4", 10, 45],
-  ["4 Exam", 10, 50],
-  ["Lunch", 12, 30],
-  ["after", 13, 30],
-  ["end", 23, 59]
-];
-
-var schedule012026 = [  // start of sem 2 2026
-  ["morning", 0, 0],
-  ["before", 7, 0],
+  ["Path", 8, 30],
+  ["> LC Mtg", 10, 30],
+  ["LC Mtg", 10, 35],
+  ["> AS Mtg", 10, 55],
+  ["AS Mtg", 11, 5],
+  ["> Lunch", 11, 25],
   ["Lunch", 11, 30],
   ["L-1", 12, 0],
   ["1", 12, 5],
@@ -383,170 +363,13 @@ var schedule012026 = [  // start of sem 2 2026
   ["end", 23, 59]
 ];
 
-var scheduleExam13A = [
+var firstDayUpper = [
   ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1 Exam", 8, 30],
-  ["1-2", 10, 10],
-  ["2", 10, 15],
-  ["2-LA", 11, 25],
-  ["LA", 11, 30],
-  ["LA-3", 12, 0],
-  ["3 Exam", 12, 5],
-  ["3-4", 13, 45],
-  ["4", 13, 50],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var scheduleExam13B = [ // Period 3 exam goes to either Lunch A or C
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1 Exam", 8, 30],
-  ["1-2", 10, 10],
-  ["2", 10, 15],
-  ["2-3", 11, 25],
-  ["3.1", 11, 30],
-  ["3-LB", 12, 20],
-  ["LB", 12, 22],
-  ["LB-3", 12, 52],
-  ["3.2", 12, 55],
-  ["3-4", 13, 45],
-  ["4", 13, 50],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var scheduleExam13C = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1 Exam", 8, 30],
-  ["1-2", 10, 10],
-  ["2", 10, 15],
-  ["2-3", 11, 25],
-  ["3 Exam", 11, 30],
-  ["3-LC", 13, 10],
-  ["LC", 13, 15],
-  ["LC-4", 13, 45],
-  ["4", 13, 50],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var scheduleExam24A = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1", 8, 30],
-  ["1-2", 9, 40],
-  ["2 Exam", 9, 45],
-  ["2-LA", 11, 25],
-  ["LA", 11, 30],
-  ["LA-3", 12, 0],
-  ["3", 12, 5],
-  ["3-4", 13, 15],
-  ["4 Exam", 13, 20],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var scheduleExam24B = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1", 8, 30],
-  ["1-2", 9, 40],
-  ["2 Exam", 9, 45],
-  ["2-3", 11, 25],
-  ["3.1", 11, 30],
-  ["3-LB", 12, 5],
-  ["LB", 12, 7],
-  ["LB-3", 12, 37],
-  ["3.2", 12, 40],
-  ["3-4", 13, 15],
-  ["4 Exam", 13, 20],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var scheduleExam24C = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1", 8, 30],
-  ["1-2", 9, 40],
-  ["2 Exam", 9, 45],
-  ["2-3", 11, 25],
-  ["3", 11, 30],
-  ["3-LC", 12, 40],
-  ["LC", 12, 45],
-  ["LC-4", 13, 15],
-  ["4 Exam", 13, 20],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-// End Exams
-
-var schedule012225 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["delayed", 8, 30],
-  ["Lunch", 11, 10],
-  ["1", 11, 45],
-  ["1-2", 12, 30],
-  ["2", 12, 35],
-  ["2-3", 13, 20],
-  ["3", 13, 25],
-  ["3-4", 14, 10],
-  ["4", 14, 15],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var schedule962022Frosh = [
-  ["morning", 0, 0],
-  ["before", 7, 30],
-  ["FBlock", 8, 35],
-  ["-> LC", 10, 25],
-  ["LC", 10, 35],
-  ["-> Aud", 10, 55],
-  ["Aud", 11, 05],
-  ["Lunch", 11, 30],
-  ["-> 1", 12, 0],
-  ["1", 12, 5],
-  ["1-2", 12, 45],
-  ["2", 12, 50],
-  ["2-3", 13, 30],
-  ["3", 13, 35],
-  ["3-4", 14, 15],
-  ["4", 14, 20],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var schedule962022Soph = [
-  ["morning", 0, 0],
-  ["before", 7, 30],
-  ["FBlock", 10, 35],
-  ["-> Guid", 10, 55],
-  ["Guid", 11, 5],
-  ["Lunch", 11, 30],
-  ["-> 1", 12, 0],
-  ["1", 12, 5],
-  ["1-2", 12, 45],
-  ["2", 12, 50],
-  ["2-3", 13, 30],
-  ["3", 13, 35],
-  ["3-4", 14, 15],
-  ["4", 14, 20],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
-
-var schedule962022Upper = [
-  ["morning", 0, 0],
-  ["before", 7, 30],
+  ["before", 8, 0],
   ["Lunch", 11, 5],
-  ["FBlock", 11, 30],
-  ["-> 1", 12, 0],
+  ["L-FB", 11, 27],
+  ["FB", 11, 30],
+  ["FB-1", 12, 0],
   ["1", 12, 5],
   ["1-2", 12, 45],
   ["2", 12, 50],
@@ -558,124 +381,343 @@ var schedule962022Upper = [
   ["end", 23, 59]
 ];
 
-var lastday = [
-  ["morning", 0, 0],
-  ["before", 6, 55],
-  ["1", 8, 30],
-  ["1-2", 9, 10],
-  ["2", 9, 15],
-  ["2-3", 9, 55],
-  ["3", 10, 0],
-  ["3-4", 10, 40],
-  ["4", 10, 45],
-  ["after", 11, 25],
-  ["end", 23, 59]
-];
 
-// afternoon conf
-var schedule031326 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["1", 8, 30],
-  ["1-2", 9, 55],
-  ["2", 10, 0],
-  ["2-L", 11, 25],
-  ["Lunch", 11, 30],
-  ["after", 12, 0],
-  ["end", 23, 59]
-];
+// Exams -- start sem 1 and 2
+// var schedule011426 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["1 Exam", 8, 30],
+//   ["1-P", 10, 10],
+//   ["Path", 10, 15],
+//   ["P-2", 10, 45],
+//   ["2 Exam", 10, 50],
+//   ["Lunch", 12, 30],
+//   ["after", 13, 30],
+//   ["end", 23, 59]
+// ];
 
-// morning conf
-var schedule031226 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["Conf", 8, 30],
-  ["Lunch", 11, 30],
-  ["L-3", 12, 0],
-  ["3", 12, 05],
-  ["3-4", 13, 30],
-  ["4", 13, 35],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
+// var schedule011526 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["3 Exam", 8, 30],
+//   ["3-P", 10, 10],
+//   ["Path", 10, 15],
+//   ["P-4", 10, 45],
+//   ["4 Exam", 10, 50],
+//   ["Lunch", 12, 30],
+//   ["after", 13, 30],
+//   ["end", 23, 59]
+// ];
 
-// ELA MCAS Sess 1
-var schedule032426 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["MCAS", 8, 30],
-  ["-> L", 12, 15],
-  ["Lunch", 12, 20],
-  ["L-1", 12, 50],
-  ["1", 12, 55],
-  ["1-2", 13, 55],
-  ["2", 14, 0],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
+// var schedule012026 = [  // start of sem 2 2026
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["Lunch", 11, 30],
+//   ["L-1", 12, 0],
+//   ["1", 12, 5],
+//   ["1-2", 12, 45],
+//   ["2", 12, 50],
+//   ["2-3", 13, 30],
+//   ["3", 13, 35],
+//   ["3-4", 14, 15],
+//   ["4", 14, 20],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
 
-// ELA MCAS Sess 2
-var schedule032526 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["MCAS", 8, 30],
-  ["-> L", 12, 15],
-  ["Lunch", 12, 20],
-  ["L-3", 12, 50],
-  ["3", 12, 55],
-  ["3-4", 13, 55],
-  ["4", 14, 0],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
+// var scheduleExam13A = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["1 Exam", 8, 30],
+//   ["1-2", 10, 10],
+//   ["2", 10, 15],
+//   ["2-LA", 11, 25],
+//   ["LA", 11, 30],
+//   ["LA-3", 12, 0],
+//   ["3 Exam", 12, 5],
+//   ["3-4", 13, 45],
+//   ["4", 13, 50],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
 
-var scheduleMCAS12 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["MCAS", 8, 30],
-  ["-> L", 11, 30],
-  ["Lunch", 11, 40],
-  ["L-1", 12, 10],
-  ["1", 12, 15],
-  ["1-2", 13, 35],
-  ["2", 13, 40],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
+// var scheduleExam13B = [ // Period 3 exam goes to either Lunch A or C
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["1 Exam", 8, 30],
+//   ["1-2", 10, 10],
+//   ["2", 10, 15],
+//   ["2-3", 11, 25],
+//   ["3.1", 11, 30],
+//   ["3-LB", 12, 20],
+//   ["LB", 12, 22],
+//   ["LB-3", 12, 52],
+//   ["3.2", 12, 55],
+//   ["3-4", 13, 45],
+//   ["4", 13, 50],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
 
-var scheduleMCAS34 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["MCAS", 8, 30],
-  ["-> L", 11, 30],
-  ["Lunch", 11, 40],
-  ["L-3", 12, 10],
-  ["3", 12, 15],
-  ["3-4", 13, 35],
-  ["4", 13, 40],
-  ["after", 15, 0],
-  ["end", 23, 59]
-];
+// var scheduleExam13C = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["1 Exam", 8, 30],
+//   ["1-2", 10, 10],
+//   ["2", 10, 15],
+//   ["2-3", 11, 25],
+//   ["3 Exam", 11, 30],
+//   ["3-LC", 13, 10],
+//   ["LC", 13, 15],
+//   ["LC-4", 13, 45],
+//   ["4", 13, 50],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
 
-//thanksgiving falcon day
-var schedule112625 = [
-  ["morning", 0, 0],
-  ["before", 7, 0],
-  ["FB", 8, 30],
-  ["→ 1", 9, 5],
-  ["Rot 1", 9, 10],
-  ["1→2", 9, 45],
-  ["Rot 2", 9, 50],
-  ["2→3", 10, 25],
-  ["Rot 3", 10, 30],
-  ["3→4", 11, 5],
-  ["Rot 4", 11, 10],
-  ["after", 11, 45],
-  ["end", 23, 59]
-];
+// var scheduleExam24A = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["1", 8, 30],
+//   ["1-2", 9, 40],
+//   ["2 Exam", 9, 45],
+//   ["2-LA", 11, 25],
+//   ["LA", 11, 30],
+//   ["LA-3", 12, 0],
+//   ["3", 12, 5],
+//   ["3-4", 13, 15],
+//   ["4 Exam", 13, 20],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// var scheduleExam24B = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["1", 8, 30],
+//   ["1-2", 9, 40],
+//   ["2 Exam", 9, 45],
+//   ["2-3", 11, 25],
+//   ["3.1", 11, 30],
+//   ["3-LB", 12, 5],
+//   ["LB", 12, 7],
+//   ["LB-3", 12, 37],
+//   ["3.2", 12, 40],
+//   ["3-4", 13, 15],
+//   ["4 Exam", 13, 20],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// var scheduleExam24C = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["1", 8, 30],
+//   ["1-2", 9, 40],
+//   ["2 Exam", 9, 45],
+//   ["2-3", 11, 25],
+//   ["3", 11, 30],
+//   ["3-LC", 12, 40],
+//   ["LC", 12, 45],
+//   ["LC-4", 13, 15],
+//   ["4 Exam", 13, 20],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// // End Exams
+
+// var schedule012225 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["delayed", 8, 30],
+//   ["Lunch", 11, 10],
+//   ["1", 11, 45],
+//   ["1-2", 12, 30],
+//   ["2", 12, 35],
+//   ["2-3", 13, 20],
+//   ["3", 13, 25],
+//   ["3-4", 14, 10],
+//   ["4", 14, 15],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// var schedule962022Frosh = [
+//   ["morning", 0, 0],
+//   ["before", 7, 30],
+//   ["FBlock", 8, 35],
+//   ["-> LC", 10, 25],
+//   ["LC", 10, 35],
+//   ["-> Aud", 10, 55],
+//   ["Aud", 11, 05],
+//   ["Lunch", 11, 30],
+//   ["-> 1", 12, 0],
+//   ["1", 12, 5],
+//   ["1-2", 12, 45],
+//   ["2", 12, 50],
+//   ["2-3", 13, 30],
+//   ["3", 13, 35],
+//   ["3-4", 14, 15],
+//   ["4", 14, 20],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// var schedule962022Soph = [
+//   ["morning", 0, 0],
+//   ["before", 7, 30],
+//   ["FBlock", 10, 35],
+//   ["-> Guid", 10, 55],
+//   ["Guid", 11, 5],
+//   ["Lunch", 11, 30],
+//   ["-> 1", 12, 0],
+//   ["1", 12, 5],
+//   ["1-2", 12, 45],
+//   ["2", 12, 50],
+//   ["2-3", 13, 30],
+//   ["3", 13, 35],
+//   ["3-4", 14, 15],
+//   ["4", 14, 20],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// var schedule962022Upper = [
+//   ["morning", 0, 0],
+//   ["before", 7, 30],
+//   ["Lunch", 11, 5],
+//   ["FBlock", 11, 30],
+//   ["-> 1", 12, 0],
+//   ["1", 12, 5],
+//   ["1-2", 12, 45],
+//   ["2", 12, 50],
+//   ["2-3", 13, 30],
+//   ["3", 13, 35],
+//   ["3-4", 14, 15],
+//   ["4", 14, 20],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// var lastday = [
+//   ["morning", 0, 0],
+//   ["before", 6, 55],
+//   ["1", 8, 30],
+//   ["1-2", 9, 10],
+//   ["2", 9, 15],
+//   ["2-3", 9, 55],
+//   ["3", 10, 0],
+//   ["3-4", 10, 40],
+//   ["4", 10, 45],
+//   ["after", 11, 25],
+//   ["end", 23, 59]
+// ];
+
+// // afternoon conf
+// var schedule031326 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["1", 8, 30],
+//   ["1-2", 9, 55],
+//   ["2", 10, 0],
+//   ["2-L", 11, 25],
+//   ["Lunch", 11, 30],
+//   ["after", 12, 0],
+//   ["end", 23, 59]
+// ];
+
+// // morning conf
+// var schedule031226 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["Conf", 8, 30],
+//   ["Lunch", 11, 30],
+//   ["L-3", 12, 0],
+//   ["3", 12, 05],
+//   ["3-4", 13, 30],
+//   ["4", 13, 35],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// // ELA MCAS Sess 1
+// var schedule032426 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["MCAS", 8, 30],
+//   ["-> L", 12, 15],
+//   ["Lunch", 12, 20],
+//   ["L-1", 12, 50],
+//   ["1", 12, 55],
+//   ["1-2", 13, 55],
+//   ["2", 14, 0],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// // ELA MCAS Sess 2
+// var schedule032526 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["MCAS", 8, 30],
+//   ["-> L", 12, 15],
+//   ["Lunch", 12, 20],
+//   ["L-3", 12, 50],
+//   ["3", 12, 55],
+//   ["3-4", 13, 55],
+//   ["4", 14, 0],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// var scheduleMCAS12 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["MCAS", 8, 30],
+//   ["-> L", 11, 30],
+//   ["Lunch", 11, 40],
+//   ["L-1", 12, 10],
+//   ["1", 12, 15],
+//   ["1-2", 13, 35],
+//   ["2", 13, 40],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// var scheduleMCAS34 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["MCAS", 8, 30],
+//   ["-> L", 11, 30],
+//   ["Lunch", 11, 40],
+//   ["L-3", 12, 10],
+//   ["3", 12, 15],
+//   ["3-4", 13, 35],
+//   ["4", 13, 40],
+//   ["after", 15, 0],
+//   ["end", 23, 59]
+// ];
+
+// //thanksgiving falcon day
+// var schedule112625 = [
+//   ["morning", 0, 0],
+//   ["before", 7, 0],
+//   ["FB", 8, 30],
+//   ["→ 1", 9, 5],
+//   ["Rot 1", 9, 10],
+//   ["1→2", 9, 45],
+//   ["Rot 2", 9, 50],
+//   ["2→3", 10, 25],
+//   ["Rot 3", 10, 30],
+//   ["3→4", 11, 5],
+//   ["Rot 4", 11, 10],
+//   ["after", 11, 45],
+//   ["end", 23, 59]
+// ];
   
 var specialSchedules = [
-  // [9, 6, schedule962022Frosh, schedule962022Soph, schedule962022Upper],
+  [9, 1, firstDayFrosh, firstDayUpper, firstDayUpper],
   // [10, 9, schedule031225, schedule031225, schedule031225], // morning conferences
   // [10, 10, schedule031125, schedule031125, schedule031125], // afternoon conferences
   // [11, 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
@@ -690,20 +732,20 @@ var specialSchedules = [
   // [1, 23, schedule12323, schedule12323, schedule12323],
   // [2, 1, schedule020123, schedule020123, schedule020123],
   // [2, 2, schedule020223, schedule020223, schedule020223],
-  [3, 12, schedule031226, schedule031226, schedule031226], // Spring Family Conferences morning
-  [3, 13, schedule031326, schedule031326, schedule031326], // Spring Family Conferences afternoon
-  [3, 24, schedule032426, schedule032426, schedule032426], // ELA MCAS Session 1
-  [3, 25, schedule032526, schedule032526, schedule032526], // ELA MCAS Session 2
+  // [3, 12, schedule031226, schedule031226, schedule031226], // Spring Family Conferences morning
+  // [3, 13, schedule031326, schedule031326, schedule031326], // Spring Family Conferences afternoon
+  // [3, 24, schedule032426, schedule032426, schedule032426], // ELA MCAS Session 1
+  // [3, 25, schedule032526, schedule032526, schedule032526], // ELA MCAS Session 2
   // [3, 28, schedule032823, schedule032823, schedule032823],
   // [3, 29, schedule032923, schedule032923, schedule032923],
   // [4, 13, schedule041323, schedule041323, schedule041323],
-  [5, 19, scheduleMCAS12, scheduleMCAS12, scheduleMCAS12], // Math
-  [5, 20, scheduleMCAS34, scheduleMCAS34, scheduleMCAS34], 
-  [6, 8, scheduleMCAS12, scheduleMCAS12, scheduleMCAS12], // Science
-  [6, 9, scheduleMCAS34, scheduleMCAS34, scheduleMCAS34], 
-  [6, 23, scheduleExam13A, scheduleExam13B, scheduleExam13C], // Finals
-  [6, 24, scheduleExam24A, scheduleExam24B, scheduleExam24B],
-  [6, 26, lastday, lastday, lastday]
+  // [5, 19, scheduleMCAS12, scheduleMCAS12, scheduleMCAS12], // Math
+  // [5, 20, scheduleMCAS34, scheduleMCAS34, scheduleMCAS34], 
+  // [6, 8, scheduleMCAS12, scheduleMCAS12, scheduleMCAS12], // Science
+  // [6, 9, scheduleMCAS34, scheduleMCAS34, scheduleMCAS34], 
+  // [6, 23, scheduleExam13A, scheduleExam13B, scheduleExam13C], // Finals
+  // [6, 24, scheduleExam24A, scheduleExam24B, scheduleExam24B],
+  // [6, 26, lastday, lastday, lastday]
 ];
 
 // var regularSchedules = [
@@ -726,8 +768,8 @@ var regularSchedules = [
   [scheduleA, scheduleB, scheduleC],
   [scheduleA, scheduleB, scheduleC],
   [scheduleA, scheduleB, scheduleC],
-  [scheduleThuA, scheduleThuB, scheduleThuC],
-  [scheduleFriA, scheduleFriB, scheduleFriC]
+  [scheduleA, scheduleB, scheduleC],
+  [scheduleA, scheduleB, scheduleC],
 ];
 
 // first check for a special schedule, otherwise return a regular schedule
