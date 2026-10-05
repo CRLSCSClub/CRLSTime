@@ -609,32 +609,33 @@ var firstDayUpper = [
 //   ["end", 23, 59]
 // ];
 
-// // afternoon conf
-// var schedule031326 = [
-//   ["morning", 0, 0],
-//   ["before", 7, 0],
-//   ["1", 8, 30],
-//   ["1-2", 9, 55],
-//   ["2", 10, 0],
-//   ["2-L", 11, 25],
-//   ["Lunch", 11, 30],
-//   ["after", 12, 0],
-//   ["end", 23, 59]
-// ];
+// afternoon conf
+var afterConf = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["1", 8, 30],
+  ["1-2", 9, 55],
+  ["2", 10, 0],
+  ["2-L", 11, 25],
+  ["Lunch", 11, 30],
+  ["Conf", 12, 30],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
 
-// // morning conf
-// var schedule031226 = [
-//   ["morning", 0, 0],
-//   ["before", 7, 0],
-//   ["Conf", 8, 30],
-//   ["Lunch", 11, 30],
-//   ["L-3", 12, 0],
-//   ["3", 12, 05],
-//   ["3-4", 13, 30],
-//   ["4", 13, 35],
-//   ["after", 15, 0],
-//   ["end", 23, 59]
-// ];
+// morning conf
+var mornConf = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["Conf", 8, 30],
+  ["Lunch", 11, 30],
+  ["L-3", 12, 0],
+  ["3", 12, 05],
+  ["3-4", 13, 30],
+  ["4", 13, 35],
+  ["after", 15, 0],
+  ["end", 23, 59]
+];
 
 // // ELA MCAS Sess 1
 // var schedule032426 = [
@@ -713,8 +714,8 @@ var firstDayUpper = [
   
 var specialSchedules = [
   [9, 1, firstDayFrosh, firstDayUpper, firstDayUpper],
-  // [10, 9, schedule031225, schedule031225, schedule031225], // morning conferences
-  // [10, 10, schedule031125, schedule031125, schedule031125], // afternoon conferences
+  [10, 8, mornConf, mornConf, mornConf], // morning conferences
+  [10, 9, afterConf, afterConf, afterConf], // afternoon conferences
   // [11, 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
   // [1, 14, schedule011426, schedule011426, schedule011426], // sem 1 exams
   // [1, 15, schedule011526, schedule011526, schedule011526], // sem 1 exams
