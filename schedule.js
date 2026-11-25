@@ -695,28 +695,28 @@ var mornConf = [
 //   ["end", 23, 59]
 // ];
 
-// //thanksgiving falcon day
-// var schedule112625 = [
-//   ["morning", 0, 0],
-//   ["before", 7, 0],
-//   ["FB", 8, 30],
-//   ["→ 1", 9, 5],
-//   ["Rot 1", 9, 10],
-//   ["1→2", 9, 45],
-//   ["Rot 2", 9, 50],
-//   ["2→3", 10, 25],
-//   ["Rot 3", 10, 30],
-//   ["3→4", 11, 5],
-//   ["Rot 4", 11, 10],
-//   ["after", 11, 45],
-//   ["end", 23, 59]
-// ];
+//thanksgiving falcon pride day
+var falconPride = [
+  ["morning", 0, 0],
+  ["before", 7, 0],
+  ["FB", 8, 30],
+  ["→ 1", 9, 5],
+  ["Rot 1", 9, 10],
+  ["1→2", 9, 45],
+  ["Rot 2", 9, 50],
+  ["2→3", 10, 25],
+  ["Rot 3", 10, 30],
+  ["3→4", 11, 5],
+  ["Rot 4", 11, 10],
+  ["after", 11, 45],
+  ["end", 23, 59]
+];
   
 var specialSchedules = [
   [9, 1, firstDayFrosh, firstDayUpper, firstDayUpper],
   [10, 8, mornConf, mornConf, mornConf], // morning conferences
   [10, 9, afterConf, afterConf, afterConf], // afternoon conferences
-  // [11, 26, schedule112625, schedule112625, schedule112625], // thanksgiving eve
+  [11, 25, falconPride, falconPride, falconPride], // thanksgiving eve
   // [1, 14, schedule011426, schedule011426, schedule011426], // sem 1 exams
   // [1, 15, schedule011526, schedule011526, schedule011526], // sem 1 exams
   // [1, 20, schedule012026, schedule012026, schedule012026], // start of sem 2
